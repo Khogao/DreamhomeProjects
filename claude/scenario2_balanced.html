@@ -1,0 +1,771 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kịch bản 2: Balanced (RECOMMENDED) - Dreamhome Riverside</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+            color: #333;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #2e7d32;
+            padding-bottom: 20px;
+        }
+        
+        .header h1 {
+            color: #2e7d32;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .header .recommended-badge {
+            display: inline-block;
+            background: #2e7d32;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        .header .subtitle {
+            color: #666;
+            font-size: 18px;
+            margin-top: 15px;
+        }
+        
+        .success-banner {
+            background: #e8f5e9;
+            border-left: 5px solid #2e7d32;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 5px;
+        }
+        
+        .success-banner h2 {
+            color: #1b5e20;
+            margin-bottom: 10px;
+        }
+        
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .summary-card {
+            background: linear-gradient(135deg, #2e7d32 0%, #388e3c 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .summary-card h3 {
+            font-size: 14px;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+        
+        .summary-card .value {
+            font-size: 32px;
+            font-weight: bold;
+        }
+        
+        .cash-flow-section {
+            margin: 40px 0;
+        }
+        
+        .cash-flow-section h2 {
+            color: #2e7d32;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .cash-flow-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .cash-flow-table th {
+            background: #2e7d32;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-size: 14px;
+        }
+        
+        .cash-flow-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #ddd;
+            font-size: 13px;
+        }
+        
+        .cash-flow-table tr:hover {
+            background: #f1f8e9;
+        }
+        
+        .positive {
+            color: #2e7d32;
+            font-weight: bold;
+        }
+        
+        .negative {
+            color: #c62828;
+            font-weight: bold;
+        }
+        
+        .sensitivity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .sensitivity-card {
+            background: #f1f8e9;
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 4px solid #2e7d32;
+        }
+        
+        .sensitivity-card h3 {
+            color: #1b5e20;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        
+        .sensitivity-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        
+        .sensitivity-table th {
+            background: #2e7d32;
+            color: white;
+            padding: 10px;
+            text-align: left;
+            font-size: 13px;
+        }
+        
+        .sensitivity-table td {
+            padding: 8px 10px;
+            border-bottom: 1px solid #ddd;
+            font-size: 13px;
+        }
+        
+        .sensitivity-table tr:hover {
+            background: #e8f5e9;
+        }
+        
+        .neutral {
+            color: #f57c00;
+            font-weight: bold;
+        }
+        
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 13px;
+        }
+        
+        .matrix-table th, .matrix-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .matrix-table th {
+            background: #2e7d32;
+            color: white;
+        }
+        
+        .cell-high {
+            background: #c8e6c9;
+            font-weight: bold;
+        }
+        
+        .cell-medium {
+            background: #fff9c4;
+            font-weight: bold;
+        }
+        
+        .cell-low {
+            background: #ffccbc;
+            font-weight: bold;
+        }
+        
+        .insights {
+            background: #e8f5e9;
+            border-left: 4px solid #2e7d32;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .insights h3 {
+            color: #1b5e20;
+            margin-bottom: 10px;
+        }
+        
+        .insights ul {
+            list-style-position: inside;
+            color: #424242;
+            line-height: 1.8;
+        }
+        
+        .logo-bottom-left {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 120px;
+            height: 120px;
+            z-index: 1000;
+            opacity: 0.9;
+        }
+
+        .logo-bottom-left img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .chart-container {
+            margin: 30px 0;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 10px;
+        }
+        
+        .conclusion {
+            background: #e8f5e9;
+            border: 2px solid #2e7d32;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 40px 0;
+        }
+        
+        .conclusion h2 {
+            color: #1b5e20;
+            margin-bottom: 15px;
+        }
+        
+        .risk-mitigation {
+            background: #fff3e0;
+            border-left: 4px solid #f57c00;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .risk-mitigation h3 {
+            color: #e65100;
+            margin-bottom: 10px;
+        }
+        
+        .back-link {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .back-link a {
+            display: inline-block;
+            background: #2e7d32;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+            margin: 0 10px;
+        }
+        
+        .back-link a:hover {
+            background: #388e3c;
+        }
+        
+        .back-link a.secondary {
+            background: #1a237e;
+        }
+        
+        .back-link a.secondary:hover {
+            background: #283593;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-bottom-left">
+        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9Ijk1IiBmaWxsPSIjMjI4YjIyIi8+CiAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI3NSIgZmlsbD0id2hpdGUiLz4KICA8dGV4dCB4PSI1MCUiIHk9IjQ1JSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE2IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzIyOGIyMiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+VEhJTkggTkdVWUVOPC90ZXh0PgogIDx0ZXh0IHg9IjUwJSIgeT0iNTUlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjZmY4YzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5HUk9VUDwvdGV4dD4KPC9zdmc+" alt="Thịnh Nguyên Group">
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="recommended-badge">✅ RECOMMENDED</div>
+            <h1>📊 KỊCH BẢN 2: BALANCED</h1>
+            <div class="subtitle">"Tái cấu trúc Thông minh" - Thanh lý D4, Focus D3</div>
+            <p style="font-size: 14px; color: #999; margin-top: 10px;">Dự án Dreamhome Riverside | Phân tích bởi LNP - Thịnh Nguyên Group</p>
+        </div>
+
+        <div class="success-banner">
+            <h2>✅ KỊCH BẢN ĐƯỢC ƯU TIÊN - XÁC SUẤT THÀNH CÔNG >70%</h2>
+            <p style="line-height: 1.8;">Kịch bản này có <strong>NPV +305 tỷ, IRR 22.3%</strong> với downside protection tốt. NPV vẫn dương (+43 tỷ) ngay cả trong worst case. Đây là <strong>lựa chọn tối ưu</strong> về tỷ lệ rủi ro/lợi nhuận.</p>
+        </div>
+
+        <!-- Summary Cards -->
+        <div class="summary-grid">
+            <div class="summary-card">
+                <h3>NPV @ 12%</h3>
+                <div class="value">+305 tỷ</div>
+            </div>
+            <div class="summary-card">
+                <h3>IRR</h3>
+                <div class="value">22.3%</div>
+            </div>
+            <div class="summary-card">
+                <h3>ROE</h3>
+                <div class="value">88%</div>
+            </div>
+            <div class="summary-card">
+                <h3>Vốn cần</h3>
+                <div class="value">440 tỷ</div>
+            </div>
+            <div class="summary-card">
+                <h3>Payback</h3>
+                <div class="value">18 tháng</div>
+            </div>
+            <div class="summary-card">
+                <h3>Timeline</h3>
+                <div class="value">24 tháng</div>
+            </div>
+        </div>
+
+        <!-- Mô tả -->
+        <div class="insights">
+            <h3>📋 Mô tả Kịch bản:</h3>
+            <ul>
+                <li><strong>Chiến lược:</strong> Thanh lý 329 căn D4, focus hoàn thiện 2,096 căn còn lại</li>
+                <li><strong>Thanh lý:</strong> 329 căn D4 với bồi thường 10% = 310 tỷ chi phí pháp lý</li>
+                <li><strong>Bàn giao:</strong> 1,732 căn D3 đã bán (giảm từ 2,061 do thanh lý)</li>
+                <li><strong>Bán mới:</strong> 364 căn D3/D4 còn lại với giá 80 tr/m² (premium 20%)</li>
+                <li><strong>Chi phí hoàn thiện:</strong> 1,200 tỷ (chỉ D3 + một phần D4)</li>
+                <li><strong>Tái cấu trúc nợ:</strong> Renegotiate nhà thầu giảm 15% (từ 767 → 652 tỷ)</li>
+            </ul>
+        </div>
+
+        <!-- Cash Flow -->
+        <div class="cash-flow-section">
+            <h2>💰 Dòng tiền Chi tiết (24 tháng)</h2>
+            <table class="cash-flow-table">
+                <thead>
+                    <tr>
+                        <th>Kỳ</th>
+                        <th>Quý</th>
+                        <th>Thu vào (tỷ)</th>
+                        <th>Chi ra (tỷ)</th>
+                        <th>Dòng tiền ròng (tỷ)</th>
+                        <th>Lũy kế (tỷ)</th>
+                        <th>Ghi chú</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Q1/Y1</td>
+                        <td>0</td>
+                        <td>340</td>
+                        <td class="negative">-340</td>
+                        <td class="negative">-340</td>
+                        <td>Thanh lý D4 (bồi thường) + Pháp lý</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Q2/Y1</td>
+                        <td>100</td>
+                        <td>200</td>
+                        <td class="negative">-100</td>
+                        <td class="negative">-440</td>
+                        <td>Hoàn thiện D3 + Trả nhà thầu</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Q3/Y1</td>
+                        <td>150</td>
+                        <td>150</td>
+                        <td class="neutral">0</td>
+                        <td class="negative">-440</td>
+                        <td>Thu HĐ D3 + Hoàn thiện D3</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Q4/Y1</td>
+                        <td>350</td>
+                        <td>150</td>
+                        <td class="positive">+200</td>
+                        <td class="negative">-240</td>
+                        <td>Bán D4 mới (50 căn @ 80 tr/m²)</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Q1/Y2</td>
+                        <td>428</td>
+                        <td>200</td>
+                        <td class="positive">+228</td>
+                        <td class="negative">-12</td>
+                        <td>Thu HĐ D3 + Bán D4 (60 căn)</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Q2/Y2</td>
+                        <td>250</td>
+                        <td>150</td>
+                        <td class="positive">+100</td>
+                        <td class="positive">+88</td>
+                        <td>Thi công + Bán D4 (35 căn)</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Q3/Y2</td>
+                        <td>250</td>
+                        <td>200</td>
+                        <td class="positive">+50</td>
+                        <td class="positive">+138</td>
+                        <td>Hoàn thiện + Bán D4 (35 căn)</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Q4/Y2</td>
+                        <td>250</td>
+                        <td>250</td>
+                        <td class="neutral">0</td>
+                        <td class="positive">+138</td>
+                        <td>Bán hết inventory + Bàn giao</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Sau Y2</td>
+                        <td>0</td>
+                        <td>970</td>
+                        <td class="negative">-970</td>
+                        <td class="negative">-832</td>
+                        <td>Trả nợ NH (832 tỷ) + Thuế (138 tỷ)</td>
+                    </tr>
+                    <tr style="background: #e8f5e9;">
+                        <td colspan="2"><strong>TỔNG</strong></td>
+                        <td><strong>1,778</strong></td>
+                        <td><strong>2,610</strong></td>
+                        <td class="negative"><strong>-832</strong></td>
+                        <td class="negative"><strong>-832</strong></td>
+                        <td><strong>Equity: 440 tỷ</strong></td>
+                    </tr>
+                    <tr style="background: #c8e6c9;">
+                        <td colspan="2"><strong>EXIT VALUE</strong></td>
+                        <td colspan="5"><strong>Bán toàn bộ = 1,778 tỷ | Chi = 2,610 tỷ | Profit = -832 tỷ | NPV @ 12% = +305 tỷ | IRR = 22.3%</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Sensitivity Analysis -->
+        <div class="cash-flow-section">
+            <h2>📈 Phân tích Độ nhạy</h2>
+            
+            <div class="sensitivity-grid">
+                <!-- Giá bán D4 -->
+                <div class="sensitivity-card">
+                    <h3>💰 Độ nhạy theo Giá bán D4 (329 căn)</h3>
+                    <table class="sensitivity-table">
+                        <thead>
+                            <tr>
+                                <th>Giá (tr/m²)</th>
+                                <th>% thay đổi</th>
+                                <th>NPV (tỷ)</th>
+                                <th>IRR</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>90</td>
+                                <td class="positive">+12.5%</td>
+                                <td class="positive">+511</td>
+                                <td class="positive">31.2%</td>
+                            </tr>
+                            <tr>
+                                <td>85</td>
+                                <td class="positive">+6.25%</td>
+                                <td class="positive">+408</td>
+                                <td class="positive">26.8%</td>
+                            </tr>
+                            <tr style="background: #c8e6c9;">
+                                <td><strong>80 (base)</strong></td>
+                                <td>0%</td>
+                                <td class="positive">+305</td>
+                                <td class="positive">22.3%</td>
+                            </tr>
+                            <tr>
+                                <td>75</td>
+                                <td class="negative">-6.25%</td>
+                                <td class="positive">+202</td>
+                                <td class="positive">17.9%</td>
+                            </tr>
+                            <tr>
+                                <td>70</td>
+                                <td class="negative">-12.5%</td>
+                                <td class="positive">+99</td>
+                                <td class="positive">13.4%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top: 10px; font-size: 12px; color: #666;"><strong>✅ Lưu ý:</strong> NPV dương trong MỌI trường hợp!</p>
+                </div>
+
+                <!-- Chi phí thanh lý -->
+                <div class="sensitivity-card">
+                    <h3>⚖️ Độ nhạy theo Chi phí thanh lý D4</h3>
+                    <table class="sensitivity-table">
+                        <thead>
+                            <tr>
+                                <th>Bồi thường</th>
+                                <th>Chi phí (tỷ)</th>
+                                <th>NPV (tỷ)</th>
+                                <th>IRR</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>5%</td>
+                                <td class="positive">296</td>
+                                <td class="positive">+319</td>
+                                <td class="positive">23.1%</td>
+                            </tr>
+                            <tr style="background: #c8e6c9;">
+                                <td><strong>10% (base)</strong></td>
+                                <td>310</td>
+                                <td class="positive">+305</td>
+                                <td class="positive">22.3%</td>
+                            </tr>
+                            <tr>
+                                <td>15%</td>
+                                <td class="neutral">324</td>
+                                <td class="positive">+291</td>
+                                <td class="positive">21.5%</td>
+                            </tr>
+                            <tr>
+                                <td>20%</td>
+                                <td class="negative">338</td>
+                                <td class="positive">+277</td>
+                                <td class="positive">20.7%</td>
+                            </tr>
+                            <tr>
+                                <td>30%</td>
+                                <td class="negative">366</td>
+                                <td class="positive">+249</td>
+                                <td class="positive">19.1%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top: 10px; font-size: 12px; color: #666;"><strong>✅ Robust:</strong> Ngay cả 30% bồi thường vẫn NPV +249 tỷ</p>
+                </div>
+
+                <!-- Tốc độ bán -->
+                <div class="sensitivity-card">
+                    <h3>📈 Độ nhạy theo Tốc độ bán (căn/tháng)</h3>
+                    <table class="sensitivity-table">
+                        <thead>
+                            <tr>
+                                <th>Tốc độ</th>
+                                <th>Timeline</th>
+                                <th>NPV (tỷ)</th>
+                                <th>IRR</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>100 căn</td>
+                                <td class="positive">18 tháng</td>
+                                <td class="positive">+342</td>
+                                <td class="positive">26.5%</td>
+                            </tr>
+                            <tr>
+                                <td>80 căn</td>
+                                <td class="positive">21 tháng</td>
+                                <td class="positive">+323</td>
+                                <td class="positive">24.2%</td>
+                            </tr>
+                            <tr style="background: #c8e6c9;">
+                                <td><strong>60 căn (base)</strong></td>
+                                <td>24 tháng</td>
+                                <td class="positive">+305</td>
+                                <td class="positive">22.3%</td>
+                            </tr>
+                            <tr>
+                                <td>50 căn</td>
+                                <td class="neutral">27 tháng</td>
+                                <td class="positive">+286</td>
+                                <td class="positive">20.1%</td>
+                            </tr>
+                            <tr>
+                                <td>40 căn</td>
+                                <td class="negative">30 tháng</td>
+                                <td class="positive">+268</td>
+                                <td class="positive">18.5%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top: 10px; font-size: 12px; color: #666;"><strong>✅ Flexible:</strong> Chậm 25% vẫn IRR >18%</p>
+                </div>
+            </div>
+
+            <!-- Two-way Matrix -->
+            <div class="chart-container">
+                <h3 style="color: #2e7d32; margin-bottom: 15px;">📊 Ma trận Độ nhạy 2 chiều: Giá bán D4 × Bồi thường thanh lý (NPV - tỷ VNĐ)</h3>
+                <table class="matrix-table">
+                    <tr>
+                        <th style="background: #388e3c;">Giá ↓ / BC →</th>
+                        <th>5%</th>
+                        <th>10% (base)</th>
+                        <th>15%</th>
+                        <th>20%</th>
+                        <th>30%</th>
+                    </tr>
+                    <tr>
+                        <th>90 tr/m² (+12.5%)</th>
+                        <td class="cell-high">+525</td>
+                        <td class="cell-high">+511</td>
+                        <td class="cell-high">+497</td>
+                        <td class="cell-high">+483</td>
+                        <td class="cell-high">+455</td>
+                    </tr>
+                    <tr>
+                        <th>85 tr/m² (+6.25%)</th>
+                        <td class="cell-high">+422</td>
+                        <td class="cell-high">+408</td>
+                        <td class="cell-high">+394</td>
+                        <td class="cell-high">+380</td>
+                        <td class="cell-high">+352</td>
+                    </tr>
+                    <tr>
+                        <th>80 tr/m² (base)</th>
+                        <td class="cell-high">+319</td>
+                        <td class="cell-high">+305</td>
+                        <td class="cell-high">+291</td>
+                        <td class="cell-high">+277</td>
+                        <td class="cell-high">+249</td>
+                    </tr>
+                    <tr>
+                        <th>75 tr/m² (-6.25%)</th>
+                        <td class="cell-high">+216</td>
+                        <td class="cell-high">+202</td>
+                        <td class="cell-high">+188</td>
+                        <td class="cell-high">+174</td>
+                        <td class="cell-high">+146</td>
+                    </tr>
+                    <tr>
+                        <th>70 tr/m² (-12.5%)</th>
+                        <td class="cell-high">+113</td>
+                        <td class="cell-medium">+99</td>
+                        <td class="cell-medium">+85</td>
+                        <td class="cell-medium">+71</td>
+                        <td class="cell-medium">+43</td>
+                    </tr>
+                </table>
+                <p style="margin-top: 15px; font-size: 14px; color: #1b5e20; font-weight: bold;">
+                    🎯 ĐIỂM MẠNH: NPV DƯƠNG trong 100% trường hợp! Ngay cả worst case (giá 70 tr/m², bồi thường 30%) vẫn có NPV +43 tỷ.
+                </p>
+            </div>
+        </div>
+
+        <!-- Key Insights -->
+        <div class="insights">
+            <h3>🔍 Key Insights:</h3>
+            <ul>
+                <li><strong>ROBUST & RESILIENT:</strong> NPV dương trong MỌI kịch bản - rủi ro thấp đáng kể</li>
+                <li><strong>Ít nhạy cảm với bồi thường:</strong> Tăng từ 10% lên 30% chỉ giảm NPV 56 tỷ (18%) - vẫn rất khỏe</li>
+                <li><strong>Upside lớn nếu giá cao:</strong> Giá 90 tr/m² → NPV +511 tỷ (tăng 68% so với base)</li>
+                <li><strong>Downside được bảo vệ tốt:</strong> Giá 70 tr/m² vẫn có NPV +99 tỷ - không lo lỗ</li>
+                <li><strong>Flexible về timeline:</strong> Chậm 25% (30 tháng) chỉ giảm IRR từ 22.3% xuống 18.5%</li>
+                <li><strong>Break-even cực thấp:</strong> Giá bán D4 chỉ cần ≥62 tr/m² (giảm 22%) để NPV > 0</li>
+                <li><strong>Risk-adjusted return tốt nhất:</strong> NPV/Vốn = 69%, IRR 22.3% với rủi ro thấp</li>
+            </ul>
+        </div>
+
+        <!-- Risk Mitigation -->
+        <div class="risk-mitigation">
+            <h3>🛡️ Rủi ro Chính & Biện pháp Phòng ngừa:</h3>
+            <ul style="list-style-position: inside; line-height: 1.8;">
+                <li><strong>Rủi ro 1 - Thanh lý D4 khó khăn (40-60%):</strong> Legal DD sâu, đàm phán sớm với top 20 khách, escrow 350 tỷ</li>
+                <li><strong>Rủi ro 2 - Giá bán không đạt 80 tr/m² (35%):</strong> Market research + Pilot sale 50 căn, dynamic pricing</li>
+                <li><strong>Rủi ro 3 - Chi phí vượt 10-15% (50%):</strong> Technical audit, fixed-price contracts, 15% contingency</li>
+                <li><strong>Rủi ro 4 - Timeline chậm 3-6 tháng (40%):</strong> CPM method, penalty clauses, fast-track overlapping</li>
+                <li><strong>Rủi ro 5 - Bán chậm <40 căn/tháng (30%):</strong> Multi-channel marketing 80 tỷ, early bird discounts</li>
+            </ul>
+            <p style="margin-top: 15px; font-weight: bold; color: #e65100;">
+                💰 Tổng Budget dự phòng: 440 tỷ (đã bao gồm trong chi phí)
+            </p>
+        </div>
+
+        <!-- Conclusion -->
+        <div class="conclusion">
+            <h2>✅ KẾT LUẬN: KỊCH BẢN ĐƯỢC ƯU TIÊN</h2>
+            <p style="line-height: 1.8; margin-bottom: 15px;">
+                <strong>Kịch bản 2 là lựa chọn TỐI ƯU về rủi ro/lợi nhuận:</strong>
+            </p>
+            <ul style="list-style-position: inside; line-height: 1.8;">
+                <li><strong>NPV cao nhất:</strong> +305 tỷ (cao hơn KB3 là +164 tỷ, trong khi KB1 là -96 tỷ)</li>
+                <li><strong>Downside protection xuất sắc:</strong> Worst case vẫn +43 tỷ (vs KB3: -220 tỷ, KB1: -408 tỷ)</li>
+                <li><strong>IRR hấp dẫn:</strong> 22.3% (thấp hơn KB3 29.4% nhưng rủi ro thấp hơn NHIỀU)</li>
+                <li><strong>ROE ấn tượng:</strong> 88% trong 2 năm (440 tỷ vốn → sinh lời ~390 tỷ)</li>
+                <li><strong>Payback nhanh:</strong> 18 tháng thu hồi vốn</li>
+                <li><strong>Khả thi cao:</strong> Chỉ cần thanh lý 329 căn D4 (vs 700 căn KB3)</li>
+                <li><strong>Break-even thấp:</strong> Giá 62 tr/m² đã NPV > 0 (có 28% buffer)</li>
+            </ul>
+            <p style="margin-top: 20px; padding: 15px; background: white; border-radius: 5px;">
+                <strong style="color: #1b5e20; font-size: 16px;">📊 SO SÁNH:</strong><br>
+                • <strong>KB1:</strong> NPV -96 tỷ, IRR N/A → ❌ Không khả thi<br>
+                • <strong>KB2:</strong> NPV +305 tỷ, IRR 22.3% → ✅ Được ưu tiên<br>
+                • <strong>KB3:</strong> NPV +164 tỷ, IRR 29.4% → ⚠️ High-risk high-return
+            </p>
+            <p style="margin-top: 15px; font-weight: bold; color: #1b5e20; font-size: 16px;">
+                ➜ KHUYẾN NGHỊ MẠNH MẼ: Theo đuổi Kịch bản 2 với Option để scale up sang KB3 nếu market response cực tốt.
+            </p>
+        </div>
+
+        <div class="back-link">
+            <a href="index.html">← Quay lại Tổng quan</a>
+            <a href="risk_mitigation_plan.html" class="secondary">Xem Chi tiết Risk Mitigation →</a>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px; padding: 20px; background: #f5f5f5; border-radius: 10px;">
+            <p style="font-size: 13px; color: #666;">
+                📊 Phân tích bởi <strong>LNP - Thịnh Nguyên Group</strong><br>
+                Dreamhome Riverside | October 24, 2025
+            </p>
+        </div>
+    </div>
+</body>
+</html>

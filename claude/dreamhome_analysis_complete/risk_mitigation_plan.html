@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Mitigation Plan - Dreamhome Riverside</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #c62828 0%, #d32f2f 100%);
+            color: #333;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #c62828;
+            padding-bottom: 20px;
+        }
+        
+        .header h1 {
+            color: #c62828;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        .risk-matrix {
+            margin-bottom: 50px;
+        }
+        
+        .risk-matrix h2 {
+            color: #c62828;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .matrix-table th, .matrix-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .matrix-table th {
+            background: #c62828;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .risk-critical {
+            background: #ffcdd2;
+            border-left: 4px solid #c62828;
+        }
+        
+        .risk-high {
+            background: #ffe0b2;
+            border-left: 4px solid #f57c00;
+        }
+        
+        .risk-medium {
+            background: #fff9c4;
+            border-left: 4px solid #fbc02d;
+        }
+        
+        .risk-low {
+            background: #c8e6c9;
+            border-left: 4px solid #388e3c;
+        }
+        
+        .mitigation-section {
+            margin: 30px 0;
+            padding: 25px;
+            background: #f5f5f5;
+            border-radius: 10px;
+        }
+        
+        .mitigation-section h3 {
+            color: #1a237e;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .mitigation-card {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .mitigation-card h4 {
+            color: #c62828;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .mitigation-card ul {
+            list-style-position: inside;
+            color: #424242;
+        }
+        
+        .mitigation-card li {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+        
+        .action-plan {
+            background: #e3f2fd;
+            border-left: 4px solid #1976d2;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .action-plan h4 {
+            color: #1565c0;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .timeline-table th {
+            background: #1976d2;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .timeline-table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .kpi-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .kpi-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ff6f00;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .kpi-item strong {
+            color: #424242;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        
+        .kpi-item span {
+            color: #1a237e;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .scenario-tab {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #ddd;
+        }
+        
+        .scenario-tab button {
+            padding: 12px 24px;
+            background: #f5f5f5;
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .scenario-tab button:hover {
+            background: #e0e0e0;
+        }
+        
+        .scenario-tab button.active {
+            background: white;
+            border-bottom-color: #c62828;
+            color: #c62828;
+        }
+        
+        .contingency-plan {
+            background: #fff3e0;
+            border: 2px solid #f57c00;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .contingency-plan h4 {
+            color: #e65100;
+            margin-bottom: 10px;
+        }
+        
+        .warning-box {
+            background: #ffebee;
+            border-left: 4px solid #c62828;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .warning-box strong {
+            color: #c62828;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🛡️ KẾ HOẠCH PHÒNG NGỪA RỦI RO (RISK MITIGATION PLAN)</h1>
+            <p>Dự án Dreamhome Riverside - Phân tích chi tiết 3 Kịch bản</p>
+            <p style="font-size: 14px; color: #999; margin-top: 10px;">Phân tích bởi Charlie - Chuyên gia Tái cấu trúc Dự án</p>
+        </div>
+
+        <!-- RISK MATRIX TỔNG QUAN -->
+        <div class="risk-matrix">
+            <h2>📊 MA TRẬN RỦI RO TỔNG QUAN</h2>
+            
+            <table class="matrix-table">
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">Rủi ro</th>
+                        <th style="width: 12%;">Mức độ</th>
+                        <th style="width: 15%;">Xác suất</th>
+                        <th style="width: 15%;">Tác động (tỷ)</th>
+                        <th style="width: 38%;">Biện pháp Phòng ngừa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="risk-critical">
+                        <td><strong>1. Giá bán không đạt kỳ vọng</strong></td>
+                        <td><span style="color: #c62828; font-weight: bold;">CRITICAL</span></td>
+                        <td>35-50%</td>
+                        <td>-150 đến -350</td>
+                        <td>
+                            • Market research chi tiết<br>
+                            • Pilot sale test pricing<br>
+                            • Flexible pricing strategy
+                        </td>
+                    </tr>
+                    <tr class="risk-critical">
+                        <td><strong>2. Thanh lý HĐ gặp khó khăn pháp lý</strong></td>
+                        <td><span style="color: #c62828; font-weight: bold;">CRITICAL</span></td>
+                        <td>40-60%</td>
+                        <td>-80 đến -200</td>
+                        <td>
+                            • Legal due diligence sâu<br>
+                            • Đàm phán trước với khách<br>
+                            • Escrow account bồi thường
+                        </td>
+                    </tr>
+                    <tr class="risk-high">
+                        <td><strong>3. Chi phí hoàn thiện vượt dự toán</strong></td>
+                        <td><span style="color: #f57c00; font-weight: bold;">HIGH</span></td>
+                        <td>50-70%</td>
+                        <td>-70 đến -150</td>
+                        <td>
+                            • Technical audit công trình<br>
+                            • Fixed-price contracts<br>
+                            • 15% contingency reserve
+                        </td>
+                    </tr>
+                    <tr class="risk-high">
+                        <td><strong>4. Timeline chậm trễ</strong></td>
+                        <td><span style="color: #f57c00; font-weight: bold;">HIGH</span></td>
+                        <td>40-60%</td>
+                        <td>-50 đến -120</td>
+                        <td>
+                            • Critical path method<br>
+                            • Penalty clauses cho nhà thầu<br>
+                            • Buffer time 10-15%
+                        </td>
+                    </tr>
+                    <tr class="risk-high">
+                        <td><strong>5. Tốc độ tiêu thụ thấp</strong></td>
+                        <td><span style="color: #f57c00; font-weight: bold;">HIGH</span></td>
+                        <td>30-50%</td>
+                        <td>-40 đến -100</td>
+                        <td>
+                            • Marketing chiến lược<br>
+                            • Channel đa dạng (online/offline)<br>
+                            • Incentives cho buyer sớm
+                        </td>
+                    </tr>
+                    <tr class="risk-medium">
+                        <td><strong>6. Nhà thầu không renegotiate</strong></td>
+                        <td><span style="color: #fbc02d; font-weight: bold;">MEDIUM</span></td>
+                        <td>30-40%</td>
+                        <td>-80 đến -120</td>
+                        <td>
+                            • Equity swap proposal<br>
+                            • Payment schedule ưu đãi<br>
+                            • Backup contractors
+                        </td>
+                    </tr>
+                    <tr class="risk-medium">
+                        <td><strong>7. Ngân hàng từ chối refinance</strong></td>
+                        <td><span style="color: #fbc02d; font-weight: bold;">MEDIUM</span></td>
+                        <td>20-30%</td>
+                        <td>-60 đến -100</td>
+                        <td>
+                            • Multiple bank relationships<br>
+                            • Alternative lenders (private debt)<br>
+                            • Asset-backed financing
+                        </td>
+                    </tr>
+                    <tr class="risk-medium">
+                        <td><strong>8. Chất lượng công trình kém</strong></td>
+                        <td><span style="color: #fbc02d; font-weight: bold;">MEDIUM</span></td>
+                        <td>25-35%</td>
+                        <td>-50 đến -80</td>
+                        <td>
+                            • Third-party quality inspection<br>
+                            • Remediation budget<br>
+                            • Insurance coverage
+                        </td>
+                    </tr>
+                    <tr class="risk-low">
+                        <td><strong>9. Thị trường BDS sụt giảm</strong></td>
+                        <td><span style="color: #388e3c; font-weight: bold;">LOW</span></td>
+                        <td>15-25%</td>
+                        <td>-100 đến -200</td>
+                        <td>
+                            • Fast execution (18-24 tháng)<br>
+                            • Pre-sale strategy<br>
+                            • Value-add features
+                        </td>
+                    </tr>
+                    <tr class="risk-low">
+                        <td><strong>10. Đối tác rút lui giữa chừng</strong></td>
+                        <td><span style="color: #388e3c; font-weight: bold;">LOW</span></td>
+                        <td>10-20%</td>
+                        <td>-100 đến -300</td>
+                        <td>
+                            • Binding commitment agreement<br>
+                            • Milestone-based funding<br>
+                            • Backup investors
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- KỊCH BẢN 2 - CHI TIẾT (Recommended) -->
+        <div class="mitigation-section" style="background: #e8f5e9;">
+            <h2 style="color: #2e7d32; margin-bottom: 25px;">✅ KỊCH BẢN 2: BALANCED - Kế hoạch Phòng ngừa Chi tiết</h2>
+            
+            <!-- Rủi ro #1: Giá bán -->
+            <div class="mitigation-card">
+                <h4>🎯 RỦI RO #1: Giá bán D4 không đạt 80 tr/m² (Risk: HIGH)</h4>
+                <p style="margin: 10px 0; color: #666;"><strong>Tác động:</strong> Mỗi 5 tr/m² giảm giá = -103 tỷ NPV | Xác suất: 35%</p>
+                
+                <div class="action-plan">
+                    <h4>📋 Kế hoạch Hành động:</h4>
+                    <table class="timeline-table" style="font-size: 13px;">
+                        <tr>
+                            <th style="width: 20%;">Thời điểm</th>
+                            <th style="width: 35%;">Hành động</th>
+                            <th style="width: 25%;">Người phụ trách</th>
+                            <th style="width: 20%;">KPI</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Tháng 1-2</strong></td>
+                            <td>
+                                • Market research chi tiết Q8<br>
+                                • Analyze 10+ comparable projects<br>
+                                • Survey 500+ potential buyers
+                            </td>
+                            <td>Marketing Director<br>Market Research Firm</td>
+                            <td>Report đầy đủ<br>với confidence interval</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tháng 3-4</strong></td>
+                            <td>
+                                • Pilot sale 50 căn với giá test<br>
+                                • A/B testing giá (75/80/85 tr/m²)<br>
+                                • Track conversion rate
+                            </td>
+                            <td>Sales Director</td>
+                            <td>Bán ≥30 căn<br>Conversion ≥15%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tháng 5+</strong></td>
+                            <td>
+                                • Điều chỉnh giá theo data<br>
+                                • Dynamic pricing strategy<br>
+                                • Early bird incentives
+                            </td>
+                            <td>Pricing Committee</td>
+                            <td>Duy trì avg ≥75 tr/m²</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="contingency-plan">
+                    <h4>🆘 Kế hoạch Dự phòng (nếu giá <75 tr/m²):</h4>
+                    <ul>
+                        <li><strong>Tier 1 (70-75 tr/m²):</strong> Giảm chi phí marketing, tăng volume bán</li>
+                        <li><strong>Tier 2 (65-70 tr/m²):</strong> Đàm phán thêm với nhà thầu giảm 5% chi phí</li>
+                        <li><strong>Tier 3 (<65 tr/m²):</strong> Pause D4, focus hoàn thiện D3, bán chậm hơn</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Rủi ro #2: Thanh lý pháp lý -->
+            <div class="mitigation-card">
+                <h4>⚖️ RỦI RO #2: Thanh lý 329 căn D4 gặp vướng mắc pháp lý (Risk: CRITICAL)</h4>
+                <p style="margin: 10px 0; color: #666;"><strong>Tác động:</strong> Mỗi 5% tăng bồi thường = -14 tỷ NPV | Xác suất: 45%</p>
+                
+                <div class="action-plan">
+                    <h4>📋 Kế hoạch Hành động:</h4>
+                    <table class="timeline-table" style="font-size: 13px;">
+                        <tr>
+                            <th style="width: 20%;">Thời điểm</th>
+                            <th style="width: 35%;">Hành động</th>
+                            <th style="width: 25%;">Người phụ trách</th>
+                            <th style="width: 20%;">KPI</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Pre-signing</strong></td>
+                            <td>
+                                • Legal due diligence toàn bộ HĐ<br>
+                                • Phân loại khách (dễ/khó đàm phán)<br>
+                                • Xác định force majeure clauses
+                            </td>
+                            <td>Legal Team<br>External Counsel</td>
+                            <td>100% HĐ reviewed<br>Risk score mỗi khách</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tháng 1</strong></td>
+                            <td>
+                                • Đàm phán riêng với top 20 khách lớn<br>
+                                • Offer bồi thường 8-12% linh hoạt<br>
+                                • Setup escrow account 350 tỷ
+                            </td>
+                            <td>CEO<br>CFO</td>
+                            <td>≥15/20 khách đồng ý<br>Avg bồi thường ≤11%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tháng 2-3</strong></td>
+                            <td>
+                                • Mass communication còn lại<br>
+                                • Mediation cho khách khó<br>
+                                • Backup: arbitration
+                            </td>
+                            <td>Customer Relations<br>Legal Team</td>
+                            <td>≥90% khách đồng ý<br>≤5% đi kiện</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="warning-box">
+                    <strong>⚠️ DEAL BREAKER:</strong> Nếu >15% khách từ chối hoặc yêu cầu bồi thường >20%, cần PAUSE và tái đánh giá toàn bộ kịch bản. Có thể phải chuyển sang Kịch bản 1 (giữ toàn bộ HĐ).
+                </div>
+                
+                <div class="contingency-plan">
+                    <h4>🆘 Kế hoạch Dự phòng:</h4>
+                    <ul>
+                        <li><strong>Budget dự phòng:</strong> Chuẩn bị thêm 50 tỷ cho trường hợp bồi thường cao hơn (15-18%)</li>
+                        <li><strong>Legal reserve:</strong> 20 tỷ cho chi phí kiện tụng nếu có</li>
+                        <li><strong>Alternative:</strong> Nếu không thanh lý được, pivot sang hoàn thiện D4 theo lộ trình chậm (24 tháng thay vì 12 tháng)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Rủi ro #3: Chi phí vượt -->
+            <div class="mitigation-card">
+                <h4>🏗️ RỦI RO #3: Chi phí hoàn thiện vượt 10-20% (Risk: HIGH)</h4>
+                <p style="margin: 10px 0; color: #666;"><strong>Tác động:</strong> Mỗi 10% tăng chi phí = -60 tỷ NPV | Xác suất: 60%</p>
+                
+                <div class="action-plan">
+                    <h4>📋 Kế hoạch Hành động:</h4>
+                    <table class="timeline-table" style="font-size: 13px;">
+                        <tr>
+                            <th style="width: 20%;">Thời điểm</th>
+                            <th style="width: 35%;">Hành động</th>
+                            <th style="width: 25%;">Người phụ trách</th>
+                            <th style="width: 20%;">KPI</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Pre-execution</strong></td>
+                            <td>
+                                • Technical audit công trình D3/D4<br>
+                                • Bill of quantities chi tiết<br>
+                                • Get 3 quotes mỗi hạng mục
+                            </td>
+                            <td>Technical Director<br>QS Consultant</td>
+                            <td>Accuracy ±5%<br>Contingency 15%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Contracting</strong></td>
+                            <td>
+                                • Fixed-price contracts ưu tiên<br>
+                                • Penalty clauses for overrun<br>
+                                • Value engineering workshops
+                            </td>
+                            <td>Procurement</td>
+                            <td>≥70% fixed price<br>Max escalation 5%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Execution</strong></td>
+                            <td>
+                                • Monthly cost tracking<br>
+                                • Early warning system<br>
+                                • Change order approval process
+                            </td>
+                            <td>Project Manager<br>CFO</td>
+                            <td>Variance ≤3%/month<br>No unapproved changes</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="kpi-box">
+                    <div class="kpi-item">
+                        <strong>Budget Reserve:</strong>
+                        <span>90 tỷ</span>
+                    </div>
+                    <div class="kpi-item">
+                        <strong>Max Tolerance:</strong>
+                        <span>+15%</span>
+                    </div>
+                    <div class="kpi-item">
+                        <strong>Monthly Review:</strong>
+                        <span>Bắt buộc</span>
+                    </div>
+                    <div class="kpi-item">
+                        <strong>Approval Level:</strong>
+                        <span>CFO >10 tỷ</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rủi ro #4: Timeline -->
+            <div class="mitigation-card">
+                <h4>⏰ RỦI RO #4: Timeline chậm 3-6 tháng (Risk: HIGH)</h4>
+                <p style="margin: 10px 0; color: #666;"><strong>Tác động:</strong> Mỗi 3 tháng chậm = -45 tỷ NPV (lãi vay + cơ hội) | Xác suất: 50%</p>
+                
+                <div class="action-plan">
+                    <h4>📋 Kế hoạch Hành động:</h4>
+                    <ul style="line-height: 1.8;">
+                        <li><strong>Critical Path Method:</strong> Xác định critical path và focus nguồn lực vào đây</li>
+                        <li><strong>Fast-track:</strong> Overlapping phases (ví dụ: bắt đầu MEP khi xây thô chưa xong 100%)</li>
+                        <li><strong>Incentive structure:</strong> Bonus 5% cho nhà thầu nếu hoàn thành sớm 1 tháng</li>
+                        <li><strong>Penalty clause:</strong> Phạt 0.5%/tháng nếu chậm (capped at 5%)</li>
+                        <li><strong>Buffer time:</strong> Schedule có built-in 15% buffer</li>
+                        <li><strong>Weekly monitoring:</strong> Site meetings hàng tuần, dashboard real-time</li>
+                    </ul>
+                </div>
+                
+                <div class="contingency-plan">
+                    <h4>🆘 Kế hoạch Dự phòng (nếu chậm >2 tháng):</h4>
+                    <ul>
+                        <li><strong>Mobilize thêm:</strong> Thêm shift thứ 2, tăng workforce 30-50%</li>
+                        <li><strong>Outsource:</strong> Subcontract thêm cho non-critical items</li>
+                        <li><strong>Adjust scope:</strong> Defer non-essential items (landscaping, amenities)</li>
+                        <li><strong>Finance:</strong> Sẵn sàng bridge loan nếu cần thêm 3-6 tháng</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Rủi ro #5: Tốc độ tiêu thụ -->
+            <div class="mitigation-card">
+                <h4>📉 RỦI RO #5: Bán chậm hơn dự kiến (40-50 căn/tháng thay vì 60+) (Risk: MEDIUM)</h4>
+                <p style="margin: 10px 0; color: #666;"><strong>Tác động:</strong> Timeline kéo dài 6 tháng = -36 tỷ NPV | Xác suất: 40%</p>
+                
+                <div class="action-plan">
+                    <h4>📋 Kế hoạch Hành động:</h4>
+                    <table class="timeline-table" style="font-size: 13px;">
+                        <tr>
+                            <th style="width: 25%;">Chiến lược</th>
+                            <th style="width: 40%;">Chi tiết</th>
+                            <th style="width: 20%;">Budget (tỷ)</th>
+                            <th style="width: 15%;">Target</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Digital Marketing</strong></td>
+                            <td>
+                                • Facebook/Google Ads<br>
+                                • SEO/SEM optimization<br>
+                                • Influencer partnerships
+                            </td>
+                            <td>15</td>
+                            <td>40% leads</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Traditional</strong></td>
+                            <td>
+                                • Billboard prime locations<br>
+                                • Print ads (Cafef, VNExpress)<br>
+                                • Radio/TV spots
+                            </td>
+                            <td>20</td>
+                            <td>25% leads</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Channels</strong></td>
+                            <td>
+                                • Brokers (commission 2%)<br>
+                                • Direct sales team<br>
+                                • Online platforms (Batdongsan.com)
+                            </td>
+                            <td>25</td>
+                            <td>35% leads</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Promotions</strong></td>
+                            <td>
+                                • Early bird 5% discount<br>
+                                • Furniture package 150M<br>
+                                • Lucky draw (ô tô, xe máy)
+                            </td>
+                            <td>20</td>
+                            <td>Boost 20%</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="kpi-box">
+                    <div class="kpi-item">
+                        <strong>Target Tốc độ:</strong>
+                        <span>60 căn/tháng</span>
+                    </div>
+                    <div class="kpi-item">
+                        <strong>Minimum Acceptable:</strong>
+                        <span>40 căn/tháng</span>
+                    </div>
+                    <div class="kpi-item">
+                        <strong>Marketing Budget:</strong>
+                        <span>80 tỷ total</span>
+                    </div>
+                    <div class="kpi-item">
+                        <strong>CAC Target:</strong>
+                        <span>≤40M/căn</span>
+                    </div>
+                </div>
+                
+                <div class="contingency-plan">
+                    <h4>🆘 Kế hoạch Dự phòng (nếu <40 căn/tháng):</h4>
+                    <ul>
+                        <li><strong>Wave 1 (tháng 1-3 chậm):</strong> Tăng marketing budget 30%, offer thêm incentives</li>
+                        <li><strong>Wave 2 (tháng 4-6 chậm):</strong> Giảm giá 5%, partner với corporate buyers (bulk sale)</li>
+                        <li><strong>Wave 3 (>6 tháng chậm):</strong> Consider rent-to-own, Airbnb model cho inventory</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- MONITORING & GOVERNANCE -->
+        <div class="mitigation-section" style="background: #e3f2fd;">
+            <h2 style="color: #1565c0; margin-bottom: 25px;">📊 HỆ THỐNG MONITORING & GOVERNANCE</h2>
+            
+            <div class="mitigation-card">
+                <h4>🎯 Key Performance Indicators (KPIs) - Theo dõi hàng tháng</h4>
+                <table class="matrix-table" style="font-size: 13px;">
+                    <thead>
+                        <tr>
+                            <th>KPI</th>
+                            <th>Target</th>
+                            <th>Yellow Flag</th>
+                            <th>Red Flag</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Giá bán trung bình</strong></td>
+                            <td>≥80 tr/m²</td>
+                            <td>75-79 tr/m²</td>
+                            <td><70 tr/m²</td>
+                            <td>Trigger pricing committee meeting</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tốc độ bán</strong></td>
+                            <td>≥60 căn/tháng</td>
+                            <td>40-59 căn</td>
+                            <td><40 căn</td>
+                            <td>Boost marketing, add promotions</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Chi phí vs Budget</strong></td>
+                            <td>≤100%</td>
+                            <td>100-110%</td>
+                            <td>>110%</td>
+                            <td>CFO review, freeze non-essential</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Timeline</strong></td>
+                            <td>On schedule</td>
+                            <td>+1 tháng</td>
+                            <td>+2 tháng</td>
+                            <td>Fast-track, add resources</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cash position</strong></td>
+                            <td>≥50 tỷ buffer</td>
+                            <td>20-49 tỷ</td>
+                            <td><20 tỷ</td>
+                            <td>Activate bridge financing</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Quality score</strong></td>
+                            <td>≥90%</td>
+                            <td>80-89%</td>
+                            <td><80%</td>
+                            <td>Stop work, remediation plan</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Thanh lý success rate</strong></td>
+                            <td>≥85%</td>
+                            <td>70-84%</td>
+                            <td><70%</td>
+                            <td>Escalate to CEO, pivot strategy</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mitigation-card">
+                <h4>🏛️ Governance Structure</h4>
+                <table class="timeline-table" style="font-size: 13px;">
+                    <tr>
+                        <th style="width: 20%;">Level</th>
+                        <th style="width: 35%;">Composition</th>
+                        <th style="width: 25%;">Meeting Frequency</th>
+                        <th style="width: 20%;">Decision Authority</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Steering Committee</strong></td>
+                        <td>CEO, CFO, Investor Reps (3-5 người)</td>
+                        <td>Monthly + Ad-hoc</td>
+                        <td>Strategic decisions, >100 tỷ</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Management Team</strong></td>
+                        <td>All functional heads (8-10 người)</td>
+                        <td>Bi-weekly</td>
+                        <td>Operational, 10-100 tỷ</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Project Team</strong></td>
+                        <td>PM, Technical, Sales, Finance (6-8)</td>
+                        <td>Weekly</td>
+                        <td>Execution, <10 tỷ</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Risk Committee</strong></td>
+                        <td>CFO, Legal, Technical, External (4-6)</td>
+                        <td>Monthly</td>
+                        <td>Risk mitigation, any size</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="action-plan">
+                <h4>📋 Reporting Requirements:</h4>
+                <ul>
+                    <li><strong>Daily:</strong> Construction progress, sales numbers</li>
+                    <li><strong>Weekly:</strong> Cash flow, KPIs dashboard</li>
+                    <li><strong>Monthly:</strong> Full financials, variance analysis, risk register update</li>
+                    <li><strong>Quarterly:</strong> Strategic review, stakeholder reporting</li>
+                    <li><strong>Ad-hoc:</strong> Any red flag triggered → 24h report</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- EXIT STRATEGY -->
+        <div class="mitigation-section" style="background: #fff3e0; border: 2px solid #f57c00;">
+            <h2 style="color: #e65100; margin-bottom: 25px;">🚪 EXIT STRATEGY - Kế hoạch Thoát nếu Thất bại</h2>
+            
+            <div class="warning-box" style="background: white; border-left-color: #f57c00;">
+                <strong>⚠️ Trigger Points để cân nhắc EXIT:</strong>
+                <ul style="margin-top: 10px; line-height: 1.8;">
+                    <li>NPV projected giảm xuống <0 sau sensitivity analysis</li>
+                    <li>Thanh lý D4 thất bại (>30% khách từ chối)</li>
+                    <li>Giá bán thực tế <65 tr/m² và không có dấu hiệu cải thiện</li>
+                    <li>Chi phí vượt >25% và không thể control</li>
+                    <li>Timeline chậm >9 tháng</li>
+                    <li>Đối tác chính rút lui</li>
+                </ul>
+            </div>
+
+            <div class="mitigation-card">
+                <h4>🔄 Exit Option 1: Bán toàn bộ dự án cho Developer khác</h4>
+                <p style="margin: 10px 0;"><strong>Timing:</strong> Tháng 6-12 (trước khi burn quá nhiều cash)</p>
+                <ul style="line-height: 1.8;">
+                    <li><strong>Buyer tiềm năng:</strong> Các developer lớn (Vinhomes, Novaland, Hung Thinh)</li>
+                    <li><strong>Valuation:</strong> 70-80% NAV (chấp nhận loss để cut loss)</li>
+                    <li><strong>Process:</strong> 2-3 tháng (teaser, NDA, due diligence, SPA)</li>
+                    <li><strong>Expected recovery:</strong> 60-75% vốn đã bơm</li>
+                </ul>
+            </div>
+
+            <div class="mitigation-card">
+                <h4>🔄 Exit Option 2: JV với Partner mạnh hơn</h4>
+                <p style="margin: 10px 0;"><strong>Timing:</strong> Tháng 6-15 (khi đã có proof of concept nhưng cần thêm resource)</p>
+                <ul style="line-height: 1.8;">
+                    <li><strong>Structure:</strong> Dilute equity 40-60% để đổi lấy vốn + capability</li>
+                    <li><strong>Partner target:</strong> Developer có track record hoàn thiện dự án lớn</li>
+                    <li><strong>Benefit:</strong> Shared risk, access to better contractors, stronger sales</li>
+                    <li><strong>Downside:</strong> Loss of control, dilution</li>
+                </ul>
+            </div>
+
+            <div class="mitigation-card">
+                <h4>🔄 Exit Option 3: Chuyển sang Rental Model</h4>
+                <p style="margin: 10px 0;"><strong>Timing:</strong> Tháng 18+ (nếu không bán được nhưng đã hoàn thiện)</p>
+                <ul style="line-height: 1.8;">
+                    <li><strong>Model:</strong> Cho thuê dài hạn, cash flow hàng tháng</li>
+                    <li><strong>Yield target:</strong> 5-7% gross rental yield</li>
+                    <li><strong>Refinance:</strong> Sau 2-3 năm có track record, refinance để rút vốn</li>
+                    <li><strong>Exit long-term:</strong> Bán toàn bộ cho REIT hoặc institutional investor</li>
+                    <li><strong>Downside:</strong> Vốn bị lock lâu, IRR thấp hơn</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CONTACT -->
+        <div style="text-align: center; margin-top: 40px; padding: 20px; background: #f5f5f5; border-radius: 10px;">
+            <p style="font-size: 14px; color: #666;">
+                🛡️ Risk Mitigation Plan được lập bởi <strong>Charlie - Chuyên gia Tái cấu trúc Dự án</strong><br>
+                Ngày: October 24, 2025 | Dự án: Dreamhome Riverside<br>
+                <span style="font-size: 12px; color: #999; margin-top: 5px; display: block;">
+                    Document này cần được review và update hàng quý hoặc khi có thay đổi material
+                </span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
