@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Home Riverside - Giới thiệu Dự án</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .cover {
+            height: 100vh;
+            background: linear-gradient(135deg, #ff8f00 0%, #ff6f00 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 40px;
+            page-break-after: always;
+        }
+
+        .cover h1 {
+            font-size: 72px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .cover .subtitle {
+            font-size: 32px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .cover .status {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px 40px;
+            border-radius: 8px;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 60px;
+            page-break-inside: avoid;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #ff8f00 0%, #ff6f00 100%);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-header h2 {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .section-number {
+            background: rgba(255, 255, 255, 0.3);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin-right: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #ff8f00 0%, #ff6f00 100%);
+            color: white;
+        }
+
+        th {
+            padding: 18px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        td {
+            padding: 16px 18px;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 15px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:hover {
+            background: #fff5f7;
+        }
+
+        .highlight-row {
+            background: #fff3e0;
+            font-weight: 600;
+        }
+
+        .total-row {
+            background: #fafafa;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .info-box {
+            background: #fff5f7;
+            border-left: 5px solid #ff6f00;
+            padding: 20px 30px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .info-box h3 {
+            color: #ff6f00;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .info-box p {
+            margin: 10px 0;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #ff6f00;
+        }
+
+        .metric-label {
+            color: #666;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .metric-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #ff6f00;
+            margin-bottom: 5px;
+        }
+
+        .metric-subtitle {
+            color: #999;
+            font-size: 13px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .status-complete {
+            background: #c8e6c9;
+            color: #424242;
+        }
+
+        .status-progress {
+            background: #fff3e0;
+            color: #ef6c00;
+        }
+
+        .status-pending {
+            background: #ffcdd2;
+            color: #c62828;
+        }
+
+        .footer {
+            margin-top: 80px;
+            padding: 30px;
+            background: #f5f5f5;
+            border-radius: 12px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .highlight-number {
+            color: #ff6f00;
+            font-weight: 700;
+        }
+
+        .warning-box {
+            background: #fff3e0;
+            border-left: 5px solid #ffa726;
+            padding: 20px 30px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .warning-box h3 {
+            color: #ff6f00;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .progress-bar {
+            height: 30px;
+            background: #e0e0e0;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff8f00 0%, #ff6f00 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        @media print {
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- COVER PAGE -->
+    <div class="cover">
+        <h1>DREAM HOME RIVERSIDE</h1>
+        <div class="subtitle">Giới thiệu Dự án</div>
+        <div class="status">⚙ Đang thi công</div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <!-- SECTION 1: THÔNG TIN CHUNG -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">1</div>
+                <h2>THÔNG TIN CHUNG</h2>
+            </div>
+
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-label">Tên dự án</div>
+                    <div class="metric-value" style="font-size: 20px;">Dream Home Riverside</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Chủ đầu tư</div>
+                    <div class="metric-value" style="font-size: 20px;">Công ty Lý Khương</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Vị trí</div>
+                    <div class="metric-value" style="font-size: 18px;">Trịnh Quang Nghị, Q8</div>
+                    <div class="metric-subtitle">TP. Hồ Chí Minh</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Diện tích</div>
+                    <div class="metric-value">2,4 ha</div>
+                    <div class="metric-subtitle">24.150 m²</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Chiều cao</div>
+                    <div class="metric-value">25 tầng</div>
+                    <div class="metric-subtitle">+ 2 tầng hầm</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">3 Tháp</div>
+                    <div class="metric-value" style="font-size: 18px;">Emerald, Sapphire, Diamond Center</div>
+                    <div class="metric-subtitle">D3: 2 tháp | D4: 1 tháp</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2: QUY MÔ DỰ ÁN -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">2</div>
+                <h2>QUY MÔ DỰ ÁN</h2>
+            </div>
+
+            <h3 style="color: #ff6f00; margin: 20px 0; font-size: 22px;">Cấu trúc 6 Block cao tầng</h3>
+
+            <div class="info-box" style="background: #f5f5f5; border-left-color: #1a237e;">
+                <h3 style="color: #1a237e;">D3: Chung 2 tầng hầm - 2 Tháp</h3>
+                <p><strong>🏗️ 2 tầng hầm chung</strong> cho cả Emerald và Sapphire</p>
+            </div>
+
+            <div class="info-box">
+                <h3>🏢 Tháp A - Emerald</h3>
+                <p><strong>Khối đế riêng</strong> + 2 block cao tầng</p>
+                <p>• <strong>Emerald A:</strong> Block A cao tầng</p>
+                <p>• <strong>Emerald B:</strong> Block B cao tầng</p>
+                <p><strong>Nhà thầu:</strong> HLP/One Truss (87%) và Ardor (47%)</p>
+            </div>
+
+            <div class="info-box" style="background: #fafafa; border-left-color: #424242;">
+                <h3 style="color: #424242;">🏢 Tháp B - Sapphire</h3>
+                <p><strong>Khối đế riêng</strong> + 2 block cao tầng</p>
+                <p>• <strong>Sapphire A:</strong> Block A cao tầng</p>
+                <p>• <strong>Sapphire B:</strong> Block B cao tầng</p>
+                <p><strong>Nhà thầu:</strong> SMC (88%)</p>
+            </div>
+
+            <div class="info-box" style="background: #fff3e0; border-left-color: #ff6f00;">
+                <h3 style="color: #ff6f00;">🛣️ D4: Diamond Center</h3>
+                <p><strong>📍 Vị trí:</strong> Cách biệt D3 bởi đường Phạm Thế Hiển (lộ giới 30m)</p>
+                <p><strong>Cấu trúc:</strong> 2 tầng hầm riêng + 1 khối đế + 2 block cao tầng</p>
+                <p>• <strong>Diamond A:</strong> Block A cao tầng</p>
+                <p>• <strong>Diamond B:</strong> Block B cao tầng</p>
+                <p><strong>Tình trạng:</strong> Đang thi công giai đoạn đầu (17%)</p>
+            </div>
+
+            <div class="metric-grid">
+                <div class="metric-card" style="border-top-color: #1a237e;">
+                    <div class="metric-label">Emerald (Tháp A)</div>
+                    <div class="metric-value" style="color: #1a237e; font-size: 18px;">A + B</div>
+                    <div class="metric-subtitle">2 block cao tầng</div>
+                </div>
+                <div class="metric-card" style="border-top-color: #424242;">
+                    <div class="metric-label">Sapphire (Tháp B)</div>
+                    <div class="metric-value" style="color: #424242; font-size: 18px;">A + B</div>
+                    <div class="metric-subtitle">2 block cao tầng</div>
+                </div>
+                <div class="metric-card" style="border-top-color: #ff6f00;">
+                    <div class="metric-label">Diamond Center</div>
+                    <div class="metric-value" style="color: #ff6f00; font-size: 18px;">A + B</div>
+                    <div class="metric-subtitle">2 block cao tầng</div>
+                </div>
+                <div class="metric-card" style="border-top-color: #424242;">
+                    <div class="metric-label">Tổng Block</div>
+                    <div class="metric-value" style="color: #424242;">6</div>
+                    <div class="metric-subtitle">block cao tầng</div>
+                </div>
+                <div class="metric-card" style="border-top-color: #1a237e;">
+                    <div class="metric-label">Tổng căn hộ</div>
+                    <div class="metric-value" style="color: #1a237e;">2.425</div>
+                    <div class="metric-subtitle">căn</div>
+                </div>
+                <div class="metric-card" style="border-top-color: #757575;">
+                    <div class="metric-label">DT thương phẩm</div>
+                    <div class="metric-value" style="color: #757575; font-size: 24px;">145.951</div>
+                    <div class="metric-subtitle">m²</div>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Khu</th>
+                        <th>Số căn</th>
+                        <th>Diện tích (m²)</th>
+                        <th>TB/căn</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4" style="background: #f5f5f5; font-weight: 600; color: #1a237e;">D3 - CHUNG 2 TẦNG
+                            HẦM</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 20px; background: #fafafa;"><strong>🏢 Emerald (Tháp A)</strong></td>
+                        <td colspan="3" style="background: #fafafa; font-size: 13px; color: #666;">Đế riêng + Emerald A
+                            + Emerald B</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 20px; background: #f5f5f5;"><strong>🏢 Sapphire (Tháp B)</strong></td>
+                        <td colspan="3" style="background: #f5f5f5; font-size: 13px; color: #666;">Đế riêng + Sapphire A
+                            + Sapphire B</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 30px;">Căn hộ ở</td>
+                        <td>1.456</td>
+                        <td>90.524</td>
+                        <td>62 m²</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 30px;">Căn hộ dịch vụ</td>
+                        <td>230</td>
+                        <td>10.772</td>
+                        <td>48 m²</td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td><strong>Tổng D3</strong></td>
+                        <td><strong>1.686</strong></td>
+                        <td><strong>101.296</strong></td>
+                        <td><strong>60 m²</strong></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"
+                            style="background: #fff3e0; font-weight: 600; color: #ff6f00; padding-top: 15px;">D4 -
+                            DIAMOND CENTER (Qua đường Phạm Thế Hiển)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 20px; background: #fff3e0;" colspan="4"><strong>🏢 Diamond:</strong> 2
+                            tầng hầm riêng + Đế + Diamond A + Diamond B</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 30px;">Căn hộ ở</td>
+                        <td>640</td>
+                        <td>40.098</td>
+                        <td>63 m²</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 30px;">Căn hộ dịch vụ</td>
+                        <td>99</td>
+                        <td>4.353</td>
+                        <td>46 m²</td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td><strong>Tổng D4</strong></td>
+                        <td><strong>739</strong></td>
+                        <td><strong>44.451</strong></td>
+                        <td><strong>60 m²</strong></td>
+                    </tr>
+                    <tr class="total-row">
+                        <td><strong>TỔNG DỰ ÁN (6 BLOCK)</strong></td>
+                        <td><strong>2.425</strong></td>
+                        <td><strong>145.747</strong></td>
+                        <td><strong>60 m²</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- SECTION 3: TÌNH TRẠNG XÂY DỰNG -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">3</div>
+                <h2>TÌNH TRẠNG XÂY DỰNG</h2>
+            </div>
+
+            <h3 style="color: #ff6f00; margin: 20px 0; font-size: 22px;">Tiến độ chung</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hạng mục</th>
+                        <th style="text-align: center;">% hoàn thành</th>
+                        <th style="text-align: right;">Đã chi (tỷ)</th>
+                        <th style="text-align: right;">Còn lại (tỷ)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Xây dựng D3</td>
+                        <td style="text-align: center;">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 45%;">45%</div>
+                            </div>
+                        </td>
+                        <td style="text-align: right;">572,25</td>
+                        <td style="text-align: right;">702,94</td>
+                    </tr>
+                    <tr>
+                        <td>Xây dựng D4</td>
+                        <td style="text-align: center;">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 17%;">17%</div>
+                            </div>
+                        </td>
+                        <td style="text-align: right;">86,68</td>
+                        <td style="text-align: right;">437,75</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td><strong>TỔNG XÂY DỰNG</strong></td>
+                        <td style="text-align: center;">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 37%;">37%</div>
+                            </div>
+                        </td>
+                        <td style="text-align: right;"><strong>658,93</strong></td>
+                        <td style="text-align: right;"><strong>1.140,69</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="color: #ff6f00; margin: 30px 0 20px 0; font-size: 22px;">Chi tiết D3 (2 tháp)</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hạng mục</th>
+                        <th>Nhà thầu</th>
+                        <th style="text-align: center;">% thanh toán</th>
+                        <th>Trạng thái</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4" style="background: #f5f5f5; font-weight: 600; color: #1a237e;">THÁP A - EMERALD
+                            (Đế chung + Block A + Block B)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 20px;">Xây thô - Giai đoạn 1</td>
+                        <td>HLP/One Truss</td>
+                        <td style="text-align: center;"><strong>87%</strong></td>
+                        <td><span class="status-badge status-complete">Gần hoàn thành</span></td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 20px;">Xây thô - Giai đoạn 2</td>
+                        <td>Ardor</td>
+                        <td style="text-align: center;"><strong>47%</strong></td>
+                        <td><span class="status-badge status-progress">Đang thi công</span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"
+                            style="background: #fafafa; font-weight: 600; color: #424242; padding-top: 10px;">THÁP B -
+                            SAPPHIRE (Cấu trúc tương tự Emerald)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 20px;">Xây thô</td>
+                        <td>SMC</td>
+                        <td style="text-align: center;"><strong>88%</strong></td>
+                        <td><span class="status-badge status-complete">Gần hoàn thành</span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"
+                            style="background: #e0e0e0; font-weight: 600; color: #3f51b5; padding-top: 10px;">HOÀN THIỆN
+                            & MEP (D3)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 20px;">Hoàn thiện</td>
+                        <td>Ardor</td>
+                        <td style="text-align: center;"><strong>0%</strong></td>
+                        <td><span class="status-badge status-pending">Chưa bắt đầu</span></td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 20px;">MEP</td>
+                        <td>Vietree, G-Tech, Quang Minh</td>
+                        <td style="text-align: center;"><strong>8-14%</strong></td>
+                        <td><span class="status-badge status-progress">Đang thi công</span></td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 20px;">Thầu phụ</td>
+                        <td>Sàn gỗ, nhôm kính, thang máy</td>
+                        <td style="text-align: center;"><strong>0-12%</strong></td>
+                        <td><span class="status-badge status-pending">Chưa/mới bắt đầu</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="color: #ff6f00; margin: 30px 0 20px 0; font-size: 22px;">Chi tiết D4 - Diamond Center</h3>
+
+            <div class="info-box" style="background: #fff3e0; border-left-color: #ff6f00;">
+                <p><em>Layout và naming tương tự Emerald/Sapphire</em></p>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hạng mục</th>
+                        <th style="text-align: center;">% thanh toán</th>
+                        <th>Trạng thái</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Xây dựng</td>
+                        <td style="text-align: center;"><strong>17%</strong></td>
+                        <td><span class="status-badge status-progress">Đang thi công</span></td>
+                    </tr>
+                    <tr>
+                        <td>MEP</td>
+                        <td style="text-align: center;"><strong>0%</strong></td>
+                        <td><span class="status-badge status-pending">Chưa bắt đầu</span></td>
+                    </tr>
+                    <tr>
+                        <td>Hoàn thiện</td>
+                        <td style="text-align: center;"><strong>0%</strong></td>
+                        <td><span class="status-badge status-pending">Chưa bắt đầu</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- SECTION 4: PHÁP LÝ -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">4</div>
+                <h2>PHÁP LÝ</h2>
+            </div>
+
+            <div class="info-box">
+                <h3>✓ Đã hoàn thành</h3>
+                <p>• GPXD: Có toàn bộ</p>
+                <p>• Tiền sử dụng đất: Đã đóng cho quy mô 18 tầng</p>
+                <p>• Giấy phép bán hàng: Có cho tất cả block</p>
+            </div>
+
+            <div class="warning-box">
+                <h3>⚠ Cần bổ sung</h3>
+                <table style="margin: 20px 0; box-shadow: none;">
+                    <thead style="background: linear-gradient(135deg, #ffa726 0%, #ef6c00 100%);">
+                        <tr>
+                            <th>Hạng mục</th>
+                            <th style="text-align: right;">Số tiền (tỷ VNĐ)</th>
+                            <th>Ghi chú</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Thuế bổ sung</td>
+                            <td style="text-align: right;"><strong>70</strong></td>
+                            <td>Cho phần tăng 18→25 tầng</td>
+                        </tr>
+                        <tr>
+                            <td>Phí bảo đảm dự án</td>
+                            <td style="text-align: right;"><strong>34</strong></td>
+                            <td>Hoàn lại khi hoàn thành</td>
+                        </tr>
+                        <tr>
+                            <td>Chi phí pháp lý khác</td>
+                            <td style="text-align: right;"><strong>20</strong></td>
+                            <td>Gia hạn chủ trương đầu tư</td>
+                        </tr>
+                        <tr class="total-row" style="background: #ffe0b2;">
+                            <td><strong>TỔNG</strong></td>
+                            <td style="text-align: right;"><strong>124</strong></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- SECTION 5: TÌNH TRẠNG BÁN HÀNG -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">5</div>
+                <h2>TÌNH TRẠNG BÁN HÀNG</h2>
+                <span class="status-badge status-progress" style="margin-left:auto;">Giải thích logic</span>
+            </div>
+
+            <div class="info-box" style="background: #e8f5e9; border-left-color: #2e7d32;">
+                <h3 style="color: #2e7d32;">Logic phân loại sản phẩm & dòng tiền bán hàng</h3>
+                <p>• <strong>Tổng số căn:</strong> 2.425 căn</p>
+                <p>• <strong>Đã bán ra thị trường:</strong> 1.732 căn → <strong>Đã thu:</strong> 1.714,39 tỷ →
+                    <strong>Còn phải thu:</strong> 778,39 tỷ
+                </p>
+                <p>• <strong>Số căn còn lại:</strong> 2.425 − 1.732 = <strong>693 căn</strong> = <strong>363
+                        căn</strong> (thanh lý cho đối tác M&A, đã đủ điều kiện bán) + <strong>330 căn</strong> (chưa đủ
+                    điều
+                    kiện bán)</p>
+                <p style="font-size: 13px; color: #2e7d32;">Ghi chú: 330 căn chưa bán do <strong>chưa nộp nghĩa vụ tài
+                        chính ~70 tỷ</strong> (con số này cần kiểm tra, cập nhật theo quy định hàng năm).</p>
+            </div>
+
+            <div class="metric-grid">
+                <div class="metric-card" style="border-top-color: #424242;">
+                    <div class="metric-label">Đã bán</div>
+                    <div class="metric-value" style="color: #424242;">1.732</div>
+                    <div class="metric-subtitle">căn (71%)</div>
+                </div>
+                <div class="metric-card" style="border-top-color: #ff6f00;">
+                    <div class="metric-label">Thanh lý cho đối tác M&A</div>
+                    <div class="metric-value" style="color: #ff6f00;">363</div>
+                    <div class="metric-subtitle">căn (15%) — đủ điều kiện bán</div>
+                </div>
+                <div class="metric-card" style="border-top-color: #1a237e;">
+                    <div class="metric-label">Chưa bán</div>
+                    <div class="metric-value" style="color: #1a237e;">330</div>
+                    <div class="metric-subtitle">căn (14%) — chưa đủ ĐK (nghĩa vụ ~70 tỷ)</div>
+                </div>
+                <div class="metric-card" style="border-top-color: #9e9e9e;">
+                    <div class="metric-label">Chưa đủ ĐK bán</div>
+                    <div class="metric-value" style="color: #9e9e9e; font-size: 24px;">514,91</div>
+                    <div class="metric-subtitle">tỷ VNĐ</div>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Trạng thái</th>
+                        <th style="text-align: center;">Số căn</th>
+                        <th style="text-align: right;">Doanh thu (tỷ)</th>
+                        <th style="text-align: center;">%</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="status-badge status-complete">Đã bán</span></td>
+                        <td style="text-align: center;">1.732</td>
+                        <td style="text-align: right;">2.492,78</td>
+                        <td style="text-align: center;">54%</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 30px; font-size: 14px; color: #666;">- Đã thu</td>
+                        <td style="text-align: center;">-</td>
+                        <td style="text-align: right;">1.714,39</td>
+                        <td style="text-align: center;">37%</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 30px; font-size: 14px; color: #666;">- Còn phải thu</td>
+                        <td style="text-align: center;">-</td>
+                        <td style="text-align: right;"><strong>778,39</strong></td>
+                        <td style="text-align: center;">17%</td>
+                    </tr>
+                    <tr>
+                        <td><span class="status-badge status-progress">Thanh lý cho đối tác M&A</span></td>
+                        <td style="text-align: center;">363</td>
+                        <td style="text-align: right;">638,72</td>
+                        <td style="text-align: center;">14%</td>
+                    </tr>
+                    <tr>
+                        <td><span class="status-badge" style="background: #e0e0e0; color: #1a237e;">Chưa bán</span></td>
+                        <td style="text-align: center;">330</td>
+                        <td style="text-align: right;">967,09</td>
+                        <td style="text-align: center;">21%</td>
+                    </tr>
+                    <tr>
+                        <td><span class="status-badge" style="background: #f5f5f5; color: #757575;">Chưa đủ ĐK
+                                bán</span></td>
+                        <td style="text-align: center;">-</td>
+                        <td style="text-align: right;">514,91</td>
+                        <td style="text-align: center;">11%</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td><strong>TỔNG</strong></td>
+                        <td style="text-align: center;"><strong>2.425</strong></td>
+                        <td style="text-align: right;"><strong>4.613,50</strong></td>
+                        <td style="text-align: center;"><strong>100%</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="color: #ff6f00; margin: 30px 0 20px 0; font-size: 22px;">Thanh lý 363 căn cho đối tác M&A + 330
+                căn
+                chưa bán</h3>
+
+            <div class="warning-box">
+                <h3>⚠ Quan trọng: Tiềm năng lợi nhuận từ 693 căn còn lại</h3>
+                <p><strong>693 căn (363 thanh lý M&A + 330 chưa bán)</strong> là <strong>nguồn lợi nhuận chính</strong>
+                    khi
+                    tiếp nhận dự án.</p>
+                <p>• <strong>Giá thanh lý 50-60 tr/m²</strong> trong bảng dưới là giá Lý Khương bàn giao cho đối tác M&A
+                </p>
+                <p>• <strong>Bên mua có quyền bán ra thị trường với giá 60-70 tr/m² hoặc cao hơn</strong> (tùy thời điểm
+                    & điều kiện thị trường)</p>
+                <p>• <strong>Chênh lệch 10-20 tr/m²</strong> (hoặc hơn) trên 693 căn = <strong>Lợi nhuận bổ sung đáng
+                        kể</strong></p>
+                <p style="font-size: 13px; color: #ff6f00;">Ví dụ: Nếu bán thêm 15 tr/m² so với giá thanh lý, lợi nhuận
+                    bổ sung ≈ 693 căn × 60 m²/căn × 15 tr = <strong>~624 tỷ</strong></p>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Khu</th>
+                        <th style="text-align: center;">Số căn</th>
+                        <th style="text-align: right;">Diện tích (m²)</th>
+                        <th style="text-align: right;">Giá thanh lý (tr/m²)</th>
+                        <th style="text-align: right;">Doanh thu thanh lý (tỷ)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="5" style="background: #fff3e0; font-weight: 600; color: #ff6f00;">363 CĂN THANH LÝ
+                            (đã đủ điều kiện bán)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 20px;">D3 - Căn hộ ở</td>
+                        <td style="text-align: center;">29</td>
+                        <td style="text-align: right;">1.882</td>
+                        <td style="text-align: right;">50</td>
+                        <td style="text-align: right;">46,84</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 20px;">D3 - Căn hộ DV</td>
+                        <td style="text-align: center;">5</td>
+                        <td style="text-align: right;">270</td>
+                        <td style="text-align: right;">60</td>
+                        <td style="text-align: right;">14,81</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 20px;">D4 - Căn hộ ở</td>
+                        <td style="text-align: center;">309</td>
+                        <td style="text-align: right;">19.370</td>
+                        <td style="text-align: right;">50</td>
+                        <td style="text-align: right;">505,87</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 20px;">D4 - Căn hộ DV</td>
+                        <td style="text-align: center;">20</td>
+                        <td style="text-align: right;">1.247</td>
+                        <td style="text-align: right;">60</td>
+                        <td style="text-align: right;">71,21</td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td><strong>Tổng 363 căn thanh lý</strong></td>
+                        <td style="text-align: center;"><strong>363</strong></td>
+                        <td style="text-align: right;"><strong>22.769</strong></td>
+                        <td style="text-align: right;">-</td>
+                        <td style="text-align: right;"><strong>638,72</strong></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5"
+                            style="background: #e0e0e0; font-weight: 600; color: #424242; padding-top: 10px;">330 CĂN
+                            CHƯA BÁN (chưa đủ điều kiện do nghĩa vụ ~70 tỷ)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 20px;">Ước tính 330 căn</td>
+                        <td style="text-align: center;">330</td>
+                        <td style="text-align: right;">~19.800</td>
+                        <td style="text-align: right;">~50-55</td>
+                        <td style="text-align: right;"><strong>~967,09</strong></td>
+                    </tr>
+                    <tr class="total-row">
+                        <td><strong>TỔNG 693 CĂN CÒN LẠI</strong></td>
+                        <td style="text-align: center;"><strong>693</strong></td>
+                        <td style="text-align: right;"><strong>~42.569</strong></td>
+                        <td style="text-align: right;">-</td>
+                        <td style="text-align: right;"><strong>~1.605,81</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="font-size: 13px; color: #666; margin-top: 10px;"><strong>Ghi chú:</strong> Giá trong bảng là giá
+                thanh lý nội bộ (Lý Khương → Đối tác M&A). Giá bán ra thị trường có thể cao hơn 10-20 tr/m² hoặc hơn tùy
+                thời điểm.</p>
+
+            <p style="font-size: 13px; color: #666; margin-top: 10px;">Đối chiếu logic: 2.425 tổng căn − 1.732 đã bán =
+                693 căn = 363 căn thanh lý cho đối tác M&A (đã đủ ĐK bán) + 330 căn chưa bán (chưa đủ ĐK do nghĩa vụ tài
+                chính ~70 tỷ,
+                cần đối soát cập nhật hàng năm).</p>
+        </div>
+
+        <!-- SECTION 6: TÀI CHÍNH -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">6</div>
+                <h2>TÀI CHÍNH</h2>
+            </div>
+
+            <div class="metric-grid">
+                <div class="metric-card" style="border-top-color: #424242;">
+                    <div class="metric-label">Tổng doanh thu</div>
+                    <div class="metric-value" style="color: #424242; font-size: 28px;">4.613,50</div>
+                    <div class="metric-subtitle">tỷ VNĐ</div>
+                </div>
+                <div class="metric-card" style="border-top-color: #f44336;">
+                    <div class="metric-label">Tổng chi phí</div>
+                    <div class="metric-value" style="color: #f44336; font-size: 28px;">4.758,28</div>
+                    <div class="metric-subtitle">tỷ VNĐ</div>
+                </div>
+                <div class="metric-card" style="border-top-color: #ff6f00;">
+                    <div class="metric-label">Đã thu</div>
+                    <div class="metric-value" style="color: #ff6f00; font-size: 28px;">1.714,39</div>
+                    <div class="metric-subtitle">37%</div>
+                </div>
+                <div class="metric-card" style="border-top-color: #1a237e;">
+                    <div class="metric-label">Còn phải thu</div>
+                    <div class="metric-value" style="color: #1a237e; font-size: 28px;">2.899,11</div>
+                    <div class="metric-subtitle">63%</div>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hạng mục</th>
+                        <th style="text-align: right;">Đã chi (tỷ)</th>
+                        <th style="text-align: right;">Còn lại (tỷ)</th>
+                        <th style="text-align: right;">Tổng (tỷ)</th>
+                        <th style="text-align: center;">% Hoàn thành</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Chi phí đất</td>
+                        <td style="text-align: right;">395,31</td>
+                        <td style="text-align: right;">70,00</td>
+                        <td style="text-align: right;">465,31</td>
+                        <td style="text-align: center;">85%</td>
+                    </tr>
+                    <tr>
+                        <td>Xây dựng</td>
+                        <td style="text-align: right;">658,93</td>
+                        <td style="text-align: right;">1.140,69</td>
+                        <td style="text-align: right;">1.799,62</td>
+                        <td style="text-align: center;">37%</td>
+                    </tr>
+                    <tr>
+                        <td>MEP</td>
+                        <td style="text-align: right;">21,26</td>
+                        <td style="text-align: right;">228,02</td>
+                        <td style="text-align: right;">249,28</td>
+                        <td style="text-align: center;">9%</td>
+                    </tr>
+                    <tr>
+                        <td>Hoàn thiện</td>
+                        <td style="text-align: right;">0,96</td>
+                        <td style="text-align: right;">153,00</td>
+                        <td style="text-align: right;">153,96</td>
+                        <td style="text-align: center;">1%</td>
+                    </tr>
+                    <tr>
+                        <td>Tư vấn & QLDA</td>
+                        <td style="text-align: right;">36,94</td>
+                        <td style="text-align: right;">17,05</td>
+                        <td style="text-align: right;">53,99</td>
+                        <td style="text-align: center;">68%</td>
+                    </tr>
+                    <tr>
+                        <td>Bán hàng & QLDN</td>
+                        <td style="text-align: right;">139,13</td>
+                        <td style="text-align: right;">90,13</td>
+                        <td style="text-align: right;">229,26</td>
+                        <td style="text-align: center;">61%</td>
+                    </tr>
+                    <tr>
+                        <td>Lãi vay</td>
+                        <td style="text-align: right;">195,08</td>
+                        <td style="text-align: right;">120,00</td>
+                        <td style="text-align: right;">315,08</td>
+                        <td style="text-align: center;">62%</td>
+                    </tr>
+                    <tr>
+                        <td>Thuế</td>
+                        <td style="text-align: right;">0,00</td>
+                        <td style="text-align: right;">328,23</td>
+                        <td style="text-align: right;">328,23</td>
+                        <td style="text-align: center;">0%</td>
+                    </tr>
+                    <tr>
+                        <td>Khác</td>
+                        <td style="text-align: right;">413,84</td>
+                        <td style="text-align: right;">1.083,82</td>
+                        <td style="text-align: right;">1.497,66</td>
+                        <td style="text-align: center;">28%</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td><strong>TỔNG</strong></td>
+                        <td style="text-align: right;"><strong>1.864,29</strong></td>
+                        <td style="text-align: right;"><strong>2.893,99</strong></td>
+                        <td style="text-align: right;"><strong>4.758,28</strong></td>
+                        <td style="text-align: center;"><strong>39%</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- SECTION 7: CÔNG NỢ -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">7</div>
+                <h2>CÔNG NỢ</h2>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nhóm</th>
+                        <th style="text-align: right;">GT HĐ (tỷ)</th>
+                        <th style="text-align: right;">Đã TT (tỷ)</th>
+                        <th style="text-align: right;">Công nợ (tỷ)</th>
+                        <th style="text-align: center;">% TT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Xây dựng</td>
+                        <td style="text-align: right;">713,64</td>
+                        <td style="text-align: right;">451,82</td>
+                        <td style="text-align: right;">261,82</td>
+                        <td style="text-align: center;">63%</td>
+                    </tr>
+                    <tr>
+                        <td>Thầu phụ</td>
+                        <td style="text-align: right;">127,81</td>
+                        <td style="text-align: right;">3,68</td>
+                        <td style="text-align: right;">124,13</td>
+                        <td style="text-align: center;">3%</td>
+                    </tr>
+                    <tr>
+                        <td>MEP</td>
+                        <td style="text-align: right;">249,28</td>
+                        <td style="text-align: right;">21,26</td>
+                        <td style="text-align: right;">228,02</td>
+                        <td style="text-align: center;">9%</td>
+                    </tr>
+                    <tr>
+                        <td>Vật tư</td>
+                        <td style="text-align: right;">153,96</td>
+                        <td style="text-align: right;">0,96</td>
+                        <td style="text-align: right;">153,00</td>
+                        <td style="text-align: center;">1%</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td><strong>TỔNG NỢ NHÀ THẦU & VẬT TƯ</strong></td>
+                        <td style="text-align: right;"><strong>1.244,68</strong></td>
+                        <td style="text-align: right;"><strong>477,73</strong></td>
+                        <td style="text-align: right;"><strong>766,95</strong></td>
+                        <td style="text-align: center;"><strong>38%</strong></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" style="background: #fff3e0; font-weight: 600; color: #ff6f00;">NỢ TÀI CHÍNH KHÁC
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 20px;">Hoàn vốn vay</td>
+                        <td style="text-align: right;">—</td>
+                        <td style="text-align: right;">—</td>
+                        <td style="text-align: right;">832,03</td>
+                        <td style="text-align: center;">—</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 20px;">Thuế</td>
+                        <td style="text-align: right;">—</td>
+                        <td style="text-align: right;">—</td>
+                        <td style="text-align: right;">328,23</td>
+                        <td style="text-align: center;">—</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 20px;">Nợ lương (tối thiểu)</td>
+                        <td style="text-align: right;">—</td>
+                        <td style="text-align: right;">—</td>
+                        <td style="text-align: right;">&gt;4,10</td>
+                        <td style="text-align: center;">—</td>
+                    </tr>
+                    <tr class="total-row" style="background: #ffe0b2;">
+                        <td><strong>TỔNG CÔNG NỢ (ước tính)</strong></td>
+                        <td style="text-align: right;">—</td>
+                        <td style="text-align: right;">—</td>
+                        <td style="text-align: right;"><strong>&ge;1.931,31</strong></td>
+                        <td style="text-align: center;">—</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <!-- SECTION 8: TỔNG HỢP -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">8</div>
+                <h2>TỔNG HỢP TÀI CHÍNH</h2>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Chỉ tiêu</th>
+                        <th style="text-align: right;">Số tiền (tỷ VNĐ)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="2" style="background: #e8f5e9; font-weight: 600; color: #424242;">THU</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 30px;">Tổng doanh thu</td>
+                        <td style="text-align: right;">4.613,50</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 30px;">Đã thu</td>
+                        <td style="text-align: right;">1.714,39</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 30px;">Còn phải thu</td>
+                        <td style="text-align: right;">2.899,11</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"
+                            style="background: #ffebee; font-weight: 600; color: #c62828; padding-top: 20px;">CHI</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 30px;">Tổng chi phí</td>
+                        <td style="text-align: right;">4.758,28</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 30px;">Đã chi</td>
+                        <td style="text-align: right;">1.864,29</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 30px;">Còn phải chi</td>
+                        <td style="text-align: right;">2.893,99</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"
+                            style="background: #fff3e0; font-weight: 600; color: #ff6f00; padding-top: 20px;">CÔNG NỢ
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 30px;">Nợ nhà thầu</td>
+                        <td style="text-align: right;">766,95</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 30px;">Nợ tài chính khác</td>
+                        <td style="text-align: right;">&ge;1.164,36</td>
+                    </tr>
+                    <tr class="total-row" style="background: #ffcdd2;">
+                        <td><strong>CHÊNH LỆCH THU - CHI</strong></td>
+                        <td style="text-align: right;"><strong style="color: #c62828;">-144,96</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- SECTION 9: KỊCH BẢN TIẾP NHẬN (MUA 0 ĐỒNG) -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-number">9</div>
+            <h2>KỊCH BẢN TIẾP NHẬN (MUA 0 ĐỒNG)</h2>
+        </div>
+
+        <div class="info-box">
+            <h3>Giả định chính</h3>
+            <p>• Giá mua doanh nghiệp ≈ 0 đồng (hoặc rất thấp)</p>
+            <p>• Bên mua <strong>tiếp nhận toàn bộ công nợ</strong> và <strong>cam kết chi phí hoàn thiện</strong> để
+                bàn giao sản phẩm</p>
+            <p>• Công thức: <strong>Lợi nhuận = Doanh thu bán hàng − (Tổng công nợ + Chi phí hoàn thiện)</strong></p>
+            <p style="font-size: 13px; color: #666;">Lưu ý: Phân tích Riverside tách riêng với Palace; xem <a
+                    href="combined.html" style="color: #0d47a1; text-decoration: none; font-weight: 600;">Combined
+                    Report</a> để tổng hợp 2 dự án.</p>
+        </div>
+
+        <div class="warning-box">
+            <h3>💰 Điểm mấu chốt: Lợi nhuận từ 693 căn còn lại</h3>
+            <p>Doanh thu trong công thức trên (<strong>4.613,50 tỷ</strong>) sử dụng <strong>giá thanh lý nội bộ 50-60
+                    tr/m²</strong> (Lý Khương bàn giao cho bên mua).</p>
+            <p><strong>Tuy nhiên:</strong> Bên mua có toàn quyền bán 693 căn còn lại ra thị trường với giá <strong>60-70
+                    tr/m² hoặc cao hơn</strong> (tùy thời điểm).</p>
+            <p>• <strong>Chênh lệch 10-20 tr/m²</strong> (hoặc hơn) × 693 căn × 60 m²/căn ≈ <strong>416-832 tỷ lợi nhuận
+                    bổ sung</strong></p>
+            <p>• Nếu bán thêm 15 tr/m² so với giá thanh lý → Lợi nhuận bổ sung ≈ <strong>~624 tỷ</strong></p>
+            <p style="font-size: 13px; color: #ff6f00;"><strong>⇒ Lợi nhuận thực tế có thể cao hơn đáng kể so với 2 biến
+                    thể dưới đây</strong></p>
+        </div>
+
+        <div class="metric-grid">
+            <div class="metric-card" style="border-top-color: #424242;">
+                <div class="metric-label">Tổng doanh thu (Riverside)</div>
+                <div class="metric-value" style="color: #424242; font-size: 28px;">4.613,50</div>
+                <div class="metric-subtitle">tỷ VNĐ</div>
+            </div>
+            <div class="metric-card" style="border-top-color: #c62828;">
+                <div class="metric-label">Tổng công nợ (tối thiểu)</div>
+                <div class="metric-value" style="color: #c62828; font-size: 28px;">&ge;1.931,31</div>
+                <div class="metric-subtitle">tỷ VNĐ</div>
+            </div>
+            <div class="metric-card" style="border-top-color: #ff6f00;">
+                <div class="metric-label">Chi phí hoàn thiện (tổng)</div>
+                <div class="metric-value" style="color: #ff6f00; font-size: 28px;">2.893,99</div>
+                <div class="metric-subtitle">tỷ VNĐ</div>
+            </div>
+            <div class="metric-card" style="border-top-color: #2e7d32;">
+                <div class="metric-label">Chi phí hoàn thiện (đã trừ phần trùng)</div>
+                <div class="metric-value" style="color: #2e7d32; font-size: 28px;">&le;1.794,69</div>
+                <div class="metric-subtitle">tỷ VNĐ</div>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Biến thể</th>
+                    <th style="text-align: right;">Doanh thu</th>
+                    <th style="text-align: right;">Tổng công nợ</th>
+                    <th style="text-align: right;">Chi phí hoàn thiện</th>
+                    <th style="text-align: right;">Lợi nhuận ước tính</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Bảo thủ (tổng chi phí)</td>
+                    <td style="text-align: right;">4.613,50</td>
+                    <td style="text-align: right;">&ge;1.931,31</td>
+                    <td style="text-align: right;">2.893,99</td>
+                    <td style="text-align: right; color: #c62828;"><strong>&le;-211,80</strong></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td>Điều chỉnh (trừ phần trùng)</td>
+                    <td style="text-align: right;">4.613,50</td>
+                    <td style="text-align: right;">&ge;1.931,31</td>
+                    <td style="text-align: right;">&le;1.794,69</td>
+                    <td style="text-align: right; color: #2e7d32;"><strong>&ge;887,50</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="warning-box">
+            <h3>Giải thích “trừ phần trùng”</h3>
+            <p>Chi phí còn lại 2.893,99 có <strong>phần trùng</strong> với công nợ hiện hữu (đã nghiệm thu nhưng chưa
+                thanh toán). Tối thiểu có thể đối chiếu trực tiếp: Xây dựng 261,82; MEP 228,02; Vật tư 153,00; Thuế
+                328,23; Thầu phụ 124,13; Nợ lương &gt;4,10 ⇒ Trùng tối thiểu &ge;1.099,30. Vì vậy, <em>chi phí hoàn
+                    thiện thực tế</em> ≤ 2.893,99 − 1.099,30 = <strong>1.794,69</strong> (ước tính tối đa).</p>
+            <p style="font-size: 13px; color: #666;">Con số thực tế phụ thuộc cơ cấu công nợ/chi phí được nghiệm thu;
+                cần <strong>soi hợp đồng và đối chiếu Bảng nghiệm thu</strong> để cố định phần trùng từng hạng mục.</p>
+
+            <h3 style="color: #2e7d32; margin: 30px 0 20px 0; font-size: 22px;">Phân tích độ nhạy: Giá bán 693 căn còn
+                lại</h3>
+
+            <div class="info-box" style="background: #e8f5e9; border-left-color: #2e7d32;">
+                <h3 style="color: #2e7d32;">Tác động của giá bán thị trường</h3>
+                <p>Bảng dưới cho thấy lợi nhuận thay đổi thế nào khi bán 693 căn ở các mức giá khác nhau (so với giá
+                    thanh lý nội bộ 50-60 tr/m² đã tính trong doanh thu ban đầu).</p>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Giá bán (tr/m²)</th>
+                        <th style="text-align: right;">Doanh thu bổ sung (tỷ)</th>
+                        <th style="text-align: right;">Lợi nhuận Bảo thủ</th>
+                        <th style="text-align: right;">Lợi nhuận Điều chỉnh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background: #ffebee;">
+                        <td>50 (giá thanh lý cơ sở)</td>
+                        <td style="text-align: right;">0</td>
+                        <td style="text-align: right; color: #c62828;"><strong>&le;-211,80</strong></td>
+                        <td style="text-align: right; color: #2e7d32;"><strong>&ge;887,50</strong></td>
+                    </tr>
+                    <tr>
+                        <td>55 (+5 tr so với cơ sở)</td>
+                        <td style="text-align: right;">+208</td>
+                        <td style="text-align: right; color: #666;"><strong>&le;-3,80</strong></td>
+                        <td style="text-align: right; color: #2e7d32;"><strong>&ge;1.095,50</strong></td>
+                    </tr>
+                    <tr>
+                        <td>60 (+10 tr)</td>
+                        <td style="text-align: right;">+416</td>
+                        <td style="text-align: right; color: #2e7d32;"><strong>&le;204,20</strong></td>
+                        <td style="text-align: right; color: #2e7d32;"><strong>&ge;1.303,50</strong></td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td>65 (+15 tr)</td>
+                        <td style="text-align: right;">+624</td>
+                        <td style="text-align: right; color: #2e7d32;"><strong>&le;412,20</strong></td>
+                        <td style="text-align: right; color: #2e7d32;"><strong>&ge;1.511,50</strong></td>
+                    </tr>
+                    <tr>
+                        <td>70 (+20 tr)</td>
+                        <td style="text-align: right;">+832</td>
+                        <td style="text-align: right; color: #2e7d32;"><strong>&le;620,20</strong></td>
+                        <td style="text-align: right; color: #2e7d32;"><strong>&ge;1.719,50</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="font-size: 13px; color: #666; margin-top: 10px;">C�ng th?c: Doanh thu b? sung = (Gi� b�n 50) 693
+                can 60 m/can 1000. Gi? d?nh di?n t�ch trung b�nh 60 m/can cho 693 can (~42.569 m t?ng).</p>
+
+            <h3 style="color: #1a237e; margin: 30px 0 20px 0; font-size: 22px;">Chi?n lu?c b�n h�ng: Nhanh vs Cao gi�
+            </h3>
+
+            <div class="info-box" style="background: #e8eaf6; border-left-color: #1a237e;">
+                <h3 style="color: #1a237e;">Ma tr?n d? nh?y: Ph?i h?p b�n nhanh + b�n cao</h3>
+                <p>B?ng du?i th? hi?n l?i nhu?n (bi?n th? �i?u ch?nh) khi k?t h?p:</p>
+                <p> % b�n nhanh ? m?c gi� th?p hon (50-55 tr/m) d? thu h?i v?n s?m</p>
+                <p> % gi? l?i b�n cao gi� hon (65-70 tr/m) khi th? tru?ng thu?n l?i</p>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th rowspan="2">% B�n nhanh<br>(50-55 tr/m)</th>
+                        <th colspan="3" style="text-align: center;">% Gi? l?i b�n cao (65-70 tr/m)</th>
+                    </tr>
+                    <tr>
+                        <th style="text-align: center;">30%</th>
+                        <th style="text-align: center;">50%</th>
+                        <th style="text-align: center;">70%</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>70%</strong></td>
+                        <td style="text-align: right; color: #2e7d32;">1.075 t?</td>
+                        <td style="text-align: right; color: #2e7d32;">1.200 t?</td>
+                        <td style="text-align: right; color: #2e7d32;">1.324 t?</td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td><strong>50%</strong></td>
+                        <td style="text-align: right; color: #2e7d32;">1.200 t?</td>
+                        <td style="text-align: right; color: #2e7d32;">1.407 t?</td>
+                        <td style="text-align: right; color: #2e7d32;">1.615 t?</td>
+                    </tr>
+                    <tr>
+                        <td><strong>30%</strong></td>
+                        <td style="text-align: right; color: #2e7d32;">1.324 t?</td>
+                        <td style="text-align: right; color: #2e7d32;">1.615 t?</td>
+                        <td style="text-align: right; color: #2e7d32;">1.907 t?</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="font-size: 13px; color: #666; margin-top: 10px;">V� d?: B�n nhanh 50% can (52 tr/m trung b�nh) +
+                Gi? 50% can (67,5 tr/m trung b�nh) L?i nhu?n bi?n th? �i?u ch?nh <strong>1.407 t?</strong>.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Thông tin từ báo cáo tài chính Công ty Lý Khương</p>
+        <p style="margin-top: 10px; font-weight: 600;">Dream Home Riverside - Dự án đang thi công</p>
+    </div>
+
+</body>
+
+</html>
