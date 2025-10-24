@@ -53,62 +53,10 @@
         .cover .status {
             background: rgba(255, 255, 255, 0.2);
             padding: 20px 40px;
-        
-        <!-- NỢ TÀI CHÍNH KHÁC (CHI TIẾT) -->
-        <div class="warning-box">
-            <h3>Nợ tài chính khác</h3>
-            <table style="margin: 15px 0; box-shadow: none;">
-                <thead style="background: linear-gradient(135deg, #ffa726 0%, #ef6c00 100%); color: #fff;">
-                    <tr>
-                        <th>Hạng mục</th>
-                        <th style="text-align: right;">Số tiền (tỷ VNĐ)</th>
-                        <th>Ghi chú</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Hoàn vốn vay</td>
-                        <td style="text-align: right;">832,03</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Thuế</td>
-                        <td style="text-align: right;">328,23</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Nợ lương</td>
-                        <td style="text-align: right;">&gt;4,10</td>
-                        <td>Giá trị tối thiểu</td>
-                    </tr>
-                    <tr class="total-row" style="background: #ffe0b2;">
-                        <td><strong>TỔNG NỢ TÀI CHÍNH KHÁC</strong></td>
-                        <td style="text-align: right;"><strong>&ge;1.164,36</strong></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-            <p style="font-size: 13px; color: #666; margin-top: 8px;">Lưu ý: Tổng nợ tài chính khác sử dụng ký hiệu “≥” do khoản nợ lương được thể hiện dạng tối thiểu (&gt;4,10 tỷ).</p>
-        </div>
+            border-radius: 8px;
+        }
 
-        <!-- TỔNG HỢP CÔNG NỢ -->
-        <div class="metric-grid">
-            <div class="metric-card" style="border-top-color: #424242;">
-                <div class="metric-label">Nợ nhà thầu</div>
-                <div class="metric-value" style="color: #424242; font-size: 28px;">766,95</div>
-                <div class="metric-subtitle">tỷ VNĐ</div>
-            </div>
-            <div class="metric-card" style="border-top-color: #ff6f00;">
-                <div class="metric-label">Nợ tài chính khác</div>
-                <div class="metric-value" style="color: #ff6f00; font-size: 28px;">&ge;1.164,36</div>
-                <div class="metric-subtitle">tỷ VNĐ</div>
-            </div>
-            <div class="metric-card" style="border-top-color: #c62828;">
-                <div class="metric-label">TỔNG CÔNG NỢ (ước tính)</div>
-                <div class="metric-value" style="color: #c62828; font-size: 28px;">&ge;1.931,31</div>
-                <div class="metric-subtitle">tỷ VNĐ</div>
-            </div>
-        </div>
+        .content {
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px;
@@ -740,6 +688,14 @@
                 <h2>TÌNH TRẠNG BÁN HÀNG</h2>
             </div>
 
+            <div class="info-box" style="background: #e8f5e9; border-left-color: #2e7d32;">
+                <h3 style="color: #2e7d32;">Logic phân loại sản phẩm & dòng tiền bán hàng</h3>
+                <p>• <strong>Tổng số căn:</strong> 2.425 căn</p>
+                <p>• <strong>Đã bán ra thị trường:</strong> 1.732 căn → <strong>Đã thu:</strong> 1.714,39 tỷ → <strong>Còn phải thu:</strong> 778,39 tỷ</p>
+                <p>• <strong>Số căn còn lại:</strong> 2.425 − 1.732 = <strong>693 căn</strong> = <strong>363 căn</strong> (kế hoạch thanh lý, đã đủ điều kiện bán) + <strong>330 căn</strong> (chưa đủ điều kiện bán)</p>
+                <p style="font-size: 13px; color: #2e7d32;">Ghi chú: 330 căn chưa bán do <strong>chưa nộp nghĩa vụ tài chính ~70 tỷ</strong> (con số này cần kiểm tra, cập nhật theo quy định hàng năm).</p>
+            </div>
+
             <div class="metric-grid">
                 <div class="metric-card" style="border-top-color: #424242;">
                     <div class="metric-label">Đã bán</div>
@@ -749,12 +705,12 @@
                 <div class="metric-card" style="border-top-color: #ff6f00;">
                     <div class="metric-label">Kế hoạch thanh lý</div>
                     <div class="metric-value" style="color: #ff6f00;">363</div>
-                    <div class="metric-subtitle">căn (15%)</div>
+                    <div class="metric-subtitle">căn (15%) — đủ điều kiện bán</div>
                 </div>
                 <div class="metric-card" style="border-top-color: #1a237e;">
                     <div class="metric-label">Chưa bán</div>
                     <div class="metric-value" style="color: #1a237e;">330</div>
-                    <div class="metric-subtitle">căn (14%)</div>
+                    <div class="metric-subtitle">căn (14%) — chưa đủ ĐK (nghĩa vụ ~70 tỷ)</div>
                 </div>
                 <div class="metric-card" style="border-top-color: #9e9e9e;">
                     <div class="metric-label">Chưa đủ ĐK bán</div>
@@ -788,7 +744,7 @@
                     <tr>
                         <td style="padding-left: 30px; font-size: 14px; color: #666;">- Còn phải thu</td>
                         <td style="text-align: center;">-</td>
-                        <td style="text-align: right;"><strong>778,22</strong></td>
+                        <td style="text-align: right;"><strong>778,39</strong></td>
                         <td style="text-align: center;">17%</td>
                     </tr>
                     <tr>
@@ -869,6 +825,8 @@
                     </tr>
                 </tbody>
             </table>
+
+            <p style="font-size: 13px; color: #666; margin-top: 10px;">Đối chiếu logic: 2.425 tổng căn − 1.732 đã bán = 693 căn = 363 căn thanh lý (đã đủ ĐK bán) + 330 căn chưa bán (chưa đủ ĐK do nghĩa vụ tài chính ~70 tỷ, cần đối soát cập nhật hàng năm).</p>
         </div>
 
         <!-- SECTION 6: TÀI CHÍNH -->
@@ -1033,21 +991,47 @@
                         <td style="text-align: center;">1%</td>
                     </tr>
                     <tr class="total-row">
-                        <td><strong>TỔNG</strong></td>
+                        <td><strong>TỔNG NỢ NHÀ THẦU & VẬT TƯ</strong></td>
                         <td style="text-align: right;"><strong>1.244,68</strong></td>
                         <td style="text-align: right;"><strong>477,73</strong></td>
                         <td style="text-align: right;"><strong>766,95</strong></td>
                         <td style="text-align: center;"><strong>38%</strong></td>
                     </tr>
+                    <tr>
+                        <td colspan="5" style="background: #fff3e0; font-weight: 600; color: #ff6f00;">NỢ TÀI CHÍNH KHÁC
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 20px;">Hoàn vốn vay</td>
+                        <td style="text-align: right;">—</td>
+                        <td style="text-align: right;">—</td>
+                        <td style="text-align: right;">832,03</td>
+                        <td style="text-align: center;">—</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 20px;">Thuế</td>
+                        <td style="text-align: right;">—</td>
+                        <td style="text-align: right;">—</td>
+                        <td style="text-align: right;">328,23</td>
+                        <td style="text-align: center;">—</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 20px;">Nợ lương (tối thiểu)</td>
+                        <td style="text-align: right;">—</td>
+                        <td style="text-align: right;">—</td>
+                        <td style="text-align: right;">&gt;4,10</td>
+                        <td style="text-align: center;">—</td>
+                    </tr>
+                    <tr class="total-row" style="background: #ffe0b2;">
+                        <td><strong>TỔNG CÔNG NỢ (ước tính)</strong></td>
+                        <td style="text-align: right;">—</td>
+                        <td style="text-align: right;">—</td>
+                        <td style="text-align: right;"><strong>&ge;1.931,31</strong></td>
+                        <td style="text-align: center;">—</td>
+                    </tr>
                 </tbody>
             </table>
 
-            <div class="warning-box">
-                <h3>Nợ tài chính khác</h3>
-                <p>• Hoàn vốn vay: <strong>832,03 tỷ</strong></p>
-                <p>• Thuế: <strong>328,23 tỷ</strong></p>
-                <p>• Nợ lương: <strong>>4,10 tỷ</strong></p>
-            </div>
         </div>
 
         <!-- SECTION 8: TỔNG HỢP -->
@@ -1107,7 +1091,7 @@
                     </tr>
                     <tr>
                         <td style="padding-left: 30px;">Nợ tài chính khác</td>
-                        <td style="text-align: right;">>1.160</td>
+                        <td style="text-align: right;">&ge;1.164,36</td>
                     </tr>
                     <tr class="total-row" style="background: #ffcdd2;">
                         <td><strong>CHÊNH LỆCH THU - CHI</strong></td>
