@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,36 +11,36 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #b71c1c 0%, #c62828 100%);
             color: #333;
             padding: 20px;
         }
-        
+
         .container {
             max-width: 1400px;
             margin: 0 auto;
             background: white;
             border-radius: 15px;
             padding: 40px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
         }
-        
+
         .header {
             text-align: center;
             margin-bottom: 40px;
             border-bottom: 3px solid #c62828;
             padding-bottom: 20px;
         }
-        
+
         .header h1 {
             color: #c62828;
             font-size: 32px;
             margin-bottom: 10px;
         }
-        
+
         .header .risk-badge {
             display: inline-block;
             background: #c62828;
@@ -50,13 +51,13 @@
             font-weight: bold;
             margin-top: 10px;
         }
-        
+
         .header .subtitle {
             color: #666;
             font-size: 18px;
             margin-top: 15px;
         }
-        
+
         .warning-banner {
             background: #ffebee;
             border-left: 5px solid #c62828;
@@ -64,19 +65,19 @@
             margin: 30px 0;
             border-radius: 5px;
         }
-        
+
         .warning-banner h2 {
             color: #b71c1c;
             margin-bottom: 10px;
         }
-        
+
         .summary-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             margin: 30px 0;
         }
-        
+
         .summary-card {
             background: linear-gradient(135deg, #c62828 0%, #d32f2f 100%);
             color: white;
@@ -84,38 +85,38 @@
             border-radius: 10px;
             text-align: center;
         }
-        
+
         .summary-card h3 {
             font-size: 14px;
             margin-bottom: 10px;
             opacity: 0.9;
         }
-        
+
         .summary-card .value {
             font-size: 32px;
             font-weight: bold;
         }
-        
+
         .summary-card.positive {
             background: linear-gradient(135deg, #2e7d32 0%, #388e3c 100%);
         }
-        
+
         .cash-flow-section {
             margin: 40px 0;
         }
-        
+
         .cash-flow-section h2 {
             color: #c62828;
             margin-bottom: 20px;
             font-size: 24px;
         }
-        
+
         .cash-flow-table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
         }
-        
+
         .cash-flow-table th {
             background: #c62828;
             color: white;
@@ -123,53 +124,53 @@
             text-align: left;
             font-size: 14px;
         }
-        
+
         .cash-flow-table td {
             padding: 10px 12px;
             border-bottom: 1px solid #ddd;
             font-size: 13px;
         }
-        
+
         .cash-flow-table tr:hover {
             background: #ffebee;
         }
-        
+
         .positive {
             color: #2e7d32;
             font-weight: bold;
         }
-        
+
         .negative {
             color: #c62828;
             font-weight: bold;
         }
-        
+
         .sensitivity-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 20px;
             margin: 30px 0;
         }
-        
+
         .sensitivity-card {
             background: #ffebee;
             border-radius: 10px;
             padding: 20px;
             border-left: 4px solid #c62828;
         }
-        
+
         .sensitivity-card h3 {
             color: #b71c1c;
             font-size: 18px;
             margin-bottom: 15px;
         }
-        
+
         .sensitivity-table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 10px;
         }
-        
+
         .sensitivity-table th {
             background: #c62828;
             color: white;
@@ -177,55 +178,56 @@
             text-align: left;
             font-size: 13px;
         }
-        
+
         .sensitivity-table td {
             padding: 8px 10px;
             border-bottom: 1px solid #ddd;
             font-size: 13px;
         }
-        
+
         .sensitivity-table tr:hover {
             background: #fff5f5;
         }
-        
+
         .neutral {
             color: #f57c00;
             font-weight: bold;
         }
-        
+
         .matrix-table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
             font-size: 13px;
         }
-        
-        .matrix-table th, .matrix-table td {
+
+        .matrix-table th,
+        .matrix-table td {
             border: 1px solid #ddd;
             padding: 10px;
             text-align: center;
         }
-        
+
         .matrix-table th {
             background: #c62828;
             color: white;
         }
-        
+
         .cell-high {
             background: #c8e6c9;
             font-weight: bold;
         }
-        
+
         .cell-medium {
             background: #fff9c4;
             font-weight: bold;
         }
-        
+
         .cell-low {
             background: #ffccbc;
             font-weight: bold;
         }
-        
+
         .insights {
             background: #ffebee;
             border-left: 4px solid #c62828;
@@ -233,25 +235,25 @@
             border-radius: 5px;
             margin: 20px 0;
         }
-        
+
         .insights h3 {
             color: #b71c1c;
             margin-bottom: 10px;
         }
-        
+
         .insights ul {
             list-style-position: inside;
             color: #424242;
             line-height: 1.8;
         }
-        
+
         .chart-container {
             margin: 30px 0;
             padding: 20px;
             background: #fafafa;
             border-radius: 10px;
         }
-        
+
         .conclusion {
             background: #ffebee;
             border: 2px solid #c62828;
@@ -259,12 +261,12 @@
             border-radius: 10px;
             margin: 40px 0;
         }
-        
+
         .conclusion h2 {
             color: #b71c1c;
             margin-bottom: 15px;
         }
-        
+
         .risk-detail {
             background: #fff3e0;
             border-left: 4px solid #f57c00;
@@ -272,17 +274,17 @@
             border-radius: 5px;
             margin: 20px 0;
         }
-        
+
         .risk-detail h3 {
             color: #e65100;
             margin-bottom: 10px;
         }
-        
+
         .back-link {
             text-align: center;
             margin-top: 40px;
         }
-        
+
         .back-link a {
             display: inline-block;
             background: #c62828;
@@ -294,11 +296,11 @@
             transition: background 0.3s;
             margin: 0 10px;
         }
-        
+
         .back-link a:hover {
             background: #d32f2f;
         }
-        
+
         .logo-bottom-left {
             position: fixed;
             bottom: 20px;
@@ -318,12 +320,13 @@
         .back-link a.secondary {
             background: #2e7d32;
         }
-        
+
         .back-link a.secondary:hover {
             background: #388e3c;
         }
     </style>
 </head>
+
 <body>
     <div class="logo-bottom-left">
         <img src="assets/thinh_nguyen_logo.png" alt="Thịnh Nguyên Group">
@@ -332,13 +335,16 @@
         <div class="header">
             <div class="risk-badge">⚠️ HIGH RISK</div>
             <h1>📊 KỊCH BẢN 3: AGGRESSIVE</h1>
-            <div class="subtitle">"Tối đa hóa Upside" - Thanh lý toàn bộ, Tái phát triển</div>
-            <p style="font-size: 14px; color: #999; margin-top: 10px;">Dự án Dreamhome Riverside | Phân tích bởi LNP - Thịnh Nguyên Group</p>
+            <div class="subtitle">"Tối đa hóa Lợi nhuận" - Thanh lý toàn bộ, Tái phát triển</div>
+            <p style="font-size: 14px; color: #999; margin-top: 10px;">Dự án Dreamhome Riverside | Phân tích bởi LNP -
+                Thịnh Nguyên Group</p>
         </div>
 
         <div class="warning-banner">
             <h2>⚠️ CẢNH BÁO: KỊCH BẢN RỦI RO CAO</h2>
-            <p style="line-height: 1.8;">Kịch bản này có <strong>NPV +164 tỷ, IRR 29.4%</strong> NHƯNG rủi ro pháp lý và thị trường rất cao. Worst case có thể lỗ -220 tỷ. CHỈ phù hợp với investor có khẩu vị rủi ro cao và team pháp lý cực mạnh. Xác suất thành công <strong>40-50%</strong>.</p>
+            <p style="line-height: 1.8;">Kịch bản này có <strong>NPV +164 tỷ, IRR 29.4%</strong> NHƯNG rủi ro pháp lý và
+                thị trường rất cao. Kịch bản xấu nhất có thể lỗ -220 tỷ. CHỈ phù hợp với investor có khẩu vị rủi ro cao
+                và team pháp lý cực mạnh. Xác suất thành công <strong>40-50%</strong>.</p>
         </div>
 
         <!-- Summary Cards -->
@@ -360,11 +366,11 @@
                 <div class="value">400 tỷ</div>
             </div>
             <div class="summary-card">
-                <h3>Payback</h3>
+                <h3>Thời gian hoàn vốn</h3>
                 <div class="value">12 tháng</div>
             </div>
             <div class="summary-card">
-                <h3>Timeline</h3>
+                <h3>Thời gian thực hiện</h3>
                 <div class="value">21 tháng</div>
             </div>
         </div>
@@ -472,7 +478,8 @@
                     </tr>
                     <tr style="background: #ffccbc;">
                         <td colspan="2"><strong>EXIT VALUE</strong></td>
-                        <td colspan="5"><strong>Doanh thu = 3,850 tỷ | Chi = 3,650 tỷ | Profit = 200 tỷ | NPV @ 12% = +164 tỷ | IRR = 29.4%</strong></td>
+                        <td colspan="5"><strong>Doanh thu = 3,850 tỷ | Chi = 3,650 tỷ | Profit = 200 tỷ | NPV @ 12% =
+                                +164 tỷ | IRR = 29.4%</strong></td>
                     </tr>
                 </tbody>
             </table>
@@ -481,7 +488,7 @@
         <!-- Sensitivity Analysis -->
         <div class="cash-flow-section">
             <h2>📈 Phân tích Độ nhạy</h2>
-            
+
             <div class="sensitivity-grid">
                 <!-- Giá bán -->
                 <div class="sensitivity-card">
@@ -528,7 +535,8 @@
                             </tr>
                         </tbody>
                     </table>
-                    <p style="margin-top: 10px; font-size: 12px; color: #b71c1c;"><strong>⚠️ Cảnh báo:</strong> Giá <80 tr/m² = NPV âm!</p>
+                    <p style="margin-top: 10px; font-size: 12px; color: #b71c1c;"><strong>⚠️ Cảnh báo:</strong> Giá <80
+                            tr/m²=NPV âm!</p>
                 </div>
 
                 <!-- Chi phí thanh lý -->
@@ -576,7 +584,8 @@
                             </tr>
                         </tbody>
                     </table>
-                    <p style="margin-top: 10px; font-size: 12px; color: #666;">Tương đối ít nhạy cảm với % bồi thường</p>
+                    <p style="margin-top: 10px; font-size: 12px; color: #666;">Tương đối ít nhạy cảm với % bồi thường
+                    </p>
                 </div>
 
                 <!-- Rủi ro pháp lý -->
@@ -624,13 +633,15 @@
                             </tr>
                         </tbody>
                     </table>
-                    <p style="margin-top: 10px; font-size: 12px; color: #b71c1c;"><strong>⚠️ Rủi ro lớn:</strong> >25% kiện = NPV chỉ còn +14 tỷ</p>
+                    <p style="margin-top: 10px; font-size: 12px; color: #b71c1c;"><strong>⚠️ Rủi ro lớn:</strong> >25%
+                        kiện = NPV chỉ còn +14 tỷ</p>
                 </div>
             </div>
 
             <!-- Two-way Matrix -->
             <div class="chart-container">
-                <h3 style="color: #c62828; margin-bottom: 15px;">📊 Ma trận Độ nhạy 2 chiều: Giá bán × % Khách kiện (NPV - tỷ VNĐ)</h3>
+                <h3 style="color: #c62828; margin-bottom: 15px;">📊 Ma trận Độ nhạy 2 chiều: Giá bán × % Khách kiện (NPV
+                    - tỷ VNĐ)</h3>
                 <table class="matrix-table">
                     <tr>
                         <th style="background: #d32f2f;">Giá ↓ / % Kiện →</th>
@@ -682,7 +693,8 @@
                     </tr>
                 </table>
                 <p style="margin-top: 15px; font-size: 14px; color: #b71c1c; font-weight: bold;">
-                    ⚠️ NGUY HIỂM: Nếu giá chỉ 80 tr/m² VÀ 10% khách kiện → NPV âm -13 tỷ. Worst case (75 tr/m², 25% kiện) = NPV -220 tỷ!
+                    ⚠️ NGUY HIỂM: Nếu giá chỉ 80 tr/m² VÀ 10% khách kiện → NPV âm -13 tỷ. Kịch bản xấu nhất (75 tr/m²,
+                    25% kiện) = NPV -220 tỷ!
                 </p>
             </div>
         </div>
@@ -691,12 +703,14 @@
         <div class="insights">
             <h3>🔍 Key Insights:</h3>
             <ul>
-                <li><strong>High-risk, High-return:</strong> IRR 29.4% cao nhất nhưng rủi ro pháp lý và thị trường đáng kể</li>
-                <li><strong>RẤT nhạy cảm với giá:</strong> Giảm từ 85 xuống 75 tr/m² → NPV từ +164 xuống -70 tỷ (swing 234 tỷ!)</li>
+                <li><strong>High-risk, High-return:</strong> IRR 29.4% cao nhất nhưng rủi ro pháp lý và thị trường đáng
+                    kể</li>
+                <li><strong>RẤT nhạy cảm với giá:</strong> Giảm từ 85 xuống 75 tr/m² → NPV từ +164 xuống -70 tỷ (swing
+                    234 tỷ!)</li>
                 <li><strong>Rủi ro pháp lý đáng kể:</strong> 15% khách kiện → NPV giảm 55% (còn +74 tỷ)</li>
                 <li><strong>Cần giá CAO:</strong> Phải bán ≥85 tr/m² để có margin đủ cover rủi ro</li>
                 <li><strong>Leverage cao = áp lực:</strong> Vay 500 tỷ @ 12% = 60 tỷ lãi/năm (5 tỷ/tháng)</li>
-                <li><strong>Break-even hẹp:</strong> Giá 78 tr/m² + 0% kiện, HOẶC 85 tr/m² + 20% kiện</li>
+                <li><strong>Hòa vốn hẹp:</strong> Giá 78 tr/m² + 0% kiện, HOẶC 85 tr/m² + 20% kiện</li>
                 <li><strong>Timeline nhanh = rủi ro execution:</strong> 21 tháng rất aggressive, có thể chậm</li>
             </ul>
         </div>
@@ -704,45 +718,61 @@
         <!-- Risk Details -->
         <div class="risk-detail">
             <h3>⚠️ Rủi ro Chi tiết & Điều kiện Tiên quyết:</h3>
-            <p style="margin-bottom: 15px; font-weight: bold;">Kịch bản này CHỈ khả thi nếu đáp ứng TẤT CẢ 3 điều kiện sau:</p>
+            <p style="margin-bottom: 15px; font-weight: bold;">Kịch bản này CHỈ khả thi nếu đáp ứng TẤT CẢ 3 điều kiện
+                sau:</p>
             <ul style="list-style-position: inside; line-height: 1.8;">
-                <li><strong>1. CHỨNG MINH GIÁ CAO:</strong> Phải có bằng chứng CHẮC CHẮN từ market research rằng bán được ≥85 tr/m² (tăng 27% vs giá cũ). Cần pilot sale thành công với ≥30 căn @ 85+ tr/m²</li>
-                <li><strong>2. LEGAL TEAM CỰC MẠNH:</strong> Có năng lực đàm phán với 700 khách, giảm rủi ro kiện tụng xuống <10%. Cần escrow account 650 tỷ sẵn sàng</li>
-                <li><strong>3. INVESTOR CHẤP NHẬN RỦI RO:</strong> Hiểu rõ worst case có thể lỗ -220 tỷ (55% vốn). Có buffer capital thêm 100-150 tỷ cho contingency</li>
+                <li><strong>1. CHỨNG MINH GIÁ CAO:</strong> Phải có bằng chứng CHẮC CHẮN từ market research rằng bán
+                    được ≥85 tr/m² (tăng 27% vs giá cũ). Cần pilot sale thành công với ≥30 căn @ 85+ tr/m²</li>
+                <li><strong>2. LEGAL TEAM CỰC MẠNH:</strong> Có năng lực đàm phán với 700 khách, giảm rủi ro kiện tụng
+                    xuống <10%. Cần escrow account 650 tỷ sẵn sàng</li>
+                <li><strong>3. INVESTOR CHẤP NHẬN RỦI RO:</strong> Hiểu rõ kịch bản xấu nhất có thể lỗ -220 tỷ (55%
+                    vốn). Có buffer capital thêm 100-150 tỷ cho contingency</li>
             </ul>
-            <p style="margin-top: 15px; padding: 15px; background: white; border-radius: 5px; font-weight: bold; color: #b71c1c;">
-                ❌ Nếu KHÔNG đáp ứng cả 3 điều kiện trên → KHÔNG NÊN theo đuổi kịch bản này. Rủi ro quá cao so với potential return.
+            <p
+                style="margin-top: 15px; padding: 15px; background: white; border-radius: 5px; font-weight: bold; color: #b71c1c;">
+                ❌ Nếu KHÔNG đáp ứng cả 3 điều kiện trên → KHÔNG NÊN theo đuổi kịch bản này. Rủi ro quá cao so với
+                potential return.
             </p>
         </div>
 
         <!-- Detailed Risks -->
         <div class="cash-flow-section">
             <h2>🛡️ Top 5 Rủi ro Nghiêm trọng</h2>
-            
+
             <div style="display: grid; gap: 15px;">
                 <div style="background: #ffebee; padding: 15px; border-left: 4px solid #c62828; border-radius: 5px;">
                     <h4 style="color: #b71c1c; margin-bottom: 8px;">1. Thanh lý 700 căn thất bại (Xác suất: 50-60%)</h4>
-                    <p style="font-size: 13px; line-height: 1.6;"><strong>Tác động:</strong> -200 đến -300 tỷ | <strong>Biện pháp:</strong> Legal DD sâu 3 tháng, đàm phán 1-1 với top 50 khách lớn, mediation/arbitration cho khách khó, escrow 650 tỷ</p>
+                    <p style="font-size: 13px; line-height: 1.6;"><strong>Tác động:</strong> -200 đến -300 tỷ |
+                        <strong>Biện pháp:</strong> Legal DD sâu 3 tháng, đàm phán 1-1 với top 50 khách lớn,
+                        mediation/arbitration cho khách khó, escrow 650 tỷ</p>
                 </div>
-                
+
                 <div style="background: #fff3e0; padding: 15px; border-left: 4px solid #f57c00; border-radius: 5px;">
                     <h4 style="color: #e65100; margin-bottom: 8px;">2. Giá chỉ đạt 75-80 tr/m² (Xác suất: 40%)</h4>
-                    <p style="font-size: 13px; line-height: 1.6;"><strong>Tác động:</strong> -117 đến -234 tỷ NPV | <strong>Biện pháp:</strong> Pilot sale 100 căn trong 3 tháng đầu, nếu fail → pivot sang KB2, không nên hardcore theo KB3</p>
+                    <p style="font-size: 13px; line-height: 1.6;"><strong>Tác động:</strong> -117 đến -234 tỷ NPV |
+                        <strong>Biện pháp:</strong> Pilot sale 100 căn trong 3 tháng đầu, nếu fail → pivot sang KB2,
+                        không nên hardcore theo KB3</p>
                 </div>
-                
+
                 <div style="background: #fff9c4; padding: 15px; border-left: 4px solid #fbc02d; border-radius: 5px;">
-                    <h4 style="color: #f57c00; margin-bottom: 8px;">3. Timeline chậm 6+ tháng (Xác suất: 50%)</h4>
-                    <p style="font-size: 13px; line-height: 1.6;"><strong>Tác động:</strong> -90 tỷ (lãi vay + opportunity) | <strong>Biện pháp:</strong> CPM method, 2-shift construction, penalty 1%/tháng cho contractors</p>
+                    <h4 style="color: #f57c00; margin-bottom: 8px;">3. Thời gian thực hiện chậm 6+ tháng (Xác suất: 50%)</h4>
+                    <p style="font-size: 13px; line-height: 1.6;"><strong>Tác động:</strong> -90 tỷ (lãi vay +
+                        opportunity) | <strong>Biện pháp:</strong> CPM method, 2-shift construction, penalty 1%/tháng
+                        cho contractors</p>
                 </div>
-                
+
                 <div style="background: #fff9c4; padding: 15px; border-left: 4px solid #fbc02d; border-radius: 5px;">
                     <h4 style="color: #f57c00; margin-bottom: 8px;">4. Chi phí litigation tăng (Xác suất: 40%)</h4>
-                    <p style="font-size: 13px; line-height: 1.6;"><strong>Tác động:</strong> -60 đến -150 tỷ | <strong>Biện pháp:</strong> Budget dự phòng 150 tỷ cho legal, insurance coverage 100 tỷ, settlement strategy</p>
+                    <p style="font-size: 13px; line-height: 1.6;"><strong>Tác động:</strong> -60 đến -150 tỷ |
+                        <strong>Biện pháp:</strong> Budget dự phòng 150 tỷ cho legal, insurance coverage 100 tỷ,
+                        settlement strategy</p>
                 </div>
-                
+
                 <div style="background: #ffccbc; padding: 15px; border-left: 4px solid #d32f2f; border-radius: 5px;">
                     <h4 style="color: #b71c1c; margin-bottom: 8px;">5. Thị trường sụt giảm 15-20% (Xác suất: 20%)</h4>
-                    <p style="font-size: 13px; line-height: 1.6;"><strong>Tác động:</strong> -200 đến -400 tỷ | <strong>Biện pháp:</strong> Fast execution <18 tháng, hedge với derivatives nếu có, pivot sang rental nếu không bán được</p>
+                    <p style="font-size: 13px; line-height: 1.6;"><strong>Tác động:</strong> -200 đến -400 tỷ |
+                        <strong>Biện pháp:</strong> Fast execution <18 tháng, hedge với derivatives nếu có, pivot sang
+                            rental nếu không bán được</p>
                 </div>
             </div>
         </div>
@@ -754,8 +784,10 @@
                 <strong>Kịch bản 3 có risk/return profile phân cực:</strong>
             </p>
             <ul style="list-style-position: inside; line-height: 1.8;">
-                <li><strong>✅ Upside:</strong> IRR 29.4% cao nhất, payback nhanh 12 tháng, tiềm năng lên tới +398 tỷ nếu mọi thứ hoàn hảo</li>
-                <li><strong>❌ Downside:</strong> Worst case lỗ -220 tỷ (55% vốn), rủi ro pháp lý cao, phụ thuộc nhiều vào giá ≥85 tr/m²</li>
+                <li><strong>✅ Lợi nhuận cao:</strong> IRR 29.4% cao nhất, hoàn vốn nhanh 12 tháng, tiềm năng lên tới +398 tỷ nếu
+                    mọi thứ hoàn hảo</li>
+                <li><strong>❌ Rủi ro lớn:</strong> Kịch bản xấu nhất lỗ -220 tỷ (55% vốn), rủi ro pháp lý cao, phụ thuộc nhiều
+                    vào giá ≥85 tr/m²</li>
                 <li><strong>⚠️ Complexity:</strong> Cần thanh lý 700 căn (gấp đôi KB2), deal phức tạp hơn nhiều</li>
                 <li><strong>⚠️ Execution risk:</strong> Timeline 21 tháng rất aggressive, dễ slip</li>
                 <li><strong>⚠️ Legal exposure:</strong> Có thể đối mặt với 50-100 vụ kiện nếu xử lý không tốt</li>
@@ -789,4 +821,5 @@
         </div>
     </div>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,42 +11,42 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
             color: #333;
             padding: 20px;
         }
-        
+
         .container {
             max-width: 1400px;
             margin: 0 auto;
             background: white;
             border-radius: 15px;
             padding: 40px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
         }
-        
+
         .header {
             text-align: center;
             margin-bottom: 40px;
             border-bottom: 3px solid #1a237e;
             padding-bottom: 20px;
         }
-        
+
         .header h1 {
             color: #1a237e;
             font-size: 32px;
             margin-bottom: 10px;
         }
-        
+
         .header .subtitle {
             color: #666;
             font-size: 18px;
             margin-top: 10px;
         }
-        
+
         .warning-banner {
             background: #fff3e0;
             border-left: 5px solid #f57c00;
@@ -53,19 +54,19 @@
             margin: 30px 0;
             border-radius: 5px;
         }
-        
+
         .warning-banner h2 {
             color: #e65100;
             margin-bottom: 10px;
         }
-        
+
         .summary-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             margin: 30px 0;
         }
-        
+
         .summary-card {
             background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
             color: white;
@@ -73,22 +74,22 @@
             border-radius: 10px;
             text-align: center;
         }
-        
+
         .summary-card h3 {
             font-size: 14px;
             margin-bottom: 10px;
             opacity: 0.9;
         }
-        
+
         .summary-card .value {
             font-size: 32px;
             font-weight: bold;
         }
-        
+
         .summary-card.negative {
             background: linear-gradient(135deg, #c62828 0%, #d32f2f 100%);
         }
-        
+
         .logo-bottom-left {
             position: fixed;
             bottom: 20px;
@@ -108,19 +109,19 @@
         .cash-flow-section {
             margin: 40px 0;
         }
-        
+
         .cash-flow-section h2 {
             color: #1a237e;
             margin-bottom: 20px;
             font-size: 24px;
         }
-        
+
         .cash-flow-table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
         }
-        
+
         .cash-flow-table th {
             background: #1a237e;
             color: white;
@@ -128,53 +129,53 @@
             text-align: left;
             font-size: 14px;
         }
-        
+
         .cash-flow-table td {
             padding: 10px 12px;
             border-bottom: 1px solid #ddd;
             font-size: 13px;
         }
-        
+
         .cash-flow-table tr:hover {
             background: #f5f5f5;
         }
-        
+
         .positive {
             color: #2e7d32;
             font-weight: bold;
         }
-        
+
         .negative {
             color: #c62828;
             font-weight: bold;
         }
-        
+
         .sensitivity-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 20px;
             margin: 30px 0;
         }
-        
+
         .sensitivity-card {
             background: #f5f5f5;
             border-radius: 10px;
             padding: 20px;
             border-left: 4px solid #ff6f00;
         }
-        
+
         .sensitivity-card h3 {
             color: #1a237e;
             font-size: 18px;
             margin-bottom: 15px;
         }
-        
+
         .sensitivity-table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 10px;
         }
-        
+
         .sensitivity-table th {
             background: #1a237e;
             color: white;
@@ -182,55 +183,56 @@
             text-align: left;
             font-size: 13px;
         }
-        
+
         .sensitivity-table td {
             padding: 8px 10px;
             border-bottom: 1px solid #ddd;
             font-size: 13px;
         }
-        
+
         .sensitivity-table tr:hover {
             background: #f0f0f0;
         }
-        
+
         .neutral {
             color: #f57c00;
             font-weight: bold;
         }
-        
+
         .matrix-table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
             font-size: 13px;
         }
-        
-        .matrix-table th, .matrix-table td {
+
+        .matrix-table th,
+        .matrix-table td {
             border: 1px solid #ddd;
             padding: 10px;
             text-align: center;
         }
-        
+
         .matrix-table th {
             background: #1a237e;
             color: white;
         }
-        
+
         .cell-high {
             background: #c8e6c9;
             font-weight: bold;
         }
-        
+
         .cell-medium {
             background: #fff9c4;
             font-weight: bold;
         }
-        
+
         .cell-low {
             background: #ffccbc;
             font-weight: bold;
         }
-        
+
         .insights {
             background: #e3f2fd;
             border-left: 4px solid #1976d2;
@@ -238,25 +240,25 @@
             border-radius: 5px;
             margin: 20px 0;
         }
-        
+
         .insights h3 {
             color: #1565c0;
             margin-bottom: 10px;
         }
-        
+
         .insights ul {
             list-style-position: inside;
             color: #424242;
             line-height: 1.8;
         }
-        
+
         .chart-container {
             margin: 30px 0;
             padding: 20px;
             background: #fafafa;
             border-radius: 10px;
         }
-        
+
         .conclusion {
             background: #ffebee;
             border: 2px solid #c62828;
@@ -264,17 +266,17 @@
             border-radius: 10px;
             margin: 40px 0;
         }
-        
+
         .conclusion h2 {
             color: #c62828;
             margin-bottom: 15px;
         }
-        
+
         .back-link {
             text-align: center;
             margin-top: 40px;
         }
-        
+
         .back-link a {
             display: inline-block;
             background: #1a237e;
@@ -285,12 +287,13 @@
             font-weight: bold;
             transition: background 0.3s;
         }
-        
+
         .back-link a:hover {
             background: #283593;
         }
     </style>
 </head>
+
 <body>
     <div class="logo-bottom-left">
         <img src="assets/thinh_nguyen_logo.png" alt="Thịnh Nguyên Group">
@@ -299,12 +302,15 @@
         <div class="header">
             <h1>📊 KỊCH BẢN 1: CONSERVATIVE</h1>
             <div class="subtitle">"Tồn tại và Hoàn thiện" - Giữ toàn bộ hợp đồng</div>
-            <p style="font-size: 14px; color: #999; margin-top: 10px;">Dự án Dreamhome Riverside | Phân tích bởi LNP - Thịnh Nguyên Group</p>
+            <p style="font-size: 14px; color: #999; margin-top: 10px;">Dự án Dreamhome Riverside | Phân tích bởi LNP -
+                Thịnh Nguyên Group</p>
         </div>
 
         <div class="warning-banner">
             <h2>⚠️ CẢNH BÁO: KỊCH BẢN KHÔNG KHẢ THI</h2>
-            <p style="line-height: 1.8;">Kịch bản này có <strong>NPV âm -96 tỷ</strong> và không có IRR dương. Xác suất thành công <strong>dưới 30%</strong>. KHÔNG nên theo đuổi trừ khi có bằng chứng thị trường chắc chắn về khả năng bán giá cao.</p>
+            <p style="line-height: 1.8;">Kịch bản này có <strong>NPV âm -96 tỷ</strong> và không có IRR dương. Xác suất
+                thành công <strong>dưới 30%</strong>. KHÔNG nên theo đuổi trừ khi có bằng chứng thị trường chắc chắn về
+                khả năng bán giá cao.</p>
         </div>
 
         <!-- Summary Cards -->
@@ -322,7 +328,7 @@
                 <div class="value">280 tỷ</div>
             </div>
             <div class="summary-card">
-                <h3>Timeline</h3>
+                <h3>Thời gian thực hiện</h3>
                 <div class="value">30 tháng</div>
             </div>
             <div class="summary-card">
@@ -455,7 +461,7 @@
         <!-- Sensitivity Analysis -->
         <div class="cash-flow-section">
             <h2>📈 Phân tích Độ nhạy</h2>
-            
+
             <div class="sensitivity-grid">
                 <!-- Giá bán -->
                 <div class="sensitivity-card">
@@ -601,7 +607,8 @@
 
             <!-- Two-way Matrix -->
             <div class="chart-container">
-                <h3 style="color: #1a237e; margin-bottom: 15px;">📊 Ma trận Độ nhạy 2 chiều: Giá bán × Chi phí (NPV - tỷ VNĐ)</h3>
+                <h3 style="color: #1a237e; margin-bottom: 15px;">📊 Ma trận Độ nhạy 2 chiều: Giá bán × Chi phí (NPV - tỷ
+                    VNĐ)</h3>
                 <table class="matrix-table">
                     <tr>
                         <th style="background: #283593;">Giá ↓ / Chi phí →</th>
@@ -654,7 +661,8 @@
                 </table>
                 <p style="margin-top: 15px; font-size: 13px; color: #666;">
                     <span style="background: #c8e6c9; padding: 3px 8px; margin-right: 10px;">Xanh: NPV > 0</span>
-                    <span style="background: #fff9c4; padding: 3px 8px; margin-right: 10px;">Vàng: NPV -50 đến 50 tỷ</span>
+                    <span style="background: #fff9c4; padding: 3px 8px; margin-right: 10px;">Vàng: NPV -50 đến 50
+                        tỷ</span>
                     <span style="background: #ffccbc; padding: 3px 8px;">Đỏ: NPV < -50 tỷ</span>
                 </p>
             </div>
@@ -664,13 +672,17 @@
         <div class="insights">
             <h3>🔍 Key Insights:</h3>
             <ul>
-                <li><strong>Cực kỳ nhạy cảm với giá bán:</strong> Cần tăng giá lên 85-90 tr/m² (tăng 6-12.5%) để có NPV dương</li>
-                <li><strong>Giảm chi phí không đủ:</strong> Giảm 15% chi phí chỉ cải thiện NPV lên -6 tỷ - vẫn không khả thi</li>
-                <li><strong>Timeline chậm trễ gây thiệt hại nặng:</strong> Mỗi 3 tháng chậm = -30 tỷ NPV do lãi vay và cơ hội mất</li>
+                <li><strong>Cực kỳ nhạy cảm với giá bán:</strong> Cần tăng giá lên 85-90 tr/m² (tăng 6-12.5%) để có NPV
+                    dương</li>
+                <li><strong>Giảm chi phí không đủ:</strong> Giảm 15% chi phí chỉ cải thiện NPV lên -6 tỷ - vẫn không khả
+                    thi</li>
+                <li><strong>Thời gian thực hiện chậm trễ gây thiệt hại nặng:</strong> Mỗi 3 tháng chậm = -30 tỷ NPV do
+                    lãi vay và cơ hội mất</li>
                 <li><strong>Kịch bản tốt nhất:</strong> Giá 90 tr/m² + giảm chi phí 15% = NPV +166 tỷ, IRR ~8%</li>
                 <li><strong>Kịch bản xấu nhất:</strong> Giá 70 tr/m² + tăng chi phí 20% = NPV -408 tỷ - thảm họa</li>
-                <li><strong>Break-even:</strong> Cần giá bán ≥83 tr/m² (tăng 24% so với giá cũ 67 tr/m²) để NPV = 0</li>
-                <li><strong>Market premium cần thiết:</strong> Phải chứng minh được thị trường sẵn sàng trả premium 20-25%</li>
+                <li><strong>Hòa vốn:</strong> Cần giá bán ≥83 tr/m² (tăng 24% so với giá cũ 67 tr/m²) để NPV = 0</li>
+                <li><strong>Market premium cần thiết:</strong> Phải chứng minh được thị trường sẵn sàng trả premium
+                    20-25%</li>
             </ul>
         </div>
 
@@ -684,8 +696,8 @@
                 <li><strong>NPV âm:</strong> -96 tỷ ngay cả với giả định lạc quan (giá 80 tr/m²)</li>
                 <li><strong>Không có IRR:</strong> Không tạo ra return cho nhà đầu tư</li>
                 <li><strong>Phụ thuộc vào giá cao:</strong> Chỉ khả thi nếu bán được ≥85 tr/m² (tăng 27% vs giá cũ)</li>
-                <li><strong>Không có downside protection:</strong> Worst case lỗ tới -408 tỷ</li>
-                <li><strong>Timeline dài:</strong> 30 tháng = 2.5 năm lock vốn không sinh lời</li>
+                <li><strong>Không có bảo vệ rủi ro:</strong> Kịch bản xấu nhất lỗ tới -408 tỷ</li>
+                <li><strong>Thời gian thực hiện dài:</strong> 30 tháng = 2.5 năm lock vốn không sinh lời</li>
             </ul>
             <p style="margin-top: 15px; font-weight: bold; color: #c62828;">
                 ➜ KHUYẾN NGHỊ: Chuyển sang Kịch bản 2 (Balanced) với NPV +305 tỷ và rủi ro thấp hơn nhiều.
@@ -704,4 +716,5 @@
         </div>
     </div>
 </body>
+
 </html>
