@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PALACE - Phân tích Tài chính</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .cover {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #4a148c 0%, #7b1fa2 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 60px 40px;
+        }
+
+        .cover h1 {
+            font-size: 72px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .cover .subtitle {
+            font-size: 32px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .cover .meta {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px 40px;
+            border-radius: 12px;
+            font-size: 18px;
+            backdrop-filter: blur(10px);
+            max-width: 600px;
+        }
+
+        .cover .meta p {
+            margin: 8px 0;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            background: white;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #4a148c 0%, #7b1fa2 100%);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(74, 20, 140, 0.3);
+        }
+
+        .section-header h2 {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .section-number {
+            background: rgba(255, 255, 255, 0.25);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin-right: 20px;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.25);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-left: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #4a148c 0%, #7b1fa2 100%);
+            color: white;
+        }
+
+        th {
+            padding: 18px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        td {
+            padding: 16px 18px;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 15px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:hover {
+            background: #f9f9f9;
+        }
+
+        .highlight-row {
+            background: #f3e5f5 !important;
+            font-weight: 600;
+        }
+
+        .total-row {
+            background: #e1bee7;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .summary-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #7b1fa2;
+        }
+
+        .summary-card.negative {
+            border-top-color: #c62828;
+        }
+
+        .summary-card.positive {
+            border-top-color: #2e7d32;
+        }
+
+        .summary-card.neutral {
+            border-top-color: #424242;
+        }
+
+        .card-label {
+            color: #666;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .card-value {
+            font-size: 36px;
+            font-weight: 700;
+            color: #4a148c;
+            margin-bottom: 8px;
+        }
+
+        .card-value.negative {
+            color: #c62828;
+        }
+
+        .card-value.positive {
+            color: #2e7d32;
+        }
+
+        .card-subtitle {
+            color: #999;
+            font-size: 13px;
+        }
+
+        .info-box {
+            background: #f3e5f5;
+            border-left: 5px solid #7b1fa2;
+            padding: 20px 30px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+
+        .info-box h3 {
+            color: #4a148c;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .info-box p {
+            margin: 10px 0;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .warning-box {
+            background: #fff3e0;
+            border-left: 5px solid #f57c00;
+            padding: 20px 30px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+
+        .warning-box h3 {
+            color: #e65100;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .warning-box p {
+            margin: 10px 0;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .footer {
+            margin-top: 80px;
+            padding: 30px;
+            background: #f5f5f5;
+            border-radius: 12px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            border-top: 3px solid #7b1fa2;
+        }
+
+        .note {
+            font-size: 13px;
+            color: #666;
+            font-style: italic;
+            margin-top: 15px;
+        }
+
+        @media print {
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- COVER -->
+    <div class="cover">
+        <h1>DREAM HOME PALACE</h1>
+        <div class="subtitle">Phân tích Tài chính Chi tiết</div>
+        <div class="meta">
+            <p><strong>Phân tích viên:</strong> Lý Khương Analysis Team</p>
+            <p><strong>Ngày báo cáo:</strong> 24/10/2025</p>
+            <p><strong>Tình trạng:</strong> ✓ Hoàn thành 95% | Đã bán hết căn hộ</p>
+        </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <!-- SECTION 1: THÔNG TIN DỰ ÁN -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">1</div>
+                <h2>THÔNG TIN DỰ ÁN</h2>
+            </div>
+
+            <div class="summary-grid">
+                <div class="summary-card neutral">
+                    <div class="card-label">Tên dự án</div>
+                    <div class="card-value" style="font-size: 24px;">Dream Home Palace</div>
+                    <div class="card-subtitle">Quận 8, TPHCM</div>
+                </div>
+                <div class="summary-card neutral">
+                    <div class="card-label">Chủ đầu tư</div>
+                    <div class="card-value" style="font-size: 24px;">Công ty Lý Khương</div>
+                </div>
+                <div class="summary-card neutral">
+                    <div class="card-label">Diện tích khu đất</div>
+                    <div class="card-value">1,1 ha</div>
+                    <div class="card-subtitle">11.000 m²</div>
+                </div>
+                <div class="summary-card positive">
+                    <div class="card-label">Tiến độ xây dựng</div>
+                    <div class="card-value positive">95%</div>
+                    <div class="card-subtitle">Đã hoàn thành</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2: QUY MÔ & TIẾN ĐỘ -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">2</div>
+                <h2>QUY MÔ & TIẾN ĐỘ XÂY DỰNG</h2>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hạng mục</th>
+                        <th>Tình trạng</th>
+                        <th style="text-align: right;">Còn thiếu (tỷ VNĐ)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Xây dựng chính</td>
+                        <td><strong style="color: #2e7d32;">✓ 95% hoàn thành</strong></td>
+                        <td style="text-align: right;">-</td>
+                    </tr>
+                    <tr>
+                        <td>Mái hiên</td>
+                        <td><strong style="color: #f57c00;">⚠ Chưa hoàn thiện</strong></td>
+                        <td style="text-align: right;">1,50</td>
+                    </tr>
+                    <tr>
+                        <td>Pháp lý, nghiệm thu</td>
+                        <td><strong style="color: #f57c00;">⚠ Chưa hoàn tất</strong></td>
+                        <td style="text-align: right;">6,00</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td colspan="2"><strong>TỔNG CẦN BỔ SUNG</strong></td>
+                        <td style="text-align: right;"><strong>7,50</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- SECTION 3: PHÁP LÝ -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">3</div>
+                <h2>PHÁP LÝ</h2>
+            </div>
+
+            <div class="info-box">
+                <h3>📋 Tình trạng pháp lý</h3>
+                <p>• <strong>Giấy phép xây dựng:</strong> Đã có</p>
+                <p>• <strong>Quy hoạch 1/500:</strong> Đã phê duyệt</p>
+                <p>• <strong>Nghiệm thu hoàn công:</strong> Chưa hoàn tất (cần bổ sung ~6,0 tỷ VNĐ)</p>
+                <p>• <strong>Sổ hồng:</strong> Đang triển khai cấp sổ cho khách hàng</p>
+            </div>
+        </div>
+
+        <!-- SECTION 4: TÌNH TRẠNG BÁN HÀNG -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">4</div>
+                <h2>TÌNH TRẠNG BÁN HÀNG</h2>
+            </div>
+
+            <div class="info-box">
+                <h3>✓ Căn hộ: Đã bán hết 100%</h3>
+                <p>• <strong>Đã thu tiền:</strong> Phần lớn đã thanh toán (~95%)</p>
+                <p>• <strong>Còn phải thu:</strong> <span style="color: #4a148c; font-weight: 700;">76,06 tỷ VNĐ</span> (đợt 5% ra sổ)</p>
+                <p>• <strong>Lưu ý:</strong> Số tiền 76,06 tỷ đang thế chấp bổ sung tại TPBank (liên quan đến khoản vay thi công Riverside)</p>
+            </div>
+
+            <h3 style="color: #4a148c; margin: 30px 0 20px 0; font-size: 22px;">Sàn Thương mại (Tài sản còn lại)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hạng mục</th>
+                        <th style="text-align: center;">Diện tích</th>
+                        <th style="text-align: right;">Giá dự kiến</th>
+                        <th style="text-align: right;">Giá trị (tỷ VNĐ)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sàn TM còn trống</td>
+                        <td style="text-align: center;">5.654 m²</td>
+                        <td style="text-align: right;">45 tr/m²</td>
+                        <td style="text-align: right;"><strong style="color: #4a148c;">254,43</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="warning-box">
+                <h3>⚠ Chi tiết thế chấp Sàn TM</h3>
+                <p>• <strong>4.833 m² thế chấp vay ngoài:</strong> Nợ còn <span style="color: #c62828; font-weight: 700;">47,60 tỷ VNĐ</span></p>
+                <p>• <strong>821 m² thế chấp bổ sung TPBank:</strong> Liên quan khoản vay thi công Riverside</p>
+                <p>• <strong>Tổng 5.654 m²:</strong> Cần giải chấp trước khi bán/thanh lý</p>
+            </div>
+        </div>
+
+        <!-- SECTION 5: BÁO CÁO TÀI CHÍNH -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">5</div>
+                <h2>BÁO CÁO TÀI CHÍNH</h2>
+            </div>
+
+            <div class="summary-grid">
+                <div class="summary-card neutral">
+                    <div class="card-label">Thu tiềm năng</div>
+                    <div class="card-value" style="color: #424242;">330,49</div>
+                    <div class="card-subtitle">tỷ VNĐ</div>
+                </div>
+                <div class="summary-card negative">
+                    <div class="card-label">Nợ phải trả</div>
+                    <div class="card-value negative">136,60</div>
+                    <div class="card-subtitle">tỷ VNĐ</div>
+                </div>
+                <div class="summary-card positive">
+                    <div class="card-label">Dòng tiền ròng tiềm năng</div>
+                    <div class="card-value positive">193,89</div>
+                    <div class="card-subtitle">tỷ VNĐ</div>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hạng mục</th>
+                        <th style="text-align: right;">Số tiền (tỷ VNĐ)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background: #e8f5e9;">
+                        <td colspan="2"><strong style="color: #2e7d32;">THU</strong></td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 30px;">Thu từ 5% ra sổ</td>
+                        <td style="text-align: right;">76,06</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 30px;">Tiềm năng từ Sàn TM: 5.654 m² × 45 tr/m²</td>
+                        <td style="text-align: right;">254,43</td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td><strong>TỔNG THU TIỀM NĂNG</strong></td>
+                        <td style="text-align: right;"><strong>330,49</strong></td>
+                    </tr>
+
+                    <tr style="background: #ffebee;">
+                        <td colspan="2" style="padding-top: 20px;"><strong style="color: #c62828;">CHI</strong></td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 30px;">Nợ phải trả (chi tiết Section 6)</td>
+                        <td style="text-align: right;">136,60</td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td><strong>TỔNG CHI</strong></td>
+                        <td style="text-align: right;"><strong>136,60</strong></td>
+                    </tr>
+
+                    <tr class="total-row">
+                        <td><strong>DÒNG TIỀN RÒNG TIỀM NĂNG</strong></td>
+                        <td style="text-align: right;"><strong style="color: #1a237e;">193,89</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="note">Ghi chú: Dòng tiền ròng = Thu tiềm năng - Nợ phải trả. Chưa tính chi phí vận hành, môi giới, thuế bán tài sản.</p>
+        </div>
+
+        <!-- SECTION 6: CÔNG NỢ -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">6</div>
+                <h2>CÔNG NỢ</h2>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Khoản nợ</th>
+                        <th style="text-align: right;">Số tiền (tỷ VNĐ)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nợ nhà thầu</td>
+                        <td style="text-align: right;">43,74</td>
+                    </tr>
+                    <tr>
+                        <td>Thuế 1% (doanh thu bán hàng)</td>
+                        <td style="text-align: right;">8,63</td>
+                    </tr>
+                    <tr>
+                        <td>Phạt chậm nộp thuế</td>
+                        <td style="text-align: right;">3,78</td>
+                    </tr>
+                    <tr>
+                        <td>Hoàn vốn vay ngoài (thế chấp 4.833 m² sàn TM)</td>
+                        <td style="text-align: right;">47,60</td>
+                    </tr>
+                    <tr>
+                        <td>Quỹ bảo trì (2% doanh thu)</td>
+                        <td style="text-align: right;">25,34</td>
+                    </tr>
+                    <tr>
+                        <td>Chi phí hoàn thiện mái hiên</td>
+                        <td style="text-align: right;">1,50</td>
+                    </tr>
+                    <tr>
+                        <td>Chi phí pháp lý, nghiệm thu</td>
+                        <td style="text-align: right;">6,00</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td><strong>TỔNG CÔNG NỢ</strong></td>
+                        <td style="text-align: right;"><strong>136,60</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- SECTION 7: TÓM TẮT TÀI CHÍNH -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">7</div>
+                <h2>TÓM TẮT TÀI CHÍNH</h2>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Chỉ số</th>
+                        <th style="text-align: right;">Giá trị (tỷ VNĐ)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Thu tiềm năng</strong></td>
+                        <td style="text-align: right;"><strong style="color: #2e7d32;">330,49</strong></td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 30px;">• Thu từ 5% ra sổ</td>
+                        <td style="text-align: right;">76,06</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 30px;">• Tiềm năng Sàn TM (5.654 m² @ 45 tr/m²)</td>
+                        <td style="text-align: right;">254,43</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Nợ phải trả</strong></td>
+                        <td style="text-align: right;"><strong style="color: #c62828;">136,60</strong></td>
+                    </tr>
+                    <tr class="total-row">
+                        <td><strong>DÒNG TIỀN RÒNG TIỀM NĂNG</strong></td>
+                        <td style="text-align: right;"><strong style="color: #1a237e;">193,89</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <h3>📊 Nhận xét</h3>
+                <p>• <strong>Tình trạng:</strong> Dự án đã hoàn thành 95%, căn hộ đã bán hết</p>
+                <p>• <strong>Tài sản chính:</strong> Sàn thương mại 5.654 m² (giá trị ~254,43 tỷ @ 45 tr/m²)</p>
+                <p>• <strong>Nợ:</strong> Tổng 136,60 tỷ (trong đó 47,60 tỷ thế chấp sàn TM)</p>
+                <p>• <strong>Dòng tiền ròng:</strong> +193,89 tỷ (nếu bán hết tài sản và thu đủ công nợ)</p>
+            </div>
+        </div>
+
+        <!-- SECTION 8: KỊCH BẢN TIẾP NHẬN (MUA 0 ĐỒNG) -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">8</div>
+                <h2>KỊCH BẢN TIẾP NHẬN (MUA 0 ĐỒNG)</h2>
+            </div>
+
+            <div class="info-box">
+                <h3>💡 Giả định kịch bản</h3>
+                <p>• <strong>Giá mua:</strong> ≈ 0 VNĐ (Lý Khương gần phá sản, cần thanh lý khẩn cấp)</p>
+                <p>• <strong>Công thức lợi nhuận:</strong> Lợi nhuận = Doanh thu - (Nợ kế thừa + Chi phí hoàn thiện)</p>
+                <p>• <strong>Mục tiêu:</strong> Thu hồi vốn từ 5% ra sổ + Bán sàn TM để thanh toán nợ</p>
+            </div>
+
+            <div class="warning-box">
+                <h3>💰 Điểm mấu chốt: Giá bán Sàn TM là yếu tố quyết định</h3>
+                <p>• Doanh thu 330,49 tỷ trong tính toán cơ sở sử dụng giá <strong>45 tr/m²</strong> cho sàn TM</p>
+                <p>• Giá thực tế có thể dao động <strong>35-55 tr/m²</strong> tùy thị trường và chiến lược bán</p>
+                <p>• Mỗi <strong>1 tr/m² chênh lệch</strong> × 5.654 m² = <strong>±5,65 tỷ VNĐ</strong> doanh thu</p>
+                <p>• <strong>⇒ Chiến lược giá bán sàn TM là then chốt quyết định lợi nhuận</strong></p>
+            </div>
+
+            <div class="summary-grid">
+                <div class="summary-card positive">
+                    <div class="card-label">Thu tiềm năng</div>
+                    <div class="card-value positive">330,49</div>
+                    <div class="card-subtitle">tỷ VNĐ (@ 45 tr/m²)</div>
+                </div>
+                <div class="summary-card negative">
+                    <div class="card-label">Nợ kế thừa</div>
+                    <div class="card-value negative">136,60</div>
+                    <div class="card-subtitle">tỷ VNĐ</div>
+                </div>
+                <div class="summary-card neutral">
+                    <div class="card-label">Chi phí hoàn thiện</div>
+                    <div class="card-value" style="color: #424242;">7,50</div>
+                    <div class="card-subtitle">tỷ VNĐ (đã tính trong nợ)</div>
+                </div>
+                <div class="summary-card positive">
+                    <div class="card-label">Lợi nhuận dự kiến</div>
+                    <div class="card-value positive">193,89</div>
+                    <div class="card-subtitle">tỷ VNĐ</div>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kịch bản</th>
+                        <th style="text-align: right;">Thu (tỷ)</th>
+                        <th style="text-align: right;">Nợ (tỷ)</th>
+                        <th style="text-align: right;">Lợi nhuận (tỷ)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="highlight-row">
+                        <td><strong>Cơ sở (@ 45 tr/m²)</strong></td>
+                        <td style="text-align: right;"><strong>330,49</strong></td>
+                        <td style="text-align: right;"><strong>136,60</strong></td>
+                        <td style="text-align: right;"><strong style="color: #2e7d32;">193,89</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="note">Ghi chú: Chi phí hoàn thiện (7,50 tỷ: mái hiên + pháp lý) đã bao gồm trong tổng nợ 136,60 tỷ.</p>
+        </div>
+
+        <!-- SECTION 9: PHÂN TÍCH ĐỘ NHẠY GIÁ -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">9</div>
+                <h2>PHÂN TÍCH ĐỘ NHẠY GIÁ</h2>
+                <span class="badge">Chiến lược Giá</span>
+            </div>
+
+            <div class="info-box">
+                <h3>📈 Tác động của giá bán Sàn TM</h3>
+                <p>Bảng dưới cho thấy lợi nhuận thay đổi thế nào khi bán 5.654 m² sàn TM ở các mức giá khác nhau (so với giá cơ sở 45 tr/m² đã tính trong doanh thu ban đầu).</p>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Giá bán Sàn TM (tr/m²)</th>
+                        <th style="text-align: right;">Doanh thu Sàn TM (tỷ)</th>
+                        <th style="text-align: right;">Tổng thu (tỷ)</th>
+                        <th style="text-align: right;">Lợi nhuận (tỷ)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background: #ffebee;">
+                        <td>35 (−10 tr so với cơ sở)</td>
+                        <td style="text-align: right;">197,89</td>
+                        <td style="text-align: right;">273,95</td>
+                        <td style="text-align: right; color: #2e7d32;"><strong>137,35</strong></td>
+                    </tr>
+                    <tr>
+                        <td>40 (−5 tr)</td>
+                        <td style="text-align: right;">226,16</td>
+                        <td style="text-align: right;">302,22</td>
+                        <td style="text-align: right; color: #2e7d32;"><strong>165,62</strong></td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td>45 (giá cơ sở)</td>
+                        <td style="text-align: right;">254,43</td>
+                        <td style="text-align: right;">330,49</td>
+                        <td style="text-align: right; color: #2e7d32;"><strong>193,89</strong></td>
+                    </tr>
+                    <tr>
+                        <td>50 (+5 tr)</td>
+                        <td style="text-align: right;">282,70</td>
+                        <td style="text-align: right;">358,76</td>
+                        <td style="text-align: right; color: #2e7d32;"><strong>222,16</strong></td>
+                    </tr>
+                    <tr style="background: #e8f5e9;">
+                        <td>55 (+10 tr)</td>
+                        <td style="text-align: right;">310,97</td>
+                        <td style="text-align: right;">387,03</td>
+                        <td style="text-align: right; color: #2e7d32;"><strong>250,43</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="font-size: 13px; color: #666; margin-top: 10px;">Công thức: Doanh thu Sàn TM = Giá bán × 5.654 m². Tổng thu = Doanh thu Sàn TM + 76,06 tỷ (5% ra sổ). Lợi nhuận = Tổng thu − 136,60 tỷ (nợ).</p>
+
+            <div class="warning-box">
+                <h3>🎯 Khuyến nghị chiến lược giá</h3>
+                <p><strong>1. Thị trường yếu (35-40 tr/m²):</strong></p>
+                <p style="margin-left: 20px;">• Lợi nhuận: 137-166 tỷ</p>
+                <p style="margin-left: 20px;">• Chiến lược: Bán nhanh để thu hồi vốn, giảm rủi ro pháp lý</p>
+                
+                <p><strong>2. Thị trường ổn định (45 tr/m² - giá cơ sở):</strong></p>
+                <p style="margin-left: 20px;">• Lợi nhuận: ~194 tỷ</p>
+                <p style="margin-left: 20px;">• Chiến lược: Cân bằng giữa tốc độ và giá trị</p>
+                
+                <p><strong>3. Thị trường mạnh (50-55 tr/m²):</strong></p>
+                <p style="margin-left: 20px;">• Lợi nhuận: 222-250 tỷ</p>
+                <p style="margin-left: 20px;">• Chiến lược: Giữ tài sản, chờ thời điểm thuận lợi để tối đa hóa lợi nhuận</p>
+
+                <p style="margin-top: 15px;"><strong>⇒ Chênh lệch tối đa:</strong> 250,43 − 137,35 = <strong style="color: #c62828;">113,08 tỷ VNĐ</strong> (chênh 20 tr/m²)</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <p><strong>Dream Home Palace - Phân tích Tài chính Chi tiết</strong></p>
+        <p style="margin-top: 10px;">Dữ liệu từ báo cáo tài chính Công ty Lý Khương | Ngày 24/10/2025</p>
+        <p style="font-size: 12px; margin-top: 15px; color: #999;">Lưu ý: Phân tích Palace tách riêng với Riverside; sẽ làm bảng tổng hợp sau khi hoàn tất từng dự án.</p>
+    </div>
+
+</body>
+</html>
