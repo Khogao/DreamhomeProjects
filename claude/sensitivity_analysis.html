@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sensitivity Analysis - Dreamhome Riverside</title>
+    <title>Phân tích Độ nhạy - Dreamhome Riverside</title>
     <style>
         * {
             margin: 0;
@@ -190,6 +190,975 @@
             border-radius: 10px;
         }
         
+        .warning {
+            background: #fff3e0;
+            border-left: 4px solid #f57c00;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .warning strong {
+            color: #e65100;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 PHÂN TÍCH ĐỘ NHẠY</h1>
+            <p>Dự án Dreamhome Riverside - 3 Kịch bản Tái cấu trúc</p>
+            <p style="font-size: 14px; color: #999; margin-top: 10px;">Phân tích bởi Thịnh Nguyên Group</p>
+        </div>
+
+        <!-- KỊCH BẢN 1 -->
+        <div class="scenario-section">
+            <div class="scenario-header">
+                <h2>📊 KỊCH BẢN 1: THẬN TRỌNG - "Tồn tại và Hoàn thiện"</h2>
+                <p>Kịch bản cơ sở: NPV = -96 tỷ | IRR = không xác định | Vốn = 280 tỷ</p>
+            </div>
+
+            <div class="sensitivity-grid">
+                <!-- Giá bán -->
+                <div class="sensitivity-card">
+                    <h3>💰 Độ nhạy theo Giá bán</h3>
+                    <table class="sensitivity-table">
+                        <thead>
+                            <tr>
+                                <th>Giá (tr/m²)</th>
+                                <th>% thay đổi</th>
+                                <th>NPV (tỷ)</th>
+                                <th>IRR</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>90</td>
+                                <td class="positive">+12.5%</td>
+                                <td class="positive">+76</td>
+                                <td class="positive">6.2%</td>
+                            </tr>
+                            <tr>
+                                <td>85</td>
+                                <td class="positive">+6.25%</td>
+                                <td class="neutral">-10</td>
+                                <td class="neutral">1.8%</td>
+                            </tr>
+                            <tr style="background: #e8eaf6;">
+                                <td><strong>80 (cơ sở)</strong></td>
+                                <td>0%</td>
+                                <td class="negative">-96</td>
+                                <td class="negative">không xác định</td>
+                            </tr>
+                            <tr>
+                                <td>75</td>
+                                <td class="negative">-6.25%</td>
+                                <td class="negative">-182</td>
+                                <td class="negative">không xác định</td>
+                            </tr>
+                            <tr>
+                                <td>70</td>
+                                <td class="negative">-12.5%</td>
+                                <td class="negative">-268</td>
+                                <td class="negative">không xác định</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Chi phí hoàn thiện -->
+                <div class="sensitivity-card">
+                    <h3>🏗️ Độ nhạy theo Chi phí hoàn thiện</h3>
+                    <table class="sensitivity-table">
+                        <thead>
+                            <tr>
+                                <th>Chi phí</th>
+                                <th>% thay đổi</th>
+                                <th>NPV (tỷ)</th>
+                                <th>Vốn cần</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1,190 tỷ</td>
+                                <td class="positive">-15%</td>
+                                <td class="neutral">-6</td>
+                                <td class="positive">238 tỷ</td>
+                            </tr>
+                            <tr>
+                                <td>1,260 tỷ</td>
+                                <td class="positive">-10%</td>
+                                <td class="neutral">-36</td>
+                                <td class="positive">252 tỷ</td>
+                            </tr>
+                            <tr style="background: #e8eaf6;">
+                                <td><strong>1,400 tỷ (cơ sở)</strong></td>
+                                <td>0%</td>
+                                <td class="negative">-96</td>
+                                <td>280 tỷ</td>
+                            </tr>
+                            <tr>
+                                <td>1,540 tỷ</td>
+                                <td class="negative">+10%</td>
+                                <td class="negative">-156</td>
+                                <td class="negative">308 tỷ</td>
+                            </tr>
+                            <tr>
+                                <td>1,680 tỷ</td>
+                                <td class="negative">+20%</td>
+                                <td class="negative">-236</td>
+                                <td class="negative">364 tỷ</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Timeline -->
+                <div class="sensitivity-card">
+                    <h3>⏰ Độ nhạy theo Timeline</h3>
+                    <table class="sensitivity-table">
+                        <thead>
+                            <tr>
+                                <th>Timeline</th>
+                                <th>% chậm</th>
+                                <th>NPV (tỷ)</th>
+                                <th>Lãi vay thêm</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>27 tháng</td>
+                                <td class="positive">-10%</td>
+                                <td class="neutral">-76</td>
+                                <td class="positive">-20 tỷ</td>
+                            </tr>
+                            <tr style="background: #e8eaf6;">
+                                <td><strong>30 tháng (cơ sở)</strong></td>
+                                <td>0%</td>
+                                <td class="negative">-96</td>
+                                <td>0 tỷ</td>
+                            </tr>
+                            <tr>
+                                <td>33 tháng</td>
+                                <td class="negative">+10%</td>
+                                <td class="negative">-126</td>
+                                <td class="negative">+30 tỷ</td>
+                            </tr>
+                            <tr>
+                                <td>36 tháng</td>
+                                <td class="negative">+20%</td>
+                                <td class="negative">-156</td>
+                                <td class="negative">+60 tỷ</td>
+                            </tr>
+                            <tr>
+                                <td>42 tháng</td>
+                                <td class="negative">+40%</td>
+                                <td class="negative">-216</td>
+                                <td class="negative">+120 tỷ</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Two-way sensitivity matrix -->
+            <div class="chart-container">
+                <h3 style="color: #1a237e; margin-bottom: 15px;">📈 Ma trận Độ nhạy 2 chiều: Giá bán × Chi phí hoàn thiện (NPV - tỷ VNĐ)</h3>
+                <table class="matrix-table">
+                    <tr>
+                        <th class="corner">Giá ↓ / Chi phí →</th>
+                        <th>1,190 tỷ<br>(-15%)</th>
+                        <th>1,260 tỷ<br>(-10%)</th>
+                        <th>1,400 tỷ<br>(cơ sở)</th>
+                        <th>1,540 tỷ<br>(+10%)</th>
+                        <th>1,680 tỷ<br>(+20%)</th>
+                    </tr>
+                    <tr>
+                        <th>90 tr/m²<br>(+12.5%)</th>
+                        <td class="cell-high">+166</td>
+                        <td class="cell-high">+136</td>
+                        <td class="cell-medium">+76</td>
+                        <td class="cell-medium">+16</td>
+                        <td class="cell-low">-64</td>
+                    </tr>
+                    <tr>
+                        <th>85 tr/m²<br>(+6.25%)</th>
+                        <td class="cell-high">+80</td>
+                        <td class="cell-medium">+50</td>
+                        <td class="cell-low">-10</td>
+                        <td class="cell-low">-70</td>
+                        <td class="cell-low">-150</td>
+                    </tr>
+                    <tr>
+                        <th>80 tr/m²<br>(cơ sở)</th>
+                        <td class="cell-medium">-6</td>
+                        <td class="cell-low">-36</td>
+                        <td class="cell-low">-96</td>
+                        <td class="cell-low">-156</td>
+                        <td class="cell-low">-236</td>
+                    </tr>
+                    <tr>
+                        <th>75 tr/m²<br>(-6.25%)</th>
+                        <td class="cell-low">-92</td>
+                        <td class="cell-low">-122</td>
+                        <td class="cell-low">-182</td>
+                        <td class="cell-low">-242</td>
+                        <td class="cell-low">-322</td>
+                    </tr>
+                    <tr>
+                        <th>70 tr/m²<br>(-12.5%)</th>
+                        <td class="cell-low">-178</td>
+                        <td class="cell-low">-208</td>
+                        <td class="cell-low">-268</td>
+                        <td class="cell-low">-328</td>
+                        <td class="cell-low">-408</td>
+                    </tr>
+                </table>
+                <p style="margin-top: 15px; font-size: 13px; color: #666;">
+                    <span style="background: #c8e6c9; padding: 3px 8px; margin-right: 10px;">Xanh: NPV > 0</span>
+                    <span style="background: #fff9c4; padding: 3px 8px; margin-right: 10px;">Vàng: NPV -50 đến 50 tỷ</span>
+                    <span style="background: #ffccbc; padding: 3px 8px;">Đỏ: NPV &lt; -50 tỷ</span>
+                </p>
+            </div>
+
+            <div class="insights">
+                <h3>🔍 Những điểm chính - Kịch bản 1:</h3>
+                <ul>
+                    <li><strong>Cực kỳ nhạy cảm với giá bán:</strong> Cần tăng giá lên 85-90 tr/m² để có NPV dương</li>
+                    <li><strong>Giảm chi phí 15%</strong> chỉ cải thiện NPV lên -6 tỷ - vẫn không đủ</li>
+                    <li><strong>Timeline chậm trễ</strong> gây thiệt hại nặng: +10% thời gian = -30 tỷ NPV</li>
+                    <li><strong>Kịch bản tốt nhất:</strong> Giá 90 tr/m² + giảm chi phí 15% = NPV +166 tỷ</li>
+                    <li><strong>Kịch bản xấu nhất:</strong> Giá 70 tr/m² + tăng chi phí 20% = NPV -408 tỷ</li>
+                    <li><strong>Kết luận:</strong> Kịch bản này CHỈ khả thi nếu phần trội của thị trường ≥20% hoặc giảm chi phí đáng kể</li>
+                </ul>
+            </div>
+
+            <div class="warning">
+                <strong>⚠️ CẢNH BÁO:</strong> Kịch bản 1 có xác suất thành công thấp (&lt;30%) với giả định hiện tại. Không nên theo đuổi trừ khi có bằng chứng thị trường chắc chắn.
+            </div>
+        </div>
+
+        <!-- KỊCH BẢN 2 -->
+        <div class="scenario-section">
+            <div class="scenario-header" style="background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);">
+                <h2>📊 KỊCH BẢN 2: CÂN BẰNG - "Tái cấu trúc Thông minh"</h2>
+                <p>Kịch bản cơ sở: NPV = +305 tỷ | IRR = 22.3% | Vốn = 440 tỷ</p>
+            </div>
+
+            <div class="sensitivity-grid">
+                <!-- Giá bán D4 mới -->
+                <div class="sensitivity-card" style="border-left-color: #2e7d32;">
+                    <h3>💰 Độ nhạy theo Giá bán D4 (329 căn)</h3>
+                    <table class="sensitivity-table">
+                        <thead>
+                            <tr>
+                                <th>Giá (tr/m²)</th>
+                                <th>% thay đổi</th>
+                                <th>NPV (tỷ)</th>
+                                <th>IRR</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>90</td>
+                                <td class="positive">+12.5%</td>
+                                <td class="positive">+511</td>
+                                <td class="positive">31.2%</td>
+                            </tr>
+                            <tr>
+                                <td>85</td>
+                                <td class="positive">+6.25%</td>
+                                <td class="positive">+408</td>
+                                <td class="positive">26.8%</td>
+                            </tr>
+                            <tr style="background: #e8f5e9;">
+                                <td><strong>80 (cơ sở)</strong></td>
+                                <td>0%</td>
+                                <td class="positive">+305</td>
+                                <td class="positive">22.3%</td>
+                            </tr>
+                            <tr>
+                                <td>75</td>
+                                <td class="negative">-6.25%</td>
+                                <td class="positive">+202</td>
+                                <td class="positive">17.9%</td>
+                            </tr>
+                            <tr>
+                                <td>70</td>
+                                <td class="negative">-12.5%</td>
+                                <td class="neutral">+99</td>
+                                <td class="positive">13.4%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Chi phí thanh lý -->
+                <div class="sensitivity-card" style="border-left-color: #2e7d32;">
+                    <h3>⚖️ Độ nhạy theo Chi phí thanh lý D4</h3>
+                    <table class="sensitivity-table">
+                        <thead>
+                            <tr>
+                                <th>Bồi thường</th>
+                                <th>Chi phí (tỷ)</th>
+                                <th>NPV (tỷ)</th>
+                                <th>IRR</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>5%</td>
+                                <td class="positive">296</td>
+                                <td class="positive">+319</td>
+                                <td class="positive">23.1%</td>
+                            </tr>
+                            <tr style="background: #e8f5e9;">
+                                <td><strong>10% (cơ sở)</strong></td>
+                                <td>310</td>
+                                <td class="positive">+305</td>
+                                <td class="positive">22.3%</td>
+                            </tr>
+                            <tr>
+                                <td>15%</td>
+                                <td class="neutral">324</td>
+                                <td class="positive">+291</td>
+                                <td class="positive">21.5%</td>
+                            </tr>
+                            <tr>
+                                <td>20%</td>
+                                <td class="negative">338</td>
+                                <td class="positive">+277</td>
+                                <td class="positive">20.7%</td>
+                            </tr>
+                            <tr>
+                                <td>30%</td>
+                                <td class="negative">366</td>
+                                <td class="positive">+249</td>
+                                <td class="positive">19.1%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Tốc độ bán hàng -->
+                <div class="sensitivity-card" style="border-left-color: #2e7d32;">
+                    <h3>📈 Độ nhạy theo Tốc độ bán (căn/tháng)</h3>
+                    <table class="sensitivity-table">
+                        <thead>
+                            <tr>
+                                <th>Tốc độ</th>
+                                <th>Timeline</th>
+                                <th>NPV (tỷ)</th>
+                                <th>IRR</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>100 căn</td>
+                                <td class="positive">18 tháng</td>
+                                <td class="positive">+342</td>
+                                <td class="positive">26.5%</td>
+                            </tr>
+                            <tr>
+                                <td>80 căn</td>
+                                <td class="positive">21 tháng</td>
+                                <td class="positive">+323</td>
+                                <td class="positive">24.2%</td>
+                            </tr>
+                            <tr style="background: #e8f5e9;">
+                                <td><strong>60 căn (cơ sở)</strong></td>
+                                <td>24 tháng</td>
+                                <td class="positive">+305</td>
+                                <td class="positive">22.3%</td>
+                            </tr>
+                            <tr>
+                                <td>50 căn</td>
+                                <td class="neutral">27 tháng</td>
+                                <td class="positive">+286</td>
+                                <td class="positive">20.1%</td>
+                            </tr>
+                            <tr>
+                                <td>40 căn</td>
+                                <td class="negative">30 tháng</td>
+                                <td class="positive">+268</td>
+                                <td class="positive">18.5%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Two-way sensitivity matrix KB2 -->
+            <div class="chart-container">
+                <h3 style="color: #2e7d32; margin-bottom: 15px;">📈 Ma trận Độ nhạy 2 chiều: Giá bán D4 × Bồi thường thanh lý (NPV - tỷ VNĐ)</h3>
+                <table class="matrix-table">
+                    <tr>
+                        <th class="corner">Giá D4 ↓ / Bồi thường →</th>
+                        <th>5%</th>
+                        <th>10%<br>(cơ sở)</th>
+                        <th>15%</th>
+                        <th>20%</th>
+                        <th>30%</th>
+                    </tr>
+                    <tr>
+                        <th>90 tr/m²<br>(+12.5%)</th>
+                        <td class="cell-high">+525</td>
+                        <td class="cell-high">+511</td>
+                        <td class="cell-high">+497</td>
+                        <td class="cell-high">+483</td>
+                        <td class="cell-high">+455</td>
+                    </tr>
+                    <tr>
+                        <th>85 tr/m²<br>(+6.25%)</th>
+                        <td class="cell-high">+422</td>
+                        <td class="cell-high">+408</td>
+                        <td class="cell-high">+394</td>
+                        <td class="cell-high">+380</td>
+                        <td class="cell-high">+352</td>
+                    </tr>
+                    <tr>
+                        <th>80 tr/m²<br>(cơ sở)</th>
+                        <td class="cell-high">+319</td>
+                        <td class="cell-high">+305</td>
+                        <td class="cell-high">+291</td>
+                        <td class="cell-high">+277</td>
+                        <td class="cell-high">+249</td>
+                    </tr>
+                    <tr>
+                        <th>75 tr/m²<br>(-6.25%)</th>
+                        <td class="cell-high">+216</td>
+                        <td class="cell-high">+202</td>
+                        <td class="cell-high">+188</td>
+                        <td class="cell-high">+174</td>
+                        <td class="cell-high">+146</td>
+                    </tr>
+                    <tr>
+                        <th>70 tr/m²<br>(-12.5%)</th>
+                        <td class="cell-high">+113</td>
+                        <td class="cell-medium">+99</td>
+                        <td class="cell-medium">+85</td>
+                        <td class="cell-medium">+71</td>
+                        <td class="cell-medium">+43</td>
+                    </tr>
+                </table>
+                <p style="margin-top: 15px; font-size: 13px; color: #666;">
+                    <strong>Lưu ý:</strong> Kịch bản 2 có NPV DƯƠNG trong mọi trường hợp! Ngay cả kịch bản xấu nhất (giá 70 tr/m², bồi thường 30%) vẫn có NPV +43 tỷ.
+                </p>
+            </div>
+
+            <div class="insights" style="background: #e8f5e9; border-left-color: #2e7d32;">
+                <h3 style="color: #1b5e20;">🔍 Những điểm chính - Kịch bản 2:</h3>
+                <ul>
+                    <li><strong>Vững chắc:</strong> NPV dương trong MỌI kịch bản - rủi ro thấp</li>
+                    <li><strong>Ít nhạy cảm với bồi thường:</strong> Tăng từ 10% lên 30% chỉ giảm NPV 56 tỷ (18%)</li>
+                    <li><strong>Tiềm năng tăng lớn nếu giá cao:</strong> Giá 90 tr/m² → NPV +511 tỷ (tăng 68%)</li>
+                    <li><strong>Bảo vệ rủi ro giảm:</strong> Giá 70 tr/m² vẫn có NPV +99 tỷ</li>
+                    <li><strong>Tốc độ bán ảnh hưởng vừa phải:</strong> Chậm 25% chỉ giảm IRR từ 22.3% xuống 18.5%</li>
+                    <li><strong>Điểm hòa vốn:</strong> Giá bán D4 chỉ cần ≥62 tr/m² (giảm 22% so với cơ sở) để NPV > 0</li>
+                </ul>
+            </div>
+
+            <div class="warning" style="background: #e8f5e9; border-left-color: #2e7d32;">
+                <strong>✅ KHUYẾN NGHỊ:</strong> Kịch bản 2 có xác suất thành công cao (>70%) với risk/return profile tốt nhất. Đây là lựa chọn ĐƯỢC ƯU TIÊN.
+            </div>
+        </div>
+
+        <!-- KỊCH BẢN 3 -->
+        <div class="scenario-section">
+            <div class="scenario-header" style="background: linear-gradient(135deg, #b71c1c 0%, #c62828 100%);">
+                <h2>📊 KỊCH BẢN 3: MẠNH TAY - "Tối đa hóa Lợi nhuận"</h2>
+                <p>Kịch bản cơ sở: NPV = +164 tỷ | IRR = 29.4% | Vốn = 400 tỷ + Vay 500 tỷ</p>
+            </div>
+
+            <div class="sensitivity-grid">
+                <!-- Giá bán -->
+                <div class="sensitivity-card" style="border-left-color: #c62828;">
+                    <h3>💰 Độ nhạy theo Giá bán (85 tr/m²)</h3>
+                    <table class="sensitivity-table">
+                        <thead>
+                            <tr>
+                                <th>Giá (tr/m²)</th>
+                                <th>% thay đổi</th>
+                                <th>NPV (tỷ)</th>
+                                <th>IRR</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>95</td>
+                                <td class="positive">+11.8%</td>
+                                <td class="positive">+398</td>
+                                <td class="positive">47.6%</td>
+                            </tr>
+                            <tr>
+                                <td>90</td>
+                                <td class="positive">+5.9%</td>
+                                <td class="positive">+281</td>
+                                <td class="positive">38.5%</td>
+                            </tr>
+                            <tr style="background: #ffebee;">
+                                <td><strong>85 (cơ sở)</strong></td>
+                                <td>0%</td>
+                                <td class="positive">+164</td>
+                                <td class="positive">29.4%</td>
+                            </tr>
+                            <tr>
+                                <td>80</td>
+                                <td class="negative">-5.9%</td>
+                                <td class="neutral">+47</td>
+                                <td class="positive">20.3%</td>
+                            </tr>
+                            <tr>
+                                <td>75</td>
+                                <td class="negative">-11.8%</td>
+                                <td class="negative">-70</td>
+                                <td class="negative">11.2%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Chi phí thanh lý -->
+                <div class="sensitivity-card" style="border-left-color: #c62828;">
+                    <h3>⚖️ Độ nhạy theo Chi phí thanh lý (700 căn)</h3>
+                    <table class="sensitivity-table">
+                        <thead>
+                            <tr>
+                                <th>Bồi thường</th>
+                                <th>Chi phí (tỷ)</th>
+                                <th>NPV (tỷ)</th>
+                                <th>IRR</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>8%</td>
+                                <td class="positive">576</td>
+                                <td class="positive">+188</td>
+                                <td class="positive">31.2%</td>
+                            </tr>
+                            <tr>
+                                <td>10%</td>
+                                <td class="positive">590</td>
+                                <td class="positive">+176</td>
+                                <td class="positive">30.3%</td>
+                            </tr>
+                            <tr style="background: #ffebee;">
+                                <td><strong>12% (cơ sở)</strong></td>
+                                <td>600</td>
+                                <td class="positive">+164</td>
+                                <td class="positive">29.4%</td>
+                            </tr>
+                            <tr>
+                                <td>15%</td>
+                                <td class="negative">618</td>
+                                <td class="positive">+146</td>
+                                <td class="positive">27.9%</td>
+                            </tr>
+                            <tr>
+                                <td>20%</td>
+                                <td class="negative">648</td>
+                                <td class="positive">+116</td>
+                                <td class="positive">25.1%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Rủi ro pháp lý -->
+                <div class="sensitivity-card" style="border-left-color: #c62828;">
+                    <h3>⚠️ Độ nhạy theo Rủi ro pháp lý</h3>
+                    <table class="sensitivity-table">
+                        <thead>
+                            <tr>
+                                <th>Kịch bản</th>
+                                <th>Chi phí thêm</th>
+                                <th>NPV (tỷ)</th>
+                                <th>IRR</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: #ffebee;">
+                                <td><strong>Cơ sở (0% kiện)</strong></td>
+                                <td>0</td>
+                                <td class="positive">+164</td>
+                                <td class="positive">29.4%</td>
+                            </tr>
+                            <tr>
+                                <td>5% khách kiện</td>
+                                <td class="negative">+30 tỷ</td>
+                                <td class="positive">+134</td>
+                                <td class="positive">26.8%</td>
+                            </tr>
+                            <tr>
+                                <td>10% khách kiện</td>
+                                <td class="negative">+60 tỷ</td>
+                                <td class="positive">+104</td>
+                                <td class="positive">24.2%</td>
+                            </tr>
+                            <tr>
+                                <td>15% khách kiện</td>
+                                <td class="negative">+90 tỷ</td>
+                                <td class="neutral">+74</td>
+                                <td class="positive">21.6%</td>
+                            </tr>
+                            <tr>
+                                <td>25% khách kiện</td>
+                                <td class="negative">+150 tỷ</td>
+                                <td class="neutral">+14</td>
+                                <td class="positive">16.4%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Two-way sensitivity matrix KB3 -->
+            <div class="chart-container">
+                <h3 style="color: #c62828; margin-bottom: 15px;">📈 Ma trận Độ nhạy 2 chiều: Giá bán × % Khách kiện (NPV - tỷ VNĐ)</h3>
+                <table class="matrix-table">
+                    <tr>
+                        <th class="corner">Giá ↓ / % Kiện →</th>
+                        <th>0%<br>(cơ sở)</th>
+                        <th>5%</th>
+                        <th>10%</th>
+                        <th>15%</th>
+                        <th>25%</th>
+                    </tr>
+                    <tr>
+                        <th>95 tr/m²<br>(+11.8%)</th>
+                        <td class="cell-high">+398</td>
+                        <td class="cell-high">+368</td>
+                        <td class="cell-high">+338</td>
+                        <td class="cell-high">+308</td>
+                        <td class="cell-high">+248</td>
+                    </tr>
+                    <tr>
+                        <th>90 tr/m²<br>(+5.9%)</th>
+                        <td class="cell-high">+281</td>
+                        <td class="cell-high">+251</td>
+                        <td class="cell-high">+221</td>
+                        <td class="cell-high">+191</td>
+                        <td class="cell-high">+131</td>
+                    </tr>
+                    <tr>
+                        <th>85 tr/m²<br>(cơ sở)</th>
+                        <td class="cell-high">+164</td>
+                        <td class="cell-high">+134</td>
+                        <td class="cell-high">+104</td>
+                        <td class="cell-medium">+74</td>
+                        <td class="cell-medium">+14</td>
+                    </tr>
+                    <tr>
+                        <th>80 tr/m²<br>(-5.9%)</th>
+                        <td class="cell-medium">+47</td>
+                        <td class="cell-medium">+17</td>
+                        <td class="cell-low">-13</td>
+                        <td class="cell-low">-43</td>
+                        <td class="cell-low">-103</td>
+                    </tr>
+                    <tr>
+                        <th>75 tr/m²<br>(-11.8%)</th>
+                        <td class="cell-low">-70</td>
+                        <td class="cell-low">-100</td>
+                        <td class="cell-low">-130</td>
+                        <td class="cell-low">-160</td>
+                        <td class="cell-low">-220</td>
+                    </tr>
+                </table>
+                <p style="margin-top: 15px; font-size: 13px; color: #666;">
+                    <strong>CẢNH BÁO:</strong> Nếu giá chỉ đạt 80 tr/m² VÀ có 10% khách kiện → NPV âm. Kịch bản này có rủi ro đáng kể.
+                </p>
+            </div>
+
+            <div class="insights" style="background: #ffebee; border-left-color: #c62828;">
+                <h3 style="color: #b71c1c;">🔍 Những điểm chính - Kịch bản 3:</h3>
+                <ul>
+                    <li><strong>Rủi ro cao - Lợi nhuận cao:</strong> IRR 29.4% nhưng rủi ro pháp lý cao</li>
+                    <li><strong>Rất nhạy cảm với giá:</strong> Giảm giá từ 85 xuống 75 tr/m² → NPV từ +164 xuống -70 tỷ</li>
+                    <li><strong>Rủi ro pháp lý đáng kể:</strong> 15% khách kiện → NPV còn +74 tỷ (giảm 55%)</li>
+                    <li><strong>Cần giá cao:</strong> Phải bán ≥85 tr/m² để có biên lợi nhuận đủ bù rủi ro</li>
+                    <li><strong>Đòn bẩy tài chính cao = áp lực:</strong> Vay 500 tỷ với lãi suất 12% = 60 tỷ lãi/năm</li>
+                    <li><strong>Điểm hòa vốn:</strong> Giá 78 tr/m² + 0% kiện, HOẶC giá 85 tr/m² + 20% kiện</li>
+                </ul>
+            </div>
+
+            <div class="warning" style="background: #ffebee; border-left-color: #c62828;">
+                <strong>⚠️ CẢNH BÁO:</strong> Kịch bản 3 CHỈ phù hợp nếu: (1) Có bằng chứng CHẮC CHẮN bán được ≥85 tr/m², (2) đội pháp lý CỰC MẠNH để giảm rủi ro kiện tụng xuống &lt;10%, (3) Nhà đầu tư chấp nhận rủi ro cao. Nếu không đáp ứng cả 3 điều kiện → KHÔNG NÊN theo đuổi.
+            </div>
+        </div>
+
+        <!-- SO SÁNH TỔNG QUAN -->
+        <div class="scenario-section">
+            <div class="scenario-header" style="background: linear-gradient(135deg, #4a148c 0%, #6a1b9a 100%);">
+                <h2>📊 SO SÁNH TỔNG QUAN - RỦI RO vs LỢI NHUẬN</h2>
+            </div>
+
+            <div class="chart-container">
+                <h3 style="color: #4a148c; margin-bottom: 15px;">🎯 Ma trận Rủi ro - Lợi nhuận (Kịch bản cơ sở)</h3>
+                <table class="matrix-table">
+                    <thead>
+                        <tr>
+                            <th>Kịch bản</th>
+                            <th>Vốn cần</th>
+                            <th>NPV (tỷ)</th>
+                            <th>IRR</th>
+                            <th>Hoàn vốn</th>
+                            <th>Rủi ro</th>
+                            <th>Tiềm năng tăng</th>
+                            <th>Rủi ro giảm</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>KB1: Thận trọng</strong></td>
+                            <td>280 tỷ</td>
+                            <td class="negative">-96</td>
+                            <td class="negative">N/A</td>
+                            <td class="negative">N/A</td>
+                            <td>Thấp</td>
+                            <td class="neutral">+166 tỷ</td>
+                            <td class="negative">-408 tỷ</td>
+                        </tr>
+                        <tr style="background: #e8f5e9;">
+                            <td><strong>KB2: Cân bằng ✅</strong></td>
+                            <td>440 tỷ</td>
+                            <td class="positive">+305</td>
+                            <td class="positive">22.3%</td>
+                            <td class="positive">18 tháng</td>
+                            <td>Trung bình</td>
+                            <td class="positive">+525 tỷ</td>
+                            <td class="positive">+43 tỷ</td>
+                        </tr>
+                        <tr>
+                            <td><strong>KB3: Mạnh tay</strong></td>
+                            <td>400 tỷ (+vay 500)</td>
+                            <td class="positive">+164</td>
+                            <td class="positive">29.4%</td>
+                            <td class="positive">12 tháng</td>
+                            <td>Cao</td>
+                            <td class="positive">+398 tỷ</td>
+                            <td class="negative">-220 tỷ</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="insights" style="background: #f3e5f5; border-left-color: #6a1b9a;">
+                <h3 style="color: #4a148c;">🎯 KẾT LUẬN & KHUYẾN NGHỊ:</h3>
+                <ul>
+                    <li><strong>Kịch bản 1:</strong> NPV âm trong kịch bản cơ sở → KHÔNG khả thi</li>
+                    <li><strong>Kịch bản 2:</strong> NPV +305 tỷ, bảo vệ rủi ro giảm tốt (+43 tỷ ở kịch bản xấu nhất) → <strong style="color: #2e7d32;">ĐƯỢC ƯU TIÊN</strong></li>
+                    <li><strong>Kịch bản 3:</strong> IRR cao nhất (29.4%) nhưng rủi ro lớn (kịch bản xấu nhất -220 tỷ) → Chỉ phù hợp với nhà đầu tư mạnh tay</li>
+                    <li><strong>Khuyến nghị:</strong> Theo đuổi <strong>Kịch bản 2</strong> với phương án mở rộng sang KB3 nếu phản hồi thị trường tích cực</li>
+                    <li><strong>Phân tích hòa vốn:</strong> KB2 cần giá chỉ 62 tr/m² để NPV > 0, trong khi KB3 cần 78 tr/m²</li>
+                    <li><strong>Tỷ suất điều chỉnh rủi ro:</strong> KB2 có tỷ lệ Sharpe tốt nhất (lợi nhuận/rủi ro)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; padding: 20px; background: #f5f5f5; border-radius: 10px;">
+            <p style="font-size: 14px; color: #666;">
+                📊 Phân tích được thực hiện bởi <strong>Thịnh Nguyên Group</strong><br>
+                Ngày: 24/10/2025 | Dự án: Dreamhome Riverside
+            </p>
+        </div>
+    </div>
+ </body>
+ </html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensitivity Analysis - Dreamhome Riverside</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #1a237e;
+            padding-bottom: 20px;
+        }
+
+        .header h1 {
+            color: #1a237e;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .scenario-section {
+            margin-bottom: 50px;
+        }
+
+        .scenario-header {
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .scenario-header h2 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .scenario-header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .sensitivity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .sensitivity-card {
+            background: #f5f5f5;
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 4px solid #ff6f00;
+        }
+
+        .sensitivity-card h3 {
+            color: #1a237e;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .sensitivity-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .sensitivity-table th {
+            background: #1a237e;
+            color: white;
+            padding: 10px;
+            text-align: left;
+            font-size: 13px;
+        }
+
+        .sensitivity-table td {
+            padding: 8px 10px;
+            border-bottom: 1px solid #ddd;
+            font-size: 13px;
+        }
+
+        .sensitivity-table tr:hover {
+            background: #f0f0f0;
+        }
+
+        .positive {
+            color: #2e7d32;
+            font-weight: bold;
+        }
+
+        .negative {
+            color: #c62828;
+            font-weight: bold;
+        }
+
+        .neutral {
+            color: #f57c00;
+            font-weight: bold;
+        }
+
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 12px;
+        }
+
+        .matrix-table th,
+        .matrix-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .matrix-table th {
+            background: #1a237e;
+            color: white;
+        }
+
+        .matrix-table .corner {
+            background: #283593;
+        }
+
+        .cell-high {
+            background: #c8e6c9;
+        }
+
+        .cell-medium {
+            background: #fff9c4;
+        }
+
+        .cell-low {
+            background: #ffccbc;
+        }
+
+        .insights {
+            background: #e3f2fd;
+            border-left: 4px solid #1976d2;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .insights h3 {
+            color: #1565c0;
+            margin-bottom: 10px;
+        }
+
+        .insights ul {
+            list-style-position: inside;
+            color: #424242;
+        }
+
+        .insights li {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+
+        .chart-container {
+            margin: 30px 0;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 10px;
+        }
+
         .logo-bottom-left {
             position: fixed;
             bottom: 20px;
@@ -213,38 +1182,39 @@
             margin: 20px 0;
             border-radius: 5px;
         }
-        
+
         .warning strong {
             color: #e65100;
         }
     </style>
 </head>
+
 <body>
     <div class="logo-bottom-left">
-        <img src="assets/thinh_nguyen_logo.png" alt="Th?nh Nguy�n Group">
+        <img src="assets/thinh_nguyen_logo.png" alt="Th?nh Nguy�n Group">
     </div>
     <div class="container">
         <div class="header">
-            <h1>?? PH�N T�CH �? NH?Y (SENSITIVITY ANALYSIS)</h1>
-            <p>D? �n Dreamhome Riverside - 3 K?ch b?n T�i c?u tr�c</p>
-            <p style="font-size: 14px; color: #999; margin-top: 10px;">Ph�n t�ch b?i LNP - Th?nh Nguy�n Group</p>
+            <h1>?? PH�N T�CH �? NH?Y (SENSITIVITY ANALYSIS)</h1>
+            <p>D? �n Dreamhome Riverside - 3 K?ch b?n T�i c?u tr�c</p>
+            <p style="font-size: 14px; color: #999; margin-top: 10px;">Ph�n t�ch b?i LNP - Th?nh Nguy�n Group</p>
         </div>
 
         <!-- K?CH B?N 1 -->
         <div class="scenario-section">
             <div class="scenario-header">
-                <h2>?? K?CH B?N 1: TH?N TR?NG - "T?n t?i v� Ho�n thi?n"</h2>
+                <h2>?? K?CH B?N 1: TH?N TR?NG - "T?n t?i v� Ho�n thi?n"</h2>
                 <p>K?ch b?n co s?: NPV = -96 t? | IRR = N/A | V?n = 280 t?</p>
             </div>
 
             <div class="sensitivity-grid">
-                <!-- Gi� b�n -->
+                <!-- Gi� b�n -->
                 <div class="sensitivity-card">
-                    <h3>?? �? nh?y theo Gi� b�n</h3>
+                    <h3>?? �? nh?y theo Gi� b�n</h3>
                     <table class="sensitivity-table">
                         <thead>
                             <tr>
-                                <th>Gi� (tr/m�)</th>
+                                <th>Gi� (tr/m�)</th>
                                 <th>% thay d?i</th>
                                 <th>NPV (t?)</th>
                                 <th>IRR</th>
@@ -285,13 +1255,13 @@
                     </table>
                 </div>
 
-                <!-- Chi ph� ho�n thi?n -->
+                <!-- Chi ph� ho�n thi?n -->
                 <div class="sensitivity-card">
-                    <h3>??? �? nh?y theo Chi ph� ho�n thi?n</h3>
+                    <h3>??? �? nh?y theo Chi ph� ho�n thi?n</h3>
                     <table class="sensitivity-table">
                         <thead>
                             <tr>
-                                <th>Chi ph�</th>
+                                <th>Chi ph�</th>
                                 <th>% thay d?i</th>
                                 <th>NPV (t?)</th>
                                 <th>V?n c?n</th>
@@ -334,43 +1304,43 @@
 
                 <!-- Th?i gian th?c hi?n -->
                 <div class="sensitivity-card">
-                    <h3>? �? nh?y theo Th?i gian th?c hi?n</h3>
+                    <h3>? �? nh?y theo Th?i gian th?c hi?n</h3>
                     <table class="sensitivity-table">
                         <thead>
                             <tr>
                                 <th>Th?i gian th?c hi?n</th>
                                 <th>% ch?m</th>
                                 <th>NPV (t?)</th>
-                                <th>L�i vay th�m</th>
+                                <th>L�i vay th�m</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>27 th�ng</td>
+                                <td>27 th�ng</td>
                                 <td class="positive">-10%</td>
                                 <td class="neutral">-76</td>
                                 <td class="positive">-20 t?</td>
                             </tr>
                             <tr style="background: #e8eaf6;">
-                                <td><strong>30 th�ng (base)</strong></td>
+                                <td><strong>30 th�ng (base)</strong></td>
                                 <td>0%</td>
                                 <td class="negative">-96</td>
                                 <td>0 t?</td>
                             </tr>
                             <tr>
-                                <td>33 th�ng</td>
+                                <td>33 th�ng</td>
                                 <td class="negative">+10%</td>
                                 <td class="negative">-126</td>
                                 <td class="negative">+30 t?</td>
                             </tr>
                             <tr>
-                                <td>36 th�ng</td>
+                                <td>36 th�ng</td>
                                 <td class="negative">+20%</td>
                                 <td class="negative">-156</td>
                                 <td class="negative">+60 t?</td>
                             </tr>
                             <tr>
-                                <td>42 th�ng</td>
+                                <td>42 th�ng</td>
                                 <td class="negative">+40%</td>
                                 <td class="negative">-216</td>
                                 <td class="negative">+120 t?</td>
@@ -382,10 +1352,11 @@
 
             <!-- Two-way sensitivity matrix -->
             <div class="chart-container">
-                <h3 style="color: #1a237e; margin-bottom: 15px;">?? Ma tr?n �? nh?y 2 chi?u: Gi� b�n � Chi ph� ho�n thi?n (NPV - t? VN�)</h3>
+                <h3 style="color: #1a237e; margin-bottom: 15px;">?? Ma tr?n �? nh?y 2 chi?u: Gi� b�n � Chi ph� ho�n
+                    thi?n (NPV - t? VN�)</h3>
                 <table class="matrix-table">
                     <tr>
-                        <th class="corner">Gi� ? / Chi ph� ?</th>
+                        <th class="corner">Gi� ? / Chi ph� ?</th>
                         <th>1,190 t?<br>(-15%)</th>
                         <th>1,260 t?<br>(-10%)</th>
                         <th>1,400 t?<br>(base)</th>
@@ -393,7 +1364,7 @@
                         <th>1,680 t?<br>(+20%)</th>
                     </tr>
                     <tr>
-                        <th>90 tr/m�<br>(+12.5%)</th>
+                        <th>90 tr/m�<br>(+12.5%)</th>
                         <td class="cell-high">+166</td>
                         <td class="cell-high">+136</td>
                         <td class="cell-medium">+76</td>
@@ -401,7 +1372,7 @@
                         <td class="cell-low">-64</td>
                     </tr>
                     <tr>
-                        <th>85 tr/m�<br>(+6.25%)</th>
+                        <th>85 tr/m�<br>(+6.25%)</th>
                         <td class="cell-high">+80</td>
                         <td class="cell-medium">+50</td>
                         <td class="cell-low">-10</td>
@@ -409,7 +1380,7 @@
                         <td class="cell-low">-150</td>
                     </tr>
                     <tr>
-                        <th>80 tr/m�<br>(base)</th>
+                        <th>80 tr/m�<br>(base)</th>
                         <td class="cell-medium">-6</td>
                         <td class="cell-low">-36</td>
                         <td class="cell-low">-96</td>
@@ -417,7 +1388,7 @@
                         <td class="cell-low">-236</td>
                     </tr>
                     <tr>
-                        <th>75 tr/m�<br>(-6.25%)</th>
+                        <th>75 tr/m�<br>(-6.25%)</th>
                         <td class="cell-low">-92</td>
                         <td class="cell-low">-122</td>
                         <td class="cell-low">-182</td>
@@ -425,7 +1396,7 @@
                         <td class="cell-low">-322</td>
                     </tr>
                     <tr>
-                        <th>70 tr/m�<br>(-12.5%)</th>
+                        <th>70 tr/m�<br>(-12.5%)</th>
                         <td class="cell-low">-178</td>
                         <td class="cell-low">-208</td>
                         <td class="cell-low">-268</td>
@@ -435,554 +1406,574 @@
                 </table>
                 <p style="margin-top: 15px; font-size: 13px; color: #666;">
                     <span style="background: #c8e6c9; padding: 3px 8px; margin-right: 10px;">Xanh: NPV > 0</span>
-                    <span style="background: #fff9c4; padding: 3px 8px; margin-right: 10px;">V�ng: NPV -50 d?n 50 t?</span>
-                    <span style="background: #ffccbc; padding: 3px 8px;">�?: NPV < -50 t?</span>
+                    <span style="background: #fff9c4; padding: 3px 8px; margin-right: 10px;">V�ng: NPV -50 d?n 50
+                        t?</span>
+                    <span style="background: #ffccbc; padding: 3px 8px;">�?: NPV < -50 t?</span>
                 </p>
             </div>
 
             <div class="insights">
                 <h3>?? Insights - K?ch b?n 1:</h3>
                 <ul>
-                    <li><strong>C?c k? nh?y c?m v?i gi� b�n:</strong> C?n tang gi� l�n 85-90 tr/m� d? c� NPV duong</li>
-                    <li><strong>Gi?m chi ph� 15%</strong> ch? c?i thi?n NPV l�n -6 t? - v?n kh�ng d?</li>
-                    <li><strong>Th?i gian th?c hi?n ch?m tr?</strong> g�y thi?t h?i n?ng: +10% th?i gian = -30 t? NPV</li>
-                    <li><strong>K?ch b?n t?t nh?t:</strong> Gi� 90 tr/m� + gi?m chi ph� 15% = NPV +166 t?</li>
-                    <li><strong>K?ch b?n x?u nh?t:</strong> Gi� 70 tr/m� + tang chi ph� 20% = NPV -408 t?</li>
-                    <li><strong>K?t lu?n:</strong> K?ch b?n n�y CH? kh? thi n?u market premium =20% ho?c gi?m chi ph� d�ng k?</li>
+                    <li><strong>C?c k? nh?y c?m v?i gi� b�n:</strong> C?n tang gi� l�n 85-90 tr/m� d? c� NPV duong</li>
+                    <li><strong>Gi?m chi ph� 15%</strong> ch? c?i thi?n NPV l�n -6 t? - v?n kh�ng d?</li>
+                    <li><strong>Th?i gian th?c hi?n ch?m tr?</strong> g�y thi?t h?i n?ng: +10% th?i gian = -30 t? NPV
+                    </li>
+                    <li><strong>K?ch b?n t?t nh?t:</strong> Gi� 90 tr/m� + gi?m chi ph� 15% = NPV +166 t?</li>
+                    <li><strong>K?ch b?n x?u nh?t:</strong> Gi� 70 tr/m� + tang chi ph� 20% = NPV -408 t?</li>
+                    <li><strong>K?t lu?n:</strong> K?ch b?n n�y CH? kh? thi n?u market premium =20% ho?c gi?m chi ph�
+                        d�ng k?</li>
                 </ul>
             </div>
 
             <div class="warning">
-                <strong>?? C?NH B�O:</strong> K?ch b?n 1 c� x�c su?t th�nh c�ng th?p (<30%) v?i gi? d?nh hi?n t?i. Kh�ng n�n theo du?i tr? khi c� b?ng ch?ng th? tru?ng ch?c ch?n.
-            </div>
-        </div>
-
-        <!-- K?CH B?N 2 -->
-        <div class="scenario-section">
-            <div class="scenario-header" style="background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);">
-                <h2>?? K?CH B?N 2: C�N B?NG - "T�i c?u tr�c Th�ng minh"</h2>
-                <p>K?ch b?n co s?: NPV = +305 t? | IRR = 22.3% | V?n = 440 t?</p>
+                <strong>?? C?NH B�O:</strong> K?ch b?n 1 c� x�c su?t th�nh c�ng th?p (<30%) v?i gi? d?nh hi?n t?i. Kh�ng
+                    n�n theo du?i tr? khi c� b?ng ch?ng th? tru?ng ch?c ch?n. </div>
             </div>
 
-            <div class="sensitivity-grid">
-                <!-- Gi� b�n D4 m?i -->
-                <div class="sensitivity-card" style="border-left-color: #2e7d32;">
-                    <h3>?? �? nh?y theo Gi� b�n D4 (329 can)</h3>
-                    <table class="sensitivity-table">
-                        <thead>
-                            <tr>
-                                <th>Gi� (tr/m�)</th>
-                                <th>% thay d?i</th>
-                                <th>NPV (t?)</th>
-                                <th>IRR</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>90</td>
-                                <td class="positive">+12.5%</td>
-                                <td class="positive">+511</td>
-                                <td class="positive">31.2%</td>
-                            </tr>
-                            <tr>
-                                <td>85</td>
-                                <td class="positive">+6.25%</td>
-                                <td class="positive">+408</td>
-                                <td class="positive">26.8%</td>
-                            </tr>
-                            <tr style="background: #e8f5e9;">
-                                <td><strong>80 (base)</strong></td>
-                                <td>0%</td>
-                                <td class="positive">+305</td>
-                                <td class="positive">22.3%</td>
-                            </tr>
-                            <tr>
-                                <td>75</td>
-                                <td class="negative">-6.25%</td>
-                                <td class="positive">+202</td>
-                                <td class="positive">17.9%</td>
-                            </tr>
-                            <tr>
-                                <td>70</td>
-                                <td class="negative">-12.5%</td>
-                                <td class="neutral">+99</td>
-                                <td class="positive">13.4%</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <!-- K?CH B?N 2 -->
+            <div class="scenario-section">
+                <div class="scenario-header" style="background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);">
+                    <h2>?? K?CH B?N 2: C�N B?NG - "T�i c?u tr�c Th�ng minh"</h2>
+                    <p>K?ch b?n co s?: NPV = +305 t? | IRR = 22.3% | V?n = 440 t?</p>
                 </div>
 
-                <!-- Chi ph� thanh l� -->
-                <div class="sensitivity-card" style="border-left-color: #2e7d32;">
-                    <h3>?? �? nh?y theo Chi ph� thanh l� D4</h3>
-                    <table class="sensitivity-table">
-                        <thead>
-                            <tr>
-                                <th>B?i thu?ng</th>
-                                <th>Chi ph� (t?)</th>
-                                <th>NPV (t?)</th>
-                                <th>IRR</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>5%</td>
-                                <td class="positive">296</td>
-                                <td class="positive">+319</td>
-                                <td class="positive">23.1%</td>
-                            </tr>
-                            <tr style="background: #e8f5e9;">
-                                <td><strong>10% (base)</strong></td>
-                                <td>310</td>
-                                <td class="positive">+305</td>
-                                <td class="positive">22.3%</td>
-                            </tr>
-                            <tr>
-                                <td>15%</td>
-                                <td class="neutral">324</td>
-                                <td class="positive">+291</td>
-                                <td class="positive">21.5%</td>
-                            </tr>
-                            <tr>
-                                <td>20%</td>
-                                <td class="negative">338</td>
-                                <td class="positive">+277</td>
-                                <td class="positive">20.7%</td>
-                            </tr>
-                            <tr>
-                                <td>30%</td>
-                                <td class="negative">366</td>
-                                <td class="positive">+249</td>
-                                <td class="positive">19.1%</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="sensitivity-grid">
+                    <!-- Gi� b�n D4 m?i -->
+                    <div class="sensitivity-card" style="border-left-color: #2e7d32;">
+                        <h3>?? �? nh?y theo Gi� b�n D4 (329 can)</h3>
+                        <table class="sensitivity-table">
+                            <thead>
+                                <tr>
+                                    <th>Gi� (tr/m�)</th>
+                                    <th>% thay d?i</th>
+                                    <th>NPV (t?)</th>
+                                    <th>IRR</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>90</td>
+                                    <td class="positive">+12.5%</td>
+                                    <td class="positive">+511</td>
+                                    <td class="positive">31.2%</td>
+                                </tr>
+                                <tr>
+                                    <td>85</td>
+                                    <td class="positive">+6.25%</td>
+                                    <td class="positive">+408</td>
+                                    <td class="positive">26.8%</td>
+                                </tr>
+                                <tr style="background: #e8f5e9;">
+                                    <td><strong>80 (base)</strong></td>
+                                    <td>0%</td>
+                                    <td class="positive">+305</td>
+                                    <td class="positive">22.3%</td>
+                                </tr>
+                                <tr>
+                                    <td>75</td>
+                                    <td class="negative">-6.25%</td>
+                                    <td class="positive">+202</td>
+                                    <td class="positive">17.9%</td>
+                                </tr>
+                                <tr>
+                                    <td>70</td>
+                                    <td class="negative">-12.5%</td>
+                                    <td class="neutral">+99</td>
+                                    <td class="positive">13.4%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Chi ph� thanh l� -->
+                    <div class="sensitivity-card" style="border-left-color: #2e7d32;">
+                        <h3>?? �? nh?y theo Chi ph� thanh l� D4</h3>
+                        <table class="sensitivity-table">
+                            <thead>
+                                <tr>
+                                    <th>B?i thu?ng</th>
+                                    <th>Chi ph� (t?)</th>
+                                    <th>NPV (t?)</th>
+                                    <th>IRR</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>5%</td>
+                                    <td class="positive">296</td>
+                                    <td class="positive">+319</td>
+                                    <td class="positive">23.1%</td>
+                                </tr>
+                                <tr style="background: #e8f5e9;">
+                                    <td><strong>10% (base)</strong></td>
+                                    <td>310</td>
+                                    <td class="positive">+305</td>
+                                    <td class="positive">22.3%</td>
+                                </tr>
+                                <tr>
+                                    <td>15%</td>
+                                    <td class="neutral">324</td>
+                                    <td class="positive">+291</td>
+                                    <td class="positive">21.5%</td>
+                                </tr>
+                                <tr>
+                                    <td>20%</td>
+                                    <td class="negative">338</td>
+                                    <td class="positive">+277</td>
+                                    <td class="positive">20.7%</td>
+                                </tr>
+                                <tr>
+                                    <td>30%</td>
+                                    <td class="negative">366</td>
+                                    <td class="positive">+249</td>
+                                    <td class="positive">19.1%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- T?c d? b�n h�ng -->
+                    <div class="sensitivity-card" style="border-left-color: #2e7d32;">
+                        <h3>?? �? nh?y theo T?c d? b�n (can/th�ng)</h3>
+                        <table class="sensitivity-table">
+                            <thead>
+                                <tr>
+                                    <th>T?c d?</th>
+                                    <th>Th?i gian th?c hi?n</th>
+                                    <th>NPV (t?)</th>
+                                    <th>IRR</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>100 can</td>
+                                    <td class="positive">18 th�ng</td>
+                                    <td class="positive">+342</td>
+                                    <td class="positive">26.5%</td>
+                                </tr>
+                                <tr>
+                                    <td>80 can</td>
+                                    <td class="positive">21 th�ng</td>
+                                    <td class="positive">+323</td>
+                                    <td class="positive">24.2%</td>
+                                </tr>
+                                <tr style="background: #e8f5e9;">
+                                    <td><strong>60 can (base)</strong></td>
+                                    <td>24 th�ng</td>
+                                    <td class="positive">+305</td>
+                                    <td class="positive">22.3%</td>
+                                </tr>
+                                <tr>
+                                    <td>50 can</td>
+                                    <td class="neutral">27 th�ng</td>
+                                    <td class="positive">+286</td>
+                                    <td class="positive">20.1%</td>
+                                </tr>
+                                <tr>
+                                    <td>40 can</td>
+                                    <td class="negative">30 th�ng</td>
+                                    <td class="positive">+268</td>
+                                    <td class="positive">18.5%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
-                <!-- T?c d? b�n h�ng -->
-                <div class="sensitivity-card" style="border-left-color: #2e7d32;">
-                    <h3>?? �? nh?y theo T?c d? b�n (can/th�ng)</h3>
-                    <table class="sensitivity-table">
-                        <thead>
-                            <tr>
-                                <th>T?c d?</th>
-                                <th>Th?i gian th?c hi?n</th>
-                                <th>NPV (t?)</th>
-                                <th>IRR</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>100 can</td>
-                                <td class="positive">18 th�ng</td>
-                                <td class="positive">+342</td>
-                                <td class="positive">26.5%</td>
-                            </tr>
-                            <tr>
-                                <td>80 can</td>
-                                <td class="positive">21 th�ng</td>
-                                <td class="positive">+323</td>
-                                <td class="positive">24.2%</td>
-                            </tr>
-                            <tr style="background: #e8f5e9;">
-                                <td><strong>60 can (base)</strong></td>
-                                <td>24 th�ng</td>
-                                <td class="positive">+305</td>
-                                <td class="positive">22.3%</td>
-                            </tr>
-                            <tr>
-                                <td>50 can</td>
-                                <td class="neutral">27 th�ng</td>
-                                <td class="positive">+286</td>
-                                <td class="positive">20.1%</td>
-                            </tr>
-                            <tr>
-                                <td>40 can</td>
-                                <td class="negative">30 th�ng</td>
-                                <td class="positive">+268</td>
-                                <td class="positive">18.5%</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- Two-way sensitivity matrix KB2 -->
-            <div class="chart-container">
-                <h3 style="color: #2e7d32; margin-bottom: 15px;">?? Ma tr?n �? nh?y 2 chi?u: Gi� b�n D4 � B?i thu?ng thanh l� (NPV - t? VN�)</h3>
-                <table class="matrix-table">
-                    <tr>
-                        <th class="corner">Gi� D4 ? / B?i thu?ng ?</th>
-                        <th>5%</th>
-                        <th>10%<br>(base)</th>
-                        <th>15%</th>
-                        <th>20%</th>
-                        <th>30%</th>
-                    </tr>
-                    <tr>
-                        <th>90 tr/m�<br>(+12.5%)</th>
-                        <td class="cell-high">+525</td>
-                        <td class="cell-high">+511</td>
-                        <td class="cell-high">+497</td>
-                        <td class="cell-high">+483</td>
-                        <td class="cell-high">+455</td>
-                    </tr>
-                    <tr>
-                        <th>85 tr/m�<br>(+6.25%)</th>
-                        <td class="cell-high">+422</td>
-                        <td class="cell-high">+408</td>
-                        <td class="cell-high">+394</td>
-                        <td class="cell-high">+380</td>
-                        <td class="cell-high">+352</td>
-                    </tr>
-                    <tr>
-                        <th>80 tr/m�<br>(base)</th>
-                        <td class="cell-high">+319</td>
-                        <td class="cell-high">+305</td>
-                        <td class="cell-high">+291</td>
-                        <td class="cell-high">+277</td>
-                        <td class="cell-high">+249</td>
-                    </tr>
-                    <tr>
-                        <th>75 tr/m�<br>(-6.25%)</th>
-                        <td class="cell-high">+216</td>
-                        <td class="cell-high">+202</td>
-                        <td class="cell-high">+188</td>
-                        <td class="cell-high">+174</td>
-                        <td class="cell-high">+146</td>
-                    </tr>
-                    <tr>
-                        <th>70 tr/m�<br>(-12.5%)</th>
-                        <td class="cell-high">+113</td>
-                        <td class="cell-medium">+99</td>
-                        <td class="cell-medium">+85</td>
-                        <td class="cell-medium">+71</td>
-                        <td class="cell-medium">+43</td>
-                    </tr>
-                </table>
-                <p style="margin-top: 15px; font-size: 13px; color: #666;">
-                    <strong>Luu �:</strong> K?ch b?n 2 c� NPV DUONG trong m?i tru?ng h?p! Ngay c? k?ch b?n x?u nh?t (gi� 70 tr/m�, b?i thu?ng 30%) v?n c� NPV +43 t?.
-                </p>
-            </div>
-
-            <div class="insights" style="background: #e8f5e9; border-left-color: #2e7d32;">
-                <h3 style="color: #1b5e20;">?? Insights - K?ch b?n 2:</h3>
-                <ul>
-                    <li><strong>ROBUST:</strong> NPV duong trong M?I k?ch b?n - r?i ro th?p</li>
-                    <li><strong>�t nh?y c?m v?i b?i thu?ng:</strong> Tang t? 10% l�n 30% ch? gi?m NPV 56 t? (18%)</li>
-                    <li><strong>L?i nhu?n l?n n?u gi� cao:</strong> Gi� 90 tr/m� ? NPV +511 t? (tang 68%)</li>
-                    <li><strong>B?o v? r?i ro t?t:</strong> Gi� 70 tr/m� v?n c� NPV +99 t?</li>
-                    <li><strong>T?c d? b�n ?nh hu?ng v?a ph?i:</strong> Ch?m 25% ch? gi?m IRR t? 22.3% xu?ng 18.5%</li>
-                    <li><strong>H�a v?n c?c th?p:</strong> Gi� b�n D4 ch? c?n =62 tr/m� (gi?m 22% so v?i base) d? NPV > 0</li>
-                </ul>
-            </div>
-
-            <div class="warning" style="background: #e8f5e9; border-left-color: #2e7d32;">
-                <strong>? KHUY?N NGH?:</strong> K?ch b?n 2 c� x�c su?t th�nh c�ng cao (>70%) v?i risk/return profile t?t nh?t. ��y l� l?a ch?n �U?C UU TI�N.
-            </div>
-        </div>
-
-        <!-- K?CH B?N 3 -->
-        <div class="scenario-section">
-            <div class="scenario-header" style="background: linear-gradient(135deg, #b71c1c 0%, #c62828 100%);">
-                <h2>?? K?CH B?N 3: M?NH TAY - "T?i da h�a L?i nhu?n"</h2>
-                <p>K?ch b?n co s?: NPV = +164 t? | IRR = 29.4% | V?n = 400 t? + Vay 500 t?</p>
-            </div>
-
-            <div class="sensitivity-grid">
-                <!-- Gi� b�n -->
-                <div class="sensitivity-card" style="border-left-color: #c62828;">
-                    <h3>?? �? nh?y theo Gi� b�n (85 tr/m�)</h3>
-                    <table class="sensitivity-table">
-                        <thead>
-                            <tr>
-                                <th>Gi� (tr/m�)</th>
-                                <th>% thay d?i</th>
-                                <th>NPV (t?)</th>
-                                <th>IRR</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>95</td>
-                                <td class="positive">+11.8%</td>
-                                <td class="positive">+398</td>
-                                <td class="positive">47.6%</td>
-                            </tr>
-                            <tr>
-                                <td>90</td>
-                                <td class="positive">+5.9%</td>
-                                <td class="positive">+281</td>
-                                <td class="positive">38.5%</td>
-                            </tr>
-                            <tr style="background: #ffebee;">
-                                <td><strong>85 (base)</strong></td>
-                                <td>0%</td>
-                                <td class="positive">+164</td>
-                                <td class="positive">29.4%</td>
-                            </tr>
-                            <tr>
-                                <td>80</td>
-                                <td class="negative">-5.9%</td>
-                                <td class="neutral">+47</td>
-                                <td class="positive">20.3%</td>
-                            </tr>
-                            <tr>
-                                <td>75</td>
-                                <td class="negative">-11.8%</td>
-                                <td class="negative">-70</td>
-                                <td class="negative">11.2%</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- Chi ph� thanh l� -->
-                <div class="sensitivity-card" style="border-left-color: #c62828;">
-                    <h3>?? �? nh?y theo Chi ph� thanh l� (700 can)</h3>
-                    <table class="sensitivity-table">
-                        <thead>
-                            <tr>
-                                <th>B?i thu?ng</th>
-                                <th>Chi ph� (t?)</th>
-                                <th>NPV (t?)</th>
-                                <th>IRR</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>8%</td>
-                                <td class="positive">576</td>
-                                <td class="positive">+188</td>
-                                <td class="positive">31.2%</td>
-                            </tr>
-                            <tr>
-                                <td>10%</td>
-                                <td class="positive">590</td>
-                                <td class="positive">+176</td>
-                                <td class="positive">30.3%</td>
-                            </tr>
-                            <tr style="background: #ffebee;">
-                                <td><strong>12% (base)</strong></td>
-                                <td>600</td>
-                                <td class="positive">+164</td>
-                                <td class="positive">29.4%</td>
-                            </tr>
-                            <tr>
-                                <td>15%</td>
-                                <td class="negative">618</td>
-                                <td class="positive">+146</td>
-                                <td class="positive">27.9%</td>
-                            </tr>
-                            <tr>
-                                <td>20%</td>
-                                <td class="negative">648</td>
-                                <td class="positive">+116</td>
-                                <td class="positive">25.1%</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- R?i ro ph�p l� -->
-                <div class="sensitivity-card" style="border-left-color: #c62828;">
-                    <h3>?? �? nh?y theo R?i ro ph�p l�</h3>
-                    <table class="sensitivity-table">
-                        <thead>
-                            <tr>
-                                <th>K?ch b?n</th>
-                                <th>Chi ph� th�m</th>
-                                <th>NPV (t?)</th>
-                                <th>IRR</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr style="background: #ffebee;">
-                                <td><strong>Base (0% ki?n)</strong></td>
-                                <td>0</td>
-                                <td class="positive">+164</td>
-                                <td class="positive">29.4%</td>
-                            </tr>
-                            <tr>
-                                <td>5% kh�ch ki?n</td>
-                                <td class="negative">+30 t?</td>
-                                <td class="positive">+134</td>
-                                <td class="positive">26.8%</td>
-                            </tr>
-                            <tr>
-                                <td>10% kh�ch ki?n</td>
-                                <td class="negative">+60 t?</td>
-                                <td class="positive">+104</td>
-                                <td class="positive">24.2%</td>
-                            </tr>
-                            <tr>
-                                <td>15% kh�ch ki?n</td>
-                                <td class="negative">+90 t?</td>
-                                <td class="neutral">+74</td>
-                                <td class="positive">21.6%</td>
-                            </tr>
-                            <tr>
-                                <td>25% kh�ch ki?n</td>
-                                <td class="negative">+150 t?</td>
-                                <td class="neutral">+14</td>
-                                <td class="positive">16.4%</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- Two-way sensitivity matrix KB3 -->
-            <div class="chart-container">
-                <h3 style="color: #c62828; margin-bottom: 15px;">?? Ma tr?n �? nh?y 2 chi?u: Gi� b�n � % Kh�ch ki?n (NPV - t? VN�)</h3>
-                <table class="matrix-table">
-                    <tr>
-                        <th class="corner">Gi� ? / % Ki?n ?</th>
-                        <th>0%<br>(base)</th>
-                        <th>5%</th>
-                        <th>10%</th>
-                        <th>15%</th>
-                        <th>25%</th>
-                    </tr>
-                    <tr>
-                        <th>95 tr/m�<br>(+11.8%)</th>
-                        <td class="cell-high">+398</td>
-                        <td class="cell-high">+368</td>
-                        <td class="cell-high">+338</td>
-                        <td class="cell-high">+308</td>
-                        <td class="cell-high">+248</td>
-                    </tr>
-                    <tr>
-                        <th>90 tr/m�<br>(+5.9%)</th>
-                        <td class="cell-high">+281</td>
-                        <td class="cell-high">+251</td>
-                        <td class="cell-high">+221</td>
-                        <td class="cell-high">+191</td>
-                        <td class="cell-high">+131</td>
-                    </tr>
-                    <tr>
-                        <th>85 tr/m�<br>(base)</th>
-                        <td class="cell-high">+164</td>
-                        <td class="cell-high">+134</td>
-                        <td class="cell-high">+104</td>
-                        <td class="cell-medium">+74</td>
-                        <td class="cell-medium">+14</td>
-                    </tr>
-                    <tr>
-                        <th>80 tr/m�<br>(-5.9%)</th>
-                        <td class="cell-medium">+47</td>
-                        <td class="cell-medium">+17</td>
-                        <td class="cell-low">-13</td>
-                        <td class="cell-low">-43</td>
-                        <td class="cell-low">-103</td>
-                    </tr>
-                    <tr>
-                        <th>75 tr/m�<br>(-11.8%)</th>
-                        <td class="cell-low">-70</td>
-                        <td class="cell-low">-100</td>
-                        <td class="cell-low">-130</td>
-                        <td class="cell-low">-160</td>
-                        <td class="cell-low">-220</td>
-                    </tr>
-                </table>
-                <p style="margin-top: 15px; font-size: 13px; color: #666;">
-                    <strong>C?NH B�O:</strong> N?u gi� ch? d?t 80 tr/m� V� c� 10% kh�ch ki?n ? NPV �m. K?ch b?n n�y c� r?i ro d�ng k?.
-                </p>
-            </div>
-
-            <div class="insights" style="background: #ffebee; border-left-color: #c62828;">
-                <h3 style="color: #b71c1c;">?? Insights - K?ch b?n 3:</h3>
-                <ul>
-                    <li><strong>High-risk, High-return:</strong> IRR 29.4% nhung r?i ro ph�p l� cao</li>
-                    <li><strong>R?t nh?y c?m v?i gi�:</strong> Gi?m gi� t? 85 xu?ng 75 tr/m� ? NPV t? +164 xu?ng -70 t?</li>
-                    <li><strong>R?i ro ph�p l� d�ng k?:</strong> 15% kh�ch ki?n ? NPV c�n +74 t? (gi?m 55%)</li>
-                    <li><strong>C?n gi� cao:</strong> Ph?i b�n =85 tr/m� d? c� margin d? b� r?i ro</li>
-                    <li><strong>Leverage cao = �p l?c:</strong> Vay 500 t? @ 12% = 60 t? l�i/nam</li>
-                    <li><strong>H�a v?n h?p:</strong> Gi� 78 tr/m� + 0% ki?n, HO?C gi� 85 tr/m� + 20% ki?n</li>
-                </ul>
-            </div>
-
-            <div class="warning" style="background: #ffebee; border-left-color: #c62828;">
-                <strong>?? C?NH B�O:</strong> K?ch b?n 3 CH? ph� h?p n?u: (1) C� b?ng ch?ng CH?C CH?N b�n du?c =85 tr/m�, (2) �?i ngu ph�p l� C?C M?NH d? gi?m r?i ro ki?n t?ng xu?ng <10%, (3) Nh� d?u tu ch?p nh?n r?i ro cao. N?u kh�ng d�p ?ng c? 3 di?u ki?n ? KH�NG N�N theo du?i.
-            </div>
-        </div>
-
-        <!-- SO S�NH T?NG QUAN -->
-        <div class="scenario-section">
-            <div class="scenario-header" style="background: linear-gradient(135deg, #4a148c 0%, #6a1b9a 100%);">
-                <h2>?? SO S�NH T?NG QUAN - R?I RO vs L?I NHU?N</h2>
-            </div>
-
-            <div class="chart-container">
-                <h3 style="color: #4a148c; margin-bottom: 15px;">?? Ma tr?n R?i ro-L?i nhu?n (K?ch b?n co s?)</h3>
-                <table class="matrix-table">
-                    <thead>
+                <!-- Two-way sensitivity matrix KB2 -->
+                <div class="chart-container">
+                    <h3 style="color: #2e7d32; margin-bottom: 15px;">?? Ma tr?n �? nh?y 2 chi?u: Gi� b�n D4 � B?i thu?ng
+                        thanh l� (NPV - t? VN�)</h3>
+                    <table class="matrix-table">
                         <tr>
-                            <th>K?ch b?n</th>
-                            <th>V?n c?n</th>
-                            <th>NPV (t?)</th>
-                            <th>IRR</th>
-                            <th>Th?i gian ho�n v?n</th>
-                            <th>R?i ro</th>
-                            <th>L?i nhu?n t?i da</th>
-                            <th>R?i ro t?i da</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>KB1: TH?N TR?NG</strong></td>
-                            <td>280 t?</td>
-                            <td class="negative">-96</td>
-                            <td class="negative">N/A</td>
-                            <td class="negative">N/A</td>
-                            <td>Th?p</td>
-                            <td class="neutral">+166 t?</td>
-                            <td class="negative">-408 t?</td>
-                        </tr>
-                        <tr style="background: #e8f5e9;">
-                            <td><strong>KB2: C�N B?NG ?</strong></td>
-                            <td>440 t?</td>
-                            <td class="positive">+305</td>
-                            <td class="positive">22.3%</td>
-                            <td class="positive">18 th�ng</td>
-                            <td>Trung b�nh</td>
-                            <td class="positive">+525 t?</td>
-                            <td class="positive">+43 t?</td>
+                            <th class="corner">Gi� D4 ? / B?i thu?ng ?</th>
+                            <th>5%</th>
+                            <th>10%<br>(base)</th>
+                            <th>15%</th>
+                            <th>20%</th>
+                            <th>30%</th>
                         </tr>
                         <tr>
-                            <td><strong>KB3: M?NH TAY</strong></td>
-                            <td>400 t? (+vay 500)</td>
-                            <td class="positive">+164</td>
-                            <td class="positive">29.4%</td>
-                            <td class="positive">12 th�ng</td>
-                            <td>Cao</td>
-                            <td class="positive">+398 t?</td>
-                            <td class="negative">-220 t?</td>
+                            <th>90 tr/m�<br>(+12.5%)</th>
+                            <td class="cell-high">+525</td>
+                            <td class="cell-high">+511</td>
+                            <td class="cell-high">+497</td>
+                            <td class="cell-high">+483</td>
+                            <td class="cell-high">+455</td>
                         </tr>
-                    </tbody>
-                </table>
+                        <tr>
+                            <th>85 tr/m�<br>(+6.25%)</th>
+                            <td class="cell-high">+422</td>
+                            <td class="cell-high">+408</td>
+                            <td class="cell-high">+394</td>
+                            <td class="cell-high">+380</td>
+                            <td class="cell-high">+352</td>
+                        </tr>
+                        <tr>
+                            <th>80 tr/m�<br>(base)</th>
+                            <td class="cell-high">+319</td>
+                            <td class="cell-high">+305</td>
+                            <td class="cell-high">+291</td>
+                            <td class="cell-high">+277</td>
+                            <td class="cell-high">+249</td>
+                        </tr>
+                        <tr>
+                            <th>75 tr/m�<br>(-6.25%)</th>
+                            <td class="cell-high">+216</td>
+                            <td class="cell-high">+202</td>
+                            <td class="cell-high">+188</td>
+                            <td class="cell-high">+174</td>
+                            <td class="cell-high">+146</td>
+                        </tr>
+                        <tr>
+                            <th>70 tr/m�<br>(-12.5%)</th>
+                            <td class="cell-high">+113</td>
+                            <td class="cell-medium">+99</td>
+                            <td class="cell-medium">+85</td>
+                            <td class="cell-medium">+71</td>
+                            <td class="cell-medium">+43</td>
+                        </tr>
+                    </table>
+                    <p style="margin-top: 15px; font-size: 13px; color: #666;">
+                        <strong>Luu �:</strong> K?ch b?n 2 c� NPV DUONG trong m?i tru?ng h?p! Ngay c? k?ch b?n x?u nh?t
+                        (gi� 70 tr/m�, b?i thu?ng 30%) v?n c� NPV +43 t?.
+                    </p>
+                </div>
+
+                <div class="insights" style="background: #e8f5e9; border-left-color: #2e7d32;">
+                    <h3 style="color: #1b5e20;">?? Insights - K?ch b?n 2:</h3>
+                    <ul>
+                        <li><strong>ROBUST:</strong> NPV duong trong M?I k?ch b?n - r?i ro th?p</li>
+                        <li><strong>�t nh?y c?m v?i b?i thu?ng:</strong> Tang t? 10% l�n 30% ch? gi?m NPV 56 t? (18%)
+                        </li>
+                        <li><strong>L?i nhu?n l?n n?u gi� cao:</strong> Gi� 90 tr/m� ? NPV +511 t? (tang 68%)</li>
+                        <li><strong>B?o v? r?i ro t?t:</strong> Gi� 70 tr/m� v?n c� NPV +99 t?</li>
+                        <li><strong>T?c d? b�n ?nh hu?ng v?a ph?i:</strong> Ch?m 25% ch? gi?m IRR t? 22.3% xu?ng 18.5%
+                        </li>
+                        <li><strong>H�a v?n c?c th?p:</strong> Gi� b�n D4 ch? c?n =62 tr/m� (gi?m 22% so v?i base) d?
+                            NPV > 0</li>
+                    </ul>
+                </div>
+
+                <div class="warning" style="background: #e8f5e9; border-left-color: #2e7d32;">
+                    <strong>? KHUY?N NGH?:</strong> K?ch b?n 2 c� x�c su?t th�nh c�ng cao (>70%) v?i risk/return profile
+                    t?t nh?t. ��y l� l?a ch?n �U?C UU TI�N.
+                </div>
             </div>
 
-            <div class="insights" style="background: #f3e5f5; border-left-color: #6a1b9a;">
-                <h3 style="color: #4a148c;">?? K?T LU?N & KHUY?N NGH?:</h3>
-                <ul>
-                    <li><strong>K?ch b?n 1:</strong> NPV �m trong K?ch b?n co s? ? KH�NG kh? thi</li>
-                    <li><strong>K?ch b?n 2:</strong> NPV +305 t?, b?o v? r?i ro t?t (+43 t? ? k?ch b?n x?u nh?t) ? <strong style="color: #2e7d32;">�U?C UU TI�N</strong></li>
-                    <li><strong>K?ch b?n 3:</strong> IRR cao nh?t (29.4%) nhung r?i ro l?n (k?ch b?n x?u nh?t -220 t?) ? Ch? ph� h?p v?i investor M?NH TAY</li>
-                    <li><strong>Khuy?n ngh?:</strong> Theo du?i <strong>K?ch b?n 2</strong> v?i Option d? scale up sang KB3 n?u market response t?t</li>
-                    <li><strong>Ph�n t�ch h�a v?n:</strong> KB2 c?n gi� ch? 62 tr/m� d? NPV > 0, trong khi KB3 c?n 78 tr/m�</li>
-                    <li><strong>L?i nhu?n di?u ch?nh r?i ro:</strong> KB2 c� Ch? s? Sharpe t?t nh?t (l?i nhu?n/r?i ro)</li>
-                </ul>
-            </div>
-        </div>
+            <!-- K?CH B?N 3 -->
+            <div class="scenario-section">
+                <div class="scenario-header" style="background: linear-gradient(135deg, #b71c1c 0%, #c62828 100%);">
+                    <h2>?? K?CH B?N 3: M?NH TAY - "T?i da h�a L?i nhu?n"</h2>
+                    <p>K?ch b?n co s?: NPV = +164 t? | IRR = 29.4% | V?n = 400 t? + Vay 500 t?</p>
+                </div>
 
-        <div style="text-align: center; margin-top: 40px; padding: 20px; background: #f5f5f5; border-radius: 10px;">
-            <p style="font-size: 14px; color: #666;">
-                ?? Ph�n t�ch du?c th?c hi?n b?i <strong>LNP - Th?nh Nguy�n Group</strong><br>
-                Ng�y: October 24, 2025 | D? �n: Dreamhome Riverside
-            </p>
-        </div>
-    </div>
+                <div class="sensitivity-grid">
+                    <!-- Gi� b�n -->
+                    <div class="sensitivity-card" style="border-left-color: #c62828;">
+                        <h3>?? �? nh?y theo Gi� b�n (85 tr/m�)</h3>
+                        <table class="sensitivity-table">
+                            <thead>
+                                <tr>
+                                    <th>Gi� (tr/m�)</th>
+                                    <th>% thay d?i</th>
+                                    <th>NPV (t?)</th>
+                                    <th>IRR</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>95</td>
+                                    <td class="positive">+11.8%</td>
+                                    <td class="positive">+398</td>
+                                    <td class="positive">47.6%</td>
+                                </tr>
+                                <tr>
+                                    <td>90</td>
+                                    <td class="positive">+5.9%</td>
+                                    <td class="positive">+281</td>
+                                    <td class="positive">38.5%</td>
+                                </tr>
+                                <tr style="background: #ffebee;">
+                                    <td><strong>85 (base)</strong></td>
+                                    <td>0%</td>
+                                    <td class="positive">+164</td>
+                                    <td class="positive">29.4%</td>
+                                </tr>
+                                <tr>
+                                    <td>80</td>
+                                    <td class="negative">-5.9%</td>
+                                    <td class="neutral">+47</td>
+                                    <td class="positive">20.3%</td>
+                                </tr>
+                                <tr>
+                                    <td>75</td>
+                                    <td class="negative">-11.8%</td>
+                                    <td class="negative">-70</td>
+                                    <td class="negative">11.2%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Chi ph� thanh l� -->
+                    <div class="sensitivity-card" style="border-left-color: #c62828;">
+                        <h3>?? �? nh?y theo Chi ph� thanh l� (700 can)</h3>
+                        <table class="sensitivity-table">
+                            <thead>
+                                <tr>
+                                    <th>B?i thu?ng</th>
+                                    <th>Chi ph� (t?)</th>
+                                    <th>NPV (t?)</th>
+                                    <th>IRR</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>8%</td>
+                                    <td class="positive">576</td>
+                                    <td class="positive">+188</td>
+                                    <td class="positive">31.2%</td>
+                                </tr>
+                                <tr>
+                                    <td>10%</td>
+                                    <td class="positive">590</td>
+                                    <td class="positive">+176</td>
+                                    <td class="positive">30.3%</td>
+                                </tr>
+                                <tr style="background: #ffebee;">
+                                    <td><strong>12% (base)</strong></td>
+                                    <td>600</td>
+                                    <td class="positive">+164</td>
+                                    <td class="positive">29.4%</td>
+                                </tr>
+                                <tr>
+                                    <td>15%</td>
+                                    <td class="negative">618</td>
+                                    <td class="positive">+146</td>
+                                    <td class="positive">27.9%</td>
+                                </tr>
+                                <tr>
+                                    <td>20%</td>
+                                    <td class="negative">648</td>
+                                    <td class="positive">+116</td>
+                                    <td class="positive">25.1%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- R?i ro ph�p l� -->
+                    <div class="sensitivity-card" style="border-left-color: #c62828;">
+                        <h3>?? �? nh?y theo R?i ro ph�p l�</h3>
+                        <table class="sensitivity-table">
+                            <thead>
+                                <tr>
+                                    <th>K?ch b?n</th>
+                                    <th>Chi ph� th�m</th>
+                                    <th>NPV (t?)</th>
+                                    <th>IRR</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: #ffebee;">
+                                    <td><strong>Base (0% ki?n)</strong></td>
+                                    <td>0</td>
+                                    <td class="positive">+164</td>
+                                    <td class="positive">29.4%</td>
+                                </tr>
+                                <tr>
+                                    <td>5% kh�ch ki?n</td>
+                                    <td class="negative">+30 t?</td>
+                                    <td class="positive">+134</td>
+                                    <td class="positive">26.8%</td>
+                                </tr>
+                                <tr>
+                                    <td>10% kh�ch ki?n</td>
+                                    <td class="negative">+60 t?</td>
+                                    <td class="positive">+104</td>
+                                    <td class="positive">24.2%</td>
+                                </tr>
+                                <tr>
+                                    <td>15% kh�ch ki?n</td>
+                                    <td class="negative">+90 t?</td>
+                                    <td class="neutral">+74</td>
+                                    <td class="positive">21.6%</td>
+                                </tr>
+                                <tr>
+                                    <td>25% kh�ch ki?n</td>
+                                    <td class="negative">+150 t?</td>
+                                    <td class="neutral">+14</td>
+                                    <td class="positive">16.4%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Two-way sensitivity matrix KB3 -->
+                <div class="chart-container">
+                    <h3 style="color: #c62828; margin-bottom: 15px;">?? Ma tr?n �? nh?y 2 chi?u: Gi� b�n � % Kh�ch ki?n
+                        (NPV - t? VN�)</h3>
+                    <table class="matrix-table">
+                        <tr>
+                            <th class="corner">Gi� ? / % Ki?n ?</th>
+                            <th>0%<br>(base)</th>
+                            <th>5%</th>
+                            <th>10%</th>
+                            <th>15%</th>
+                            <th>25%</th>
+                        </tr>
+                        <tr>
+                            <th>95 tr/m�<br>(+11.8%)</th>
+                            <td class="cell-high">+398</td>
+                            <td class="cell-high">+368</td>
+                            <td class="cell-high">+338</td>
+                            <td class="cell-high">+308</td>
+                            <td class="cell-high">+248</td>
+                        </tr>
+                        <tr>
+                            <th>90 tr/m�<br>(+5.9%)</th>
+                            <td class="cell-high">+281</td>
+                            <td class="cell-high">+251</td>
+                            <td class="cell-high">+221</td>
+                            <td class="cell-high">+191</td>
+                            <td class="cell-high">+131</td>
+                        </tr>
+                        <tr>
+                            <th>85 tr/m�<br>(base)</th>
+                            <td class="cell-high">+164</td>
+                            <td class="cell-high">+134</td>
+                            <td class="cell-high">+104</td>
+                            <td class="cell-medium">+74</td>
+                            <td class="cell-medium">+14</td>
+                        </tr>
+                        <tr>
+                            <th>80 tr/m�<br>(-5.9%)</th>
+                            <td class="cell-medium">+47</td>
+                            <td class="cell-medium">+17</td>
+                            <td class="cell-low">-13</td>
+                            <td class="cell-low">-43</td>
+                            <td class="cell-low">-103</td>
+                        </tr>
+                        <tr>
+                            <th>75 tr/m�<br>(-11.8%)</th>
+                            <td class="cell-low">-70</td>
+                            <td class="cell-low">-100</td>
+                            <td class="cell-low">-130</td>
+                            <td class="cell-low">-160</td>
+                            <td class="cell-low">-220</td>
+                        </tr>
+                    </table>
+                    <p style="margin-top: 15px; font-size: 13px; color: #666;">
+                        <strong>C?NH B�O:</strong> N?u gi� ch? d?t 80 tr/m� V� c� 10% kh�ch ki?n ? NPV �m. K?ch b?n n�y
+                        c� r?i ro d�ng k?.
+                    </p>
+                </div>
+
+                <div class="insights" style="background: #ffebee; border-left-color: #c62828;">
+                    <h3 style="color: #b71c1c;">?? Insights - K?ch b?n 3:</h3>
+                    <ul>
+                        <li><strong>High-risk, High-return:</strong> IRR 29.4% nhung r?i ro ph�p l� cao</li>
+                        <li><strong>R?t nh?y c?m v?i gi�:</strong> Gi?m gi� t? 85 xu?ng 75 tr/m� ? NPV t? +164 xu?ng -70
+                            t?</li>
+                        <li><strong>R?i ro ph�p l� d�ng k?:</strong> 15% kh�ch ki?n ? NPV c�n +74 t? (gi?m 55%)</li>
+                        <li><strong>C?n gi� cao:</strong> Ph?i b�n =85 tr/m� d? c� margin d? b� r?i ro</li>
+                        <li><strong>Leverage cao = �p l?c:</strong> Vay 500 t? @ 12% = 60 t? l�i/nam</li>
+                        <li><strong>H�a v?n h?p:</strong> Gi� 78 tr/m� + 0% ki?n, HO?C gi� 85 tr/m� + 20% ki?n</li>
+                    </ul>
+                </div>
+
+                <div class="warning" style="background: #ffebee; border-left-color: #c62828;">
+                    <strong>?? C?NH B�O:</strong> K?ch b?n 3 CH? ph� h?p n?u: (1) C� b?ng ch?ng CH?C CH?N b�n du?c =85
+                    tr/m�, (2) �?i ngu ph�p l� C?C M?NH d? gi?m r?i ro ki?n t?ng xu?ng <10%, (3) Nh� d?u tu ch?p nh?n
+                        r?i ro cao. N?u kh�ng d�p ?ng c? 3 di?u ki?n ? KH�NG N�N theo du?i. </div>
+                </div>
+
+                <!-- SO S�NH T?NG QUAN -->
+                <div class="scenario-section">
+                    <div class="scenario-header" style="background: linear-gradient(135deg, #4a148c 0%, #6a1b9a 100%);">
+                        <h2>?? SO S�NH T?NG QUAN - R?I RO vs L?I NHU?N</h2>
+                    </div>
+
+                    <div class="chart-container">
+                        <h3 style="color: #4a148c; margin-bottom: 15px;">?? Ma tr?n R?i ro-L?i nhu?n (K?ch b?n co s?)
+                        </h3>
+                        <table class="matrix-table">
+                            <thead>
+                                <tr>
+                                    <th>K?ch b?n</th>
+                                    <th>V?n c?n</th>
+                                    <th>NPV (t?)</th>
+                                    <th>IRR</th>
+                                    <th>Th?i gian ho�n v?n</th>
+                                    <th>R?i ro</th>
+                                    <th>L?i nhu?n t?i da</th>
+                                    <th>R?i ro t?i da</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>KB1: TH?N TR?NG</strong></td>
+                                    <td>280 t?</td>
+                                    <td class="negative">-96</td>
+                                    <td class="negative">N/A</td>
+                                    <td class="negative">N/A</td>
+                                    <td>Th?p</td>
+                                    <td class="neutral">+166 t?</td>
+                                    <td class="negative">-408 t?</td>
+                                </tr>
+                                <tr style="background: #e8f5e9;">
+                                    <td><strong>KB2: C�N B?NG ?</strong></td>
+                                    <td>440 t?</td>
+                                    <td class="positive">+305</td>
+                                    <td class="positive">22.3%</td>
+                                    <td class="positive">18 th�ng</td>
+                                    <td>Trung b�nh</td>
+                                    <td class="positive">+525 t?</td>
+                                    <td class="positive">+43 t?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>KB3: M?NH TAY</strong></td>
+                                    <td>400 t? (+vay 500)</td>
+                                    <td class="positive">+164</td>
+                                    <td class="positive">29.4%</td>
+                                    <td class="positive">12 th�ng</td>
+                                    <td>Cao</td>
+                                    <td class="positive">+398 t?</td>
+                                    <td class="negative">-220 t?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="insights" style="background: #f3e5f5; border-left-color: #6a1b9a;">
+                        <h3 style="color: #4a148c;">?? K?T LU?N & KHUY?N NGH?:</h3>
+                        <ul>
+                            <li><strong>K?ch b?n 1:</strong> NPV �m trong K?ch b?n co s? ? KH�NG kh? thi</li>
+                            <li><strong>K?ch b?n 2:</strong> NPV +305 t?, b?o v? r?i ro t?t (+43 t? ? k?ch b?n x?u nh?t)
+                                ? <strong style="color: #2e7d32;">�U?C UU TI�N</strong></li>
+                            <li><strong>K?ch b?n 3:</strong> IRR cao nh?t (29.4%) nhung r?i ro l?n (k?ch b?n x?u nh?t
+                                -220 t?) ? Ch? ph� h?p v?i investor M?NH TAY</li>
+                            <li><strong>Khuy?n ngh?:</strong> Theo du?i <strong>K?ch b?n 2</strong> v?i Option d? scale
+                                up sang KB3 n?u market response t?t</li>
+                            <li><strong>Ph�n t�ch h�a v?n:</strong> KB2 c?n gi� ch? 62 tr/m� d? NPV > 0, trong khi KB3
+                                c?n 78 tr/m�</li>
+                            <li><strong>L?i nhu?n di?u ch?nh r?i ro:</strong> KB2 c� Ch? s? Sharpe t?t nh?t (l?i
+                                nhu?n/r?i ro)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div
+                    style="text-align: center; margin-top: 40px; padding: 20px; background: #f5f5f5; border-radius: 10px;">
+                    <p style="font-size: 14px; color: #666;">
+                        ?? Ph�n t�ch du?c th?c hi?n b?i <strong>LNP - Th?nh Nguy�n Group</strong><br>
+                        Ng�y: October 24, 2025 | D? �n: Dreamhome Riverside
+                    </p>
+                </div>
+            </div>
 </body>
-</html>
 
+</html>
