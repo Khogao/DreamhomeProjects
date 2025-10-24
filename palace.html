@@ -1,0 +1,535 @@
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Home Palace - Giới thiệu Dự án</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .cover {
+            height: 100vh;
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 40px;
+            page-break-after: always;
+        }
+
+        .cover h1 {
+            font-size: 72px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .cover .subtitle {
+            font-size: 32px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .cover .status {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px 40px;
+            border-radius: 50px;
+            font-size: 24px;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 60px;
+            page-break-inside: avoid;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-header h2 {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .section-number {
+            background: rgba(255, 255, 255, 0.3);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin-right: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            color: white;
+        }
+
+        th {
+            padding: 18px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        td {
+            padding: 16px 18px;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 15px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:hover {
+            background: #f5f5f5;
+        }
+
+        .highlight-row {
+            background: #ffa726;
+            font-weight: 600;
+        }
+
+        .total-row {
+            background: #e0e0e0;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .info-box {
+            background: #f5f5f5;
+            border-left: 5px solid #1a237e;
+            padding: 20px 30px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .info-box h3 {
+            color: #1a237e;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .info-box p {
+            margin: 10px 0;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #ff6f00;
+        }
+
+        .metric-label {
+            color: #666;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .metric-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a237e;
+            margin-bottom: 5px;
+        }
+
+        .metric-subtitle {
+            color: #999;
+            font-size: 13px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .status-complete {
+            background: #c8e6c9;
+            color: #2e7d32;
+        }
+
+        .status-pending {
+            background: #ffa726;
+            color: #ef6c00;
+        }
+
+        .footer {
+            margin-top: 80px;
+            padding: 30px;
+            background: #f5f5f5;
+            border-radius: 12px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .highlight-number {
+            color: #1a237e;
+            font-weight: 700;
+        }
+
+        @media print {
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- COVER PAGE -->
+    <div class="cover">
+        <h1>DREAM HOME PALACE</h1>
+        <div class="subtitle">Giới thiệu Dự án</div>
+        <div class="status">✓ Hoàn thành 95%</div>
+    </div>
+    <!-- CONTENT -->
+    <div class="content">
+        <!-- SECTION 1: THÔNG TIN CHUNG -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">1</div>
+                <h2>THÔNG TIN CHUNG</h2>
+            </div>
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-label">Tên dự án</div>
+                    <div class="metric-value" style="font-size:24px;">Dream Home Palace</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Chủ đầu tư</div>
+                    <div class="metric-value" style="font-size:24px;">Công ty Lý Khương</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Vị trí</div>
+                    <div class="metric-value" style="font-size:24px;">Quận 8, TPHCM</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Diện tích</div>
+                    <div class="metric-value">1,1 ha</div>
+                    <div class="metric-subtitle">11.000 m²</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Tiến độ</div>
+                    <div class="metric-value">95%</div>
+                    <div class="metric-subtitle">Đã hoàn thành</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Tình trạng bán</div>
+                    <div class="metric-value" style="font-size:20px;">Đã bán hết</div>
+                    <div class="metric-subtitle">100% căn hộ</div>
+                </div>
+            </div>
+        </div>
+        <!-- SECTION 2: TÌNH TRẠNG XÂY DỰNG -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">2</div>
+                <h2>TÌNH TRẠNG XÂY DỰNG</h2>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hạng mục</th>
+                        <th>Tình trạng</th>
+                        <th style="text-align:right;">Còn thiếu (tỷ VNĐ)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Xây dựng chính</td>
+                        <td>
+                            <span class="status-badge status-complete">95% hoàn thành</span>
+                        </td>
+                        <td style="text-align:right;">-</td>
+                    </tr>
+                    <tr>
+                        <td>Mái hiên</td>
+                        <td>
+                            <span class="status-badge status-pending">Chưa hoàn thiện</span>
+                        </td>
+                        <td style="text-align:right;">
+                            <span class="highlight-number">1,5</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Pháp lý, nghiệm thu</td>
+                        <td>
+                            <span class="status-badge status-pending">Chưa hoàn tất</span>
+                        </td>
+                        <td style="text-align:right;">
+                            <span class="highlight-number">6,0</span>
+                        </td>
+                    </tr>
+                    <tr class="total-row">
+                        <td colspan="2">
+                            <strong>TỔNG CẦN BỔ SUNG</strong>
+                        </td>
+                        <td style="text-align:right;">
+                            <strong>7,5</strong>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- SECTION 3: TÌNH TRẠNG BÁN HÀNG -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">3</div>
+                <h2>TÌNH TRẠNG BÁN HÀNG</h2>
+            </div>
+            <div class="info-box">
+                <h3>✓ Đã bán hết toàn bộ căn hộ</h3>
+                <p>
+                    <strong>Đã thu tiền:</strong>Phần lớn đã thanh toán
+                </p>
+                <p>
+                    <strong>Còn phải thu:</strong><span class="highlight-number">76,06 tỷ</span>(5% ra sổ)
+                </p>
+                <p>
+                    <strong>Lưu ý:</strong>Số tiền 76,06 tỷ đang thế chấp bổ sung tại Tpbank
+                </p>
+            </div>
+        </div>
+        <!-- SECTION 4: TÀI SẢN -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">4</div>
+                <h2>TÀI SẢN</h2>
+            </div>
+            <h3 style="color:#1a237e;margin:30px 0px 20px 0px;font-size:22px;">Sàn thương mại</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hạng mục</th>
+                        <th>Diện tích</th>
+                        <th style="text-align:right;">Giá trị (tỷ VNĐ)</th>
+                        <th>Tình trạng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sàn TM còn trống</td>
+                        <td>5.654 m²</td>
+                        <td style="text-align:right;">
+                            <span class="highlight-number">254,43</span>
+                        </td>
+                        <td>
+                            <span class="status-badge status-pending">Đang thế chấp vay</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="padding-top:0;font-size:14px;color:#666;">
+                            <strong>Giá dự kiến:</strong>45 triệu/m²
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="info-box" style="border-left-color:#ffa726;background:rgb(255, 248, 225);">
+                <h3 style="color:#f57c00;">Chi tiết thế chấp</h3>
+                <p>
+                    • 4.833 m² thế chấp vay ngoài: Nợ còn<span class="highlight-number">47,6 tỷ</span>
+                </p>
+                <p>• 821 m² thế chấp bổ sung Tpbank: Khoản vay thi công Riverside</p>
+            </div>
+        </div>
+        <!-- SECTION 5: NỢ PHẢI TRẢ -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">5</div>
+                <h2>NỢ PHẢI TRẢ</h2>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Khoản nợ</th>
+                        <th style="text-align:right;">Số tiền (tỷ VNĐ)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nhà thầu</td>
+                        <td style="text-align:right;">43,74</td>
+                    </tr>
+                    <tr>
+                        <td>Thuế 1%</td>
+                        <td style="text-align:right;">8,63</td>
+                    </tr>
+                    <tr>
+                        <td>Phạt chậm nộp</td>
+                        <td style="text-align:right;">3,78</td>
+                    </tr>
+                    <tr>
+                        <td>Hoàn vốn vay ngoài</td>
+                        <td style="text-align:right;">47,60</td>
+                    </tr>
+                    <tr>
+                        <td>Quỹ bảo trì</td>
+                        <td style="text-align:right;">25,34</td>
+                    </tr>
+                    <tr>
+                        <td>Mái hiên</td>
+                        <td style="text-align:right;">1,50</td>
+                    </tr>
+                    <tr>
+                        <td>Pháp lý</td>
+                        <td style="text-align:right;">6,00</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td>
+                            <strong>TỔNG NỢ</strong>
+                        </td>
+                        <td style="text-align:right;">
+                            <strong>136,60</strong>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- SECTION 6: BÁO CÁO TÀI CHÍNH -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">6</div>
+                <h2>BÁO CÁO TÀI CHÍNH</h2>
+            </div>
+            <div class="metric-grid">
+                <div class="metric-card" style="border-top-color:#424242;">
+                    <div class="metric-label">Thu tiềm năng</div>
+                    <div class="metric-value" style="color:#424242;">330,49</div>
+                    <div class="metric-subtitle">tỷ VNĐ</div>
+                </div>
+                <div class="metric-card" style="border-top-color:#f44336;">
+                    <div class="metric-label">Nợ phải trả</div>
+                    <div class="metric-value" style="color:#f44336;">136,60</div>
+                    <div class="metric-subtitle">tỷ VNĐ</div>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hạng mục</th>
+                        <th style="text-align:right;">Số tiền (tỷ VNĐ)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="2" style="font-weight:600;color:#2e7d32;background:rgb(232, 245, 233);">THU</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left:30px;">Thu từ 5% ra sổ</td>
+                        <td style="text-align:right;">76,06</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left:30px;">Tiềm năng từ sàn Thương mại: 5.654*45 tr/m2 </td>
+                        <td style="text-align:right;">254,43</td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td>
+                            <strong>TỔNG THU TIỀM NĂNG</strong>
+                        </td>
+                        <td style="text-align:right;">
+                            <strong>330,49</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"
+                            style="font-weight:600;color:#c62828;padding-top:20px;background:rgb(255, 235, 238);">CHI
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left:30px;">Nợ phải trả</td>
+                        <td style="text-align:right;">136,60</td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td>
+                            <strong>TỔNG CHI</strong>
+                        </td>
+                        <td style="text-align:right;">
+                            <strong>136,60</strong>
+                        </td>
+                    </tr>
+                    <tr class="total-row" style="background:rgb(224, 224, 224);">
+                        <td>
+                            <strong>DÒNG TIỀN RÒNG TIỀM NĂNG</strong>
+                        </td>
+                        <td style="text-align:right;">
+                            <strong style="color:#1a237e;">193,89</strong>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Thông tin từ báo cáo tài chính Công ty Lý Khương</p>
+        <p style="margin-top:10px;font-weight:600;">Dream Home Palace - Dự án đã hoàn thành 95%</p>
+    </div>
+</body>
+
+</html>
